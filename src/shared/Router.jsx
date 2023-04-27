@@ -4,12 +4,16 @@ import Main from '../pages/Main';
 import About from '../pages/About';
 import Projects from '../pages/Projects';
 import Contact from '../pages/Contact';
+import Header from '../pages/Header';
+import Home from '../pages/Home';
 
 const Router = () => {
   return (
     <BrowserRouter>
+      <Header />
       <Routes>
         <Route path='/' element={<Main />}></Route>
+        <Route path='/Home' element={<Home />}></Route>
         <Route path='/About' element={<About />}></Route>
         <Route path='/Projects' element={<Projects />}></Route>
         <Route path='/Contact' element={<Contact />}></Route>
