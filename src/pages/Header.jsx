@@ -23,7 +23,12 @@ export default Header;
 
 export const NavContainer = styled.div`
   /* width: 100%; */
-
+  /* position: fixed; */
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: auto;
   background-color: black;
 `;
 export const Nav = styled.div`
