@@ -119,9 +119,6 @@ export const Introname = styled.h1`
 `;
 export const IntrojobWrap = styled.div`
   display: flex;
-  /* width: 68%; */
-  /* justify-content: center; */
-  /* align-items: center; */
   height: 150px;
   color: #af9fff;
   background-color: black;
@@ -170,7 +167,7 @@ export const Progress = styled.div`
   overflow: hidden;
   width: 55%;
   padding: 0px 80px;
-  animation: Progress 5s ease-in Infinite Alternate;
+  animation: Progress 4s ease-in Infinite Alternate;
   @keyframes Progress {
     from {
       width: 55%;

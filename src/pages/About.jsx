@@ -74,7 +74,13 @@ function About() {
                 of learning.
               </IntroCardMyself>
             </IntromyselfWrap>
+            <IntroResumeBtn>
+              <ResumeDownload href='/assets/resume.pdf' download='resume.pdf'>
+                Resume
+              </ResumeDownload>
+            </IntroResumeBtn>
           </IntroCardSection>
+
           <Intropic />
         </IntroCardWrap>
       </AboutBackground>
@@ -156,3 +162,5 @@ export const Intropic = styled.figure`
   background-image: url('/assets/jinyangpark.jpg');
   background-repeat: no-repeat;
 `;
+export const IntroResumeBtn = styled.button``;
+export const ResumeDownload = styled.a``;
