@@ -24,7 +24,7 @@ export default Header;
 export const NavContainer = styled.div`
   /* width: 100%; */
   /* position: fixed; */
-  position: fixed;
+  /* position: fixed; */
   left: 0;
   top: 0;
   right: 0;
@@ -66,27 +66,3 @@ export const Navli = styled.li`
     vertical-align: middle;
   }
 `;
-// export const LinkWrap = styled.div`
-//   position: relative;
-//   overflow: hidden;
-//   &:hover {
-//     will-change: transform;
-//     transform-style: preserve-3d;
-//     transform: translate3d(-9e-5rem, 3.5e-5rem, 0px) scale3d(1, 1, 1)
-//       rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-//   }
-// `;
-// export const LinkMove = styled.div`
-//   position: relative;
-//   &:hover {
-//     transition: transform 0.4s;
-//   }
-// `;
-// export const NavliSecond = styled.div`
-//   font-family: 'Darker Grotesque', sans-serif;
-//   font-weight: 600;
-//   font-size: 25px;
-//   color: white;
-//   position: absolute;
-//   transform: rotate(16deg);
-// `;

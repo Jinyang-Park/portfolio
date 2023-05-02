@@ -34,7 +34,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body{
-        color: #202020;
+        color: black;
         font-size: 16px;
         /* line-height: 1.7; */
     }

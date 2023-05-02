@@ -37,12 +37,11 @@ function Main() {
             <Introname>Hi. I'm Jinyang.</Introname>
           </IntronameWrap>
           <IntrojobWrap>
-            <IntrojobBox>
-              <ProgressBar>
-                <Introjob>A Frontend </Introjob>
-              </ProgressBar>
-              <Introjob3>Developer </Introjob3>
-            </IntrojobBox>
+            <Introjob3>Developer </Introjob3>
+            <Progress>
+              <Introjob4>Developer </Introjob4>
+              <Introjob>A Frontend </Introjob>
+            </Progress>
           </IntrojobWrap>
           <IntrojobWrap2>
             <Introjob2>& Designer.</Introjob2>
@@ -60,8 +59,8 @@ function Main() {
 export default Main;
 
 export const Introduce = styled.div`
-  padding-top: 150px;
-  margin-bottom: 100px;
+  padding-top: 80px;
+  margin-bottom: 150px;
   /* display: flex; */
 `;
 export const IntroContent = styled.div`
@@ -73,7 +72,7 @@ export const IntroContent = styled.div`
 export const TitleBallon = styled.div`
   position: absolute;
   display: flex;
-  margin-top: -115px;
+  margin-top: -130px;
   margin-left: 19%;
 `;
 export const TitleTxtCol = styled.span`
@@ -119,19 +118,19 @@ export const Introname = styled.h1`
   justify-content: center;
 `;
 export const IntrojobWrap = styled.div`
-  width: 68%;
-  justify-content: center;
-  align-items: center;
+  display: flex;
+  /* width: 68%; */
+  /* justify-content: center; */
+  /* align-items: center; */
   height: 150px;
   color: #af9fff;
   background-color: black;
   border-radius: 0px 100px 100px 0px;
+  overflow: hidden;
+  position: relative;
+  width: 70%;
 `;
-export const IntrojobBox = styled.div`
-  display: flex;
-  /* margin-left: 0px 80px; */
-  /* padding: 0px 80px; */
-`;
+
 export const IntrojobWrap2 = styled.div`
   width: 40%;
   justify-content: center;
@@ -145,25 +144,41 @@ export const IntrojobWrap2 = styled.div`
 export const Introjob = styled.span`
   font-size: 100px;
   font-family: 'Darker Grotesque', sans-serif;
-  justify-content: center;
-  display: flex;
 `;
-export const Introjob3 = styled.span`
+export const Introjob3 = styled.div`
+  position: absolute;
   font-size: 100px;
   font-family: 'Darker Grotesque', sans-serif;
   justify-content: center;
-  margin-left: 30px;
+  left: 600px;
 `;
-export const ProgressBar = styled.div`
-  /* width: 150%; */
-  /* justify-content: center;
-  align-items: center; */
+export const Introjob4 = styled.div`
+  position: absolute;
+  font-size: 100px;
+  font-family: 'Darker Grotesque', sans-serif;
+  justify-content: center;
+
+  left: 600px;
+`;
+
+export const Progress = styled.div`
+  position: relative;
   height: 150px;
   color: black;
   border-radius: 0px 100px 100px 0px;
   background-color: #af9fff;
-  border-radius: 0px 100px 100px 0px;
+  overflow: hidden;
+  width: 55%;
   padding: 0px 80px;
+  animation: Progress 5s ease-in Infinite Alternate;
+  @keyframes Progress {
+    from {
+      width: 55%;
+    }
+    to {
+      width: 105%;
+    }
+  }
 `;
 
 export const Introjob2 = styled.span`
