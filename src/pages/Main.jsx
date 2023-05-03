@@ -60,7 +60,8 @@ export default Main;
 
 export const Introduce = styled.div`
   padding-top: 80px;
-  margin-bottom: 150px;
+  margin-bottom: 200px;
+  background-color: #f5f5f5;
   /* display: flex; */
 `;
 export const IntroContent = styled.div`
@@ -167,7 +168,7 @@ export const Progress = styled.div`
   overflow: hidden;
   width: 55%;
   padding: 0px 80px;
-  animation: Progress 4s ease-in Infinite Alternate;
+  animation: Progress 4s ease-in-out Infinite alternate;
   @keyframes Progress {
     from {
       width: 55%;
