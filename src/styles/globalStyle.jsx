@@ -34,7 +34,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body{
-        color: black;
+        background-color: #f5f5f5;
         font-size: 16px;
         /* line-height: 1.7; */
     }
@@ -64,11 +64,9 @@ const GlobalStyle = createGlobalStyle`
     }
 
     img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        -webkit-user-drag: none;
+
+        
+
     }
 
     div {

@@ -1,17 +1,30 @@
 import React from 'react';
+import { Link, Navigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 function Header() {
+  const Main = () => {
+    Navigate('/');
+  };
   return (
     <>
       <NavContainer>
         <Nav>
-          <LogoText>JIN.DEV</LogoText>
+          <NavWrapper>
+            <Link to={'/'}>
+              <LogoImg src='/assets/JLogo.png' />
+            </Link>
+            <Navul>
+              <Navli>ABOUT</Navli>
+              <Navli>PROJECTS</Navli>
+            </Navul>
+          </NavWrapper>
           <Navul>
-            <Navli>HOME</Navli>
-            <Navli>ABOUT</Navli>
-            <Navli>PROJECTS</Navli>
-            <Navli>CONTACT</Navli>
+            {/* <Navli>ABOUT</Navli>
+            <Navli>PROJECTS</Navli> */}
+            <Link to={'/Contact'}>
+              <Navli2>CONTACT</Navli2>
+            </Link>
           </Navul>
         </Nav>
       </NavContainer>
@@ -34,13 +47,20 @@ export const NavContainer = styled.div`
 export const Nav = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 20px 40px;
+
+  padding: 30px 40px;
   align-items: center;
 `;
-export const LogoText = styled.p`
-  font-size: 30px;
-  font-family: 'Darker Grotesque', sans-serif;
-  color: black;
+export const NavWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+export const LogoImg = styled.img`
+  width: 32px;
+  height: 44px;
+  margin-right: 30px;
+  background-repeat: no-repeat;
 `;
 export const Navul = styled.ul`
   display: flex;
@@ -66,5 +86,81 @@ export const Navli = styled.li`
     color: white;
     transition: color 0.3s, background-color 0.3s;
     vertical-align: middle;
+  }
+`;
+
+export const Navli2 = styled.li`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  background-color: #eeff04;
+  padding: 30px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 20px;
+  font-family: 'Darker Grotesque', sans-serif;
+  line-height: 0;
+  color: #222;
+  cursor: pointer;
+  line-height: 0.15;
+  transition: all 0.3s ease;
+  @-webkit-keyframes Navli2 {
+    15% {
+      -webkit-transform: translateY(5px);
+      transform: translateY(5px);
+    }
+    30% {
+      -webkit-transform: translateY(-5px);
+      transform: translateY(-5px);
+    }
+    50% {
+      -webkit-transform: translateY(3px);
+      transform: translateY(3px);
+    }
+    65% {
+      -webkit-transform: translateY(-3px);
+      transform: translateY(-3px);
+    }
+    80% {
+      -webkit-transform: translateY(2px);
+      transform: translateY(2px);
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+  @keyframes Navli2 {
+    15% {
+      -webkit-transform: translateY(5px);
+      transform: translateY(5px);
+    }
+    30% {
+      -webkit-transform: translateY(-5px);
+      transform: translateY(-5px);
+    }
+    50% {
+      -webkit-transform: translateY(3px);
+      transform: translateY(3px);
+    }
+    65% {
+      -webkit-transform: translateY(-3px);
+      transform: translateY(-3px);
+    }
+    80% {
+      -webkit-transform: translateY(2px);
+      transform: translateY(2px);
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+  &:hover {
+    -webkit-animation: Navli2 1s ease;
+    animation: Navli2 1s ease;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
   }
 `;

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 function About() {
@@ -46,60 +46,62 @@ function About() {
             DEVELOPED WITH SKILL & PASSION DEVELOPED WITH SKILL & PASSION
           </ScrollrightText>
         </Right>
-        <IntroCardWrap style={{ opacity: (position - 100) / 50 }}>
-          <IntroCardSection>
-            <IntroCardMyname>
-              Hello,
-              <br />
-              I'm Jinyang
-            </IntroCardMyname>
+        <IntroCardPaddingGlobal>
+          <IntroCardWrap style={{ opacity: (position - 100) / 50 }}>
+            <IntroCardSection>
+              <IntroCardMyname>
+                Hello,
+                <br />
+                I'm Jinyang
+              </IntroCardMyname>
 
-            <IntromyselfWrap>
-              <IntroCardMyself>
-                Hi, I'm Dylan, the programme director at LIM.
-                <br />
-                <br />
-                I completed my studies in Music Business Management at the
-                University of Westminster and later specialised in Music
-                Production & Sound Engineering at Abbey Road Institute in
-                London. I've also been active in the music industry for more
-                than 10 years, be that as a producer, performer or music
-                journalist.
-                <br />I created LIM to share my experience and synthesised it
-                into an intensive 3-months-course to kickstart your music
-                career. The target is to guide you through the essential skills
-                of an industry professional and answer any question that a
-                beginner might have. Let's save you the struggle of navigating
-                your career blindly - by delivering a clear and structured way
-                of learning.
-              </IntroCardMyself>
-            </IntromyselfWrap>
-            <ResumeBtn
-              href='/assets/resume.pdf'
-              target='_blank'
-              rel='noreferrer'
-            >
-              Resume
-              <Arrow>
-                <ArrowSvg
-                  width='21'
-                  height='16'
-                  viewBox='0 0 21 16'
-                  fill='none'
-                  xmlns='http://www.w3.org/2000/svg'
-                  data-v-64da5e37=''
-                >
-                  <ArrowPath
-                    d='M13.216 0H11.474C11.942 3.12 13.554 5.772 15.998 7.124L0 7.046V8.736L15.998 8.658C13.554 10.01 11.942 12.662 11.474 15.782H13.216C13.762 11.804 16.57 8.58 20.626 8.58V7.202C16.57 7.202 13.762 3.978 13.216 0Z'
-                    fill='#222222'
-                    data-v-1e2ff580=''
-                  ></ArrowPath>
-                </ArrowSvg>
-              </Arrow>
-            </ResumeBtn>
-          </IntroCardSection>
-          <Intropic />
-        </IntroCardWrap>
+              <IntromyselfWrap>
+                <IntroCardMyself>
+                  Hi, I'm Dylan, the programme director at LIM.
+                  <br />
+                  <br />
+                  I completed my studies in Music Business Management at the
+                  University of Westminster and later specialised in Music
+                  Production & Sound Engineering at Abbey Road Institute in
+                  London. I've also been active in the music industry for more
+                  than 10 years, be that as a producer, performer or music
+                  journalist.
+                  <br />I created LIM to share my experience and synthesised it
+                  into an intensive 3-months-course to kickstart your music
+                  career. The target is to guide you through the essential
+                  skills of an industry professional and answer any question
+                  that a beginner might have. Let's save you the struggle of
+                  navigating your career blindly - by delivering a clear and
+                  structured way of learning.
+                </IntroCardMyself>
+              </IntromyselfWrap>
+              <ResumeBtn
+                href='/assets/resume.pdf'
+                target='_blank'
+                rel='noreferrer'
+              >
+                Resume
+                <Arrow>
+                  <ArrowSvg
+                    width='21'
+                    height='16'
+                    viewBox='0 0 21 16'
+                    fill='none'
+                    xmlns='http://www.w3.org/2000/svg'
+                    data-v-64da5e37=''
+                  >
+                    <ArrowPath
+                      d='M13.216 0H11.474C11.942 3.12 13.554 5.772 15.998 7.124L0 7.046V8.736L15.998 8.658C13.554 10.01 11.942 12.662 11.474 15.782H13.216C13.762 11.804 16.57 8.58 20.626 8.58V7.202C16.57 7.202 13.762 3.978 13.216 0Z'
+                      fill='#222222'
+                      data-v-1e2ff580=''
+                    ></ArrowPath>
+                  </ArrowSvg>
+                </Arrow>
+              </ResumeBtn>
+            </IntroCardSection>
+            <Intropic />
+          </IntroCardWrap>
+        </IntroCardPaddingGlobal>
       </AboutBackground>
     </>
   );
@@ -109,7 +111,7 @@ export default About;
 export const AboutBackground = styled.div`
   /* width: 100%; */
   overflow: hidden;
-  height: 220vh;
+  height: 230vh;
   /* overflow: hidden; */
   background-color: #af9fff;
 `;
@@ -140,10 +142,14 @@ export const ScrollrightText = styled.div`
   color: white;
   font-weight: 600;
 `;
+export const IntroCardPaddingGlobal = styled.div`
+  padding-left: 100px;
+  padding-right: 100px;
+`;
 export const IntroCardWrap = styled.div`
   display: grid;
   margin: 0 auto;
-  width: 80%;
+  width: 100%;
   padding: 4rem;
   grid-auto-columns: 1fr;
   grid-column-gap: 16px;
@@ -155,7 +161,10 @@ export const IntroCardWrap = styled.div`
   top: -150px;
   animation: 100s ease-in-out;
 `;
-export const IntroCardSection = styled.div``;
+export const IntroCardSection = styled.div`
+  /* padding-left: 20px;
+  padding-right: 20px; */
+`;
 export const IntroCardMyname = styled.h3`
   font-size: 70px;
   line-height: 1;
@@ -204,10 +213,65 @@ export const ResumeBtn = styled.a`
   color: #222;
   cursor: pointer;
   line-height: 0.15;
+  transition: all 0.3s ease;
 
-  transition: transform 0.2s ease;
+  @-webkit-keyframes ResumeBtn {
+    15% {
+      -webkit-transform: translateY(5px);
+      transform: translateY(5px);
+    }
+    30% {
+      -webkit-transform: translateY(-5px);
+      transform: translateY(-5px);
+    }
+    50% {
+      -webkit-transform: translateY(3px);
+      transform: translateY(3px);
+    }
+    65% {
+      -webkit-transform: translateY(-3px);
+      transform: translateY(-3px);
+    }
+    80% {
+      -webkit-transform: translateY(2px);
+      transform: translateY(2px);
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+  @keyframes ResumeBtn {
+    15% {
+      -webkit-transform: translateY(5px);
+      transform: translateY(5px);
+    }
+    30% {
+      -webkit-transform: translateY(-5px);
+      transform: translateY(-5px);
+    }
+    50% {
+      -webkit-transform: translateY(3px);
+      transform: translateY(3px);
+    }
+    65% {
+      -webkit-transform: translateY(-3px);
+      transform: translateY(-3px);
+    }
+    80% {
+      -webkit-transform: translateY(2px);
+      transform: translateY(2px);
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
   &:hover {
-    transform: translateY(-5px);
+    -webkit-animation: ResumeBtn 1s ease;
+    animation: ResumeBtn 1s ease;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
   }
 `;
 export const Arrow = styled.div`

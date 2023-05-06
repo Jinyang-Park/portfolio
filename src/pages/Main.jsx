@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import About from './About';
+import Projects from './Projects';
 
 function Main() {
   return (
@@ -52,6 +53,7 @@ function Main() {
         </MinimeWrap>
       </Introduce>
       <About />
+      <Projects />
     </>
   );
 }
