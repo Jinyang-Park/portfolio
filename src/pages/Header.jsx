@@ -12,7 +12,9 @@ function Header() {
         <Nav>
           <NavWrapper>
             <Link to={'/'}>
-              <LogoImg src='/assets/JLogo.png' />
+              {/* <LogoText>Jinyang Park</LogoText> */}
+              {/* <LogoImg src='/assets/JLogo.png' /> */}
+              <LogoImg src='/assets/star2.png' />
             </Link>
             <Navul>
               <Navli>ABOUT</Navli>
@@ -56,12 +58,26 @@ export const NavWrapper = styled.div`
   justify-content: center;
   align-items: center;
 `;
+// export const LogoText = styled.span`
+//   font-family: 'Darker Grotesque', sans-serif;
+//   color: black;
+//   text-transform: none;
+//   margin-right: 30px;
+//   font-size: 20px;
+// `;
 export const LogoImg = styled.img`
-  width: 32px;
-  height: 44px;
+  color: black;
+  width: 60px;
+  height: 60px;
   margin-right: 30px;
   background-repeat: no-repeat;
 `;
+// export const LogoImg = styled.img`
+//   width: 32px;
+//   height: 44px;
+//   margin-right: 30px;
+//   background-repeat: no-repeat;
+// `;
 export const Navul = styled.ul`
   display: flex;
 `;

@@ -7,50 +7,52 @@ function Main() {
   return (
     <>
       <Introduce>
-        <MinimeHoduWrap>
-          <MinimeHouduImg />
-        </MinimeHoduWrap>
-        <TitleBallon>
-          <TitleTxtCol>
-            <TitleTxt>Hire Jinyang!</TitleTxt>
-          </TitleTxtCol>
-          <TitleTail>
-            <TitleSvg
-              width='14'
-              height='16'
-              viewBox='0 0 14 16'
-              fill='none'
-              xmlns='http://www.w3.org/2000/svg'
-              data-v-31c4c148=''
-            >
-              <TitlePath
-                fill-rule='evenodd'
-                clip-rule='evenodd'
-                d='M0 0.516602C0 9.06769 3.26836 15.9997 13.7618 15.9997L14 16.0005C13.0623 15.2567 12.2689 14.3944 11.6314 13.4229C10.4112 11.5638 10 9.73924 10 5.406V0.516602H0Z'
-                fill='#A6814C'
+        <GloblaPadding>
+          <MinimeHoduWrap>
+            <MinimeHouduImg />
+          </MinimeHoduWrap>
+          <TitleBallon>
+            <TitleTxtCol>
+              <TitleTxt>Hire Jinyang!</TitleTxt>
+            </TitleTxtCol>
+            <TitleTail>
+              <TitleSvg
+                width='14'
+                height='16'
+                viewBox='0 0 14 16'
+                fill='none'
+                xmlns='http://www.w3.org/2000/svg'
                 data-v-31c4c148=''
-              ></TitlePath>
-            </TitleSvg>
-          </TitleTail>
-        </TitleBallon>
-        <IntroContent>
-          <IntronameWrap>
-            <Introname>Hi. I'm Jinyang.</Introname>
-          </IntronameWrap>
-          <IntrojobWrap>
-            <Introjob3>Developer </Introjob3>
-            <Progress>
-              <Introjob4>Developer </Introjob4>
-              <Introjob>A Frontend </Introjob>
-            </Progress>
-          </IntrojobWrap>
-          <IntrojobWrap2>
-            <Introjob2>& Designer.</Introjob2>
-          </IntrojobWrap2>
-        </IntroContent>
-        <MinimeWrap>
-          <MinimeImg />
-        </MinimeWrap>
+              >
+                <TitlePath
+                  fill-rule='evenodd'
+                  clip-rule='evenodd'
+                  d='M0 0.516602C0 9.06769 3.26836 15.9997 13.7618 15.9997L14 16.0005C13.0623 15.2567 12.2689 14.3944 11.6314 13.4229C10.4112 11.5638 10 9.73924 10 5.406V0.516602H0Z'
+                  fill='#A6814C'
+                  data-v-31c4c148=''
+                ></TitlePath>
+              </TitleSvg>
+            </TitleTail>
+          </TitleBallon>
+          <IntroContent>
+            <IntronameWrap>
+              <Introname>Hi. I'm Jinyang.</Introname>
+            </IntronameWrap>
+            <IntrojobWrap>
+              <Introjob3>Developer </Introjob3>
+              <Progress>
+                <Introjob4>Developer </Introjob4>
+                <Introjob>A Frontend </Introjob>
+              </Progress>
+            </IntrojobWrap>
+            <IntrojobWrap2>
+              <Introjob2>& Designer.</Introjob2>
+            </IntrojobWrap2>
+          </IntroContent>
+          <MinimeWrap>
+            <MinimeImg />
+          </MinimeWrap>
+        </GloblaPadding>
       </Introduce>
       <About />
       <Projects />
@@ -59,7 +61,12 @@ function Main() {
 }
 
 export default Main;
-
+export const GloblaPadding = styled.div`
+  width: 100%;
+  max-width: 90rem;
+  margin-right: auto;
+  margin-left: auto;
+`;
 export const Introduce = styled.div`
   padding-top: 80px;
   margin-bottom: 200px;
@@ -169,7 +176,7 @@ export const Progress = styled.div`
   background-color: #af9fff;
   overflow: hidden;
   width: 55%;
-  padding: 0px 80px;
+  padding: 0px 60px;
   animation: Progress 4s ease-in-out Infinite alternate;
   @keyframes Progress {
     from {
