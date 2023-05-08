@@ -2,19 +2,20 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { BsGithub } from 'react-icons/bs';
 import { RiWindowFill } from 'react-icons/ri';
+import { ProjectList } from './ProjectsList';
 
 function Projects() {
-  const [position, setPosition] = useState(0);
-  function onScroll() {
-    console.log(window.scrollY);
-    setPosition(window.scrollY - 2900);
-  }
-  useEffect(() => {
-    window.addEventListener('scroll', onScroll);
-    return () => {
-      window.removeEventListener('scroll', onScroll);
-    };
-  }, []);
+  // const [position, setPosition] = useState(0);
+  // function onScroll() {
+  //   // console.log(window.scrollY);
+  //   setPosition(window.scrollY - 0);
+  // }
+  // useEffect(() => {
+  //   window.addEventListener('scroll', onScroll);
+  //   return () => {
+  //     window.removeEventListener('scroll', onScroll);
+  //   };
+  // }, []);
   return (
     <>
       <ProjectBackground>
@@ -29,67 +30,61 @@ function Projects() {
                 Each project is unique. Here are some of my works.
               </ProjectIntrodetail>
             </ProjectIntroText2>
+            {/*project1*/}
+            {ProjectList.map((Project) => {
+              // console.log(
+              //   Project.CardNumber.map((x) => {
+              //     console.log(x.Number);
+              //   })
+              // );
+              return (
+                <ProjectWrap>
+                  <ProjectIntroWrap>
+                    <ProjectPost>
+                      <ProjectTitle>{Project.Title}</ProjectTitle>
+                      <ProjectSubTitle>{Project.SubTitle}</ProjectSubTitle>
 
-            <ProjectWrap>
-              <ProjectIntroWrap
-                style={{
-                  transform: `translateX(${-position / 30}px)`,
-                }}
-              >
-                <ProjectPost>
-                  <ProjectTitle>Ollae</ProjectTitle>
-                  <ProjectSubTitle>
-                    Loaction based community platform
-                  </ProjectSubTitle>
+                      <ProjectAbout>About</ProjectAbout>
+                      <ProjectIntroduce>{Project.Introduce}</ProjectIntroduce>
+                      {Project.CardNumber.map((List) => {
+                        return (
+                          <CardLeftcontent>
+                            <CardTexBold>{List.Number}&nbsp;</CardTexBold>
+                            <CardTexBold2>{List.Content}</CardTexBold2>
+                          </CardLeftcontent>
+                        );
+                      })}
 
-                  <ProjectAbout>About</ProjectAbout>
-                  <ProjectIntroduce>
-                    It is a platform that provides dating services to members of
-                    single households or new generations who want to start a
-                    relationship with a casual meeting that is not deeply
-                    related to their personal lives.
-                  </ProjectIntroduce>
-                  <CardLeftcontent>
-                    <CardTexBold>1&nbsp;</CardTexBold>
-                    <CardTexBold2>
-                      Categories allow you to find people or gatherings to take
-                      a walk by choosing the topic you want.
-                    </CardTexBold2>
-                  </CardLeftcontent>
-                  <CardLeftcontent>
-                    <CardTexBold>2&nbsp;</CardTexBold>
-                    <CardTexBold2>
-                      With the map view, you can easily find the meeting place
-                      and see the meeting walking around you.
-                    </CardTexBold2>
-                  </CardLeftcontent>
-                  <CardLeftcontent>
-                    <CardTexBold>3&nbsp;</CardTexBold>
-                    <CardTexBold2>
-                      Live chat allows you to arrange a specific meeting with
-                      the person you want to walk with.
-                    </CardTexBold2>
-                  </CardLeftcontent>
-                  <ProjectSkils>Technologies</ProjectSkils>
-                  <ProjectSkilsItem>
-                    <ProjectItem>React</ProjectItem>
-                    <ProjectItem>TypeScript</ProjectItem>
-                    <ProjectItem>React-Qurey</ProjectItem>
-                    <ProjectItem>React-Native</ProjectItem>
-                  </ProjectSkilsItem>
-                  <ProjectSite>
-                    <ProjectGithubIcon></ProjectGithubIcon>
-                    <ProjectWebsiteIcon></ProjectWebsiteIcon>
-                  </ProjectSite>
-                </ProjectPost>
-              </ProjectIntroWrap>
+                      <ProjectSkils>Technologies</ProjectSkils>
+                      <ProjectSkilsItem>
+                        {Project.SkilsItem.map((Item) => {
+                          return (
+                            <>
+                              <ProjectItem>{Item}</ProjectItem>
+                            </>
+                          );
+                        })}
+                      </ProjectSkilsItem>
+                      <ProjectSite>
+                        {Project.Site.map((Web) => {
+                          return (
+                            <>
+                              <Website href={Web.Site} target='_blank'>
+                                <ProjectIcon>{Web.Icon_name}</ProjectIcon>
+                              </Website>
+                            </>
+                          );
+                        })}
+                      </ProjectSite>
+                    </ProjectPost>
+                  </ProjectIntroWrap>
 
-              <ProjectIntroWrap2
-                style={{ transform: `translateX(${position / 30}px)` }}
-              >
-                <ProjectImg src='/assets/por2.gif' />
-              </ProjectIntroWrap2>
-            </ProjectWrap>
+                  <ProjectIntroWrap2>
+                    <ProjectImg src='/assets/por2.gif' />
+                  </ProjectIntroWrap2>
+                </ProjectWrap>
+              );
+            })}
           </IntroCardPaddingGlobal>
         </GloblaPadding>
       </ProjectBackground>
@@ -166,7 +161,7 @@ export const ProjectWrap = styled.div`
   -ms-grid-columns: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
   -ms-grid-rows: 40rem;
-  grid-template-rows: 40rem;
+  /* grid-template-rows: 40rem; */
 `;
 
 export const ProjectIntroWrap2 = styled.div`
@@ -179,6 +174,9 @@ export const ProjectIntroWrap2 = styled.div`
   -webkit-transition: -webkit-transform 0.1s ease;
   transition: transform 0.1s ease;
   transition: transform 0.1s, -webkit-transform 0.1s ease;
+  transform: translate3d(-6rem, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
+    rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
 `;
 
 export const ProjectIntroWrap = styled.div`
@@ -203,18 +201,21 @@ export const ProjectIntroWrap = styled.div`
   -webkit-transition: -webkit-transform 0.1s;
   transition: transform 0.1s;
   transition: transform 0.1s, -webkit-transform 0.1s;
+  transform: translate3d(6rem, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
+    rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
 `;
 export const ProjectTitle = styled.h3`
   font-family: 'Darker Grotesque', sans-serif;
   font-weight: 600;
-  font-size: 70px;
+  font-size: 50px;
   color: #af9fff;
 `;
 export const ProjectSubTitle = styled.p`
   font-family: 'Darker Grotesque', sans-serif;
   font-size: 20px;
   color: #fff;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 `;
 export const ProjectPost = styled.div``;
 
@@ -228,34 +229,116 @@ export const ProjectIntroduce = styled.p`
   font-family: 'Darker Grotesque', sans-serif;
   font-size: 20px;
   color: #fff;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 `;
 export const ProjectSkils = styled.h4`
   font-family: 'Darker Grotesque', sans-serif;
   font-weight: 600;
   font-size: 20px;
   color: #af9fff;
+  margin-top: 25px;
+  margin-bottom: 15px;
 `;
 export const ProjectSkilsItem = styled.p`
-  font-family: 'Darker Grotesque', sans-serif;
-  font-size: 20px;
-  color: #fff;
+  max-width: 462px;
+  /* width: fit-content; */
+  display: grid;
+  -webkit-box-align: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  grid-row-gap: 10px;
 `;
-export const ProjectItem = styled.span``;
+export const ProjectItem = styled.span`
+  width: max-content;
+  line-height: 1;
+  background: #af9fff;
+  font-family: 'Darker Grotesque', sans-serif;
+  padding: 6px 8px;
+  border-radius: 30px;
+  font-size: 14px;
+  margin-right: 5px;
+  color: black;
+  font-weight: 700;
+`;
 export const ProjectSite = styled.div`
-  font-family: 'Darker Grotesque', sans-serif;
-  color: #fff;
+  display: flex;
 `;
-export const ProjectGithubIcon = styled(BsGithub)`
-  /* font-size: 26px; */
-  color: #af9fff;
+export const ProjectIcon = styled.div`
+  margin-top: 20px;
+  margin-right: 15px;
+  display: flex;
+  padding: 10px 100px;
+  border-radius: 30px;
+  border: #eeff04 solid 1px;
+  color: #eeff04;
   cursor: pointer;
+  line-height: 0.15;
+  transition: all 0.3s ease;
+
+  @-webkit-keyframes ProjectIcon {
+    15% {
+      -webkit-transform: translateY(5px);
+      transform: translateY(5px);
+    }
+    30% {
+      -webkit-transform: translateY(-5px);
+      transform: translateY(-5px);
+    }
+    50% {
+      -webkit-transform: translateY(3px);
+      transform: translateY(3px);
+    }
+    65% {
+      -webkit-transform: translateY(-3px);
+      transform: translateY(-3px);
+    }
+    80% {
+      -webkit-transform: translateY(2px);
+      transform: translateY(2px);
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+  @keyframes ProjectIcon {
+    15% {
+      -webkit-transform: translateY(5px);
+      transform: translateY(5px);
+    }
+    30% {
+      -webkit-transform: translateY(-5px);
+      transform: translateY(-5px);
+    }
+    50% {
+      -webkit-transform: translateY(3px);
+      transform: translateY(3px);
+    }
+    65% {
+      -webkit-transform: translateY(-3px);
+      transform: translateY(-3px);
+    }
+    80% {
+      -webkit-transform: translateY(2px);
+      transform: translateY(2px);
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+  &:hover {
+    -webkit-animation: ProjectIcon 1s ease;
+    animation: ProjectIcon 1s ease;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    border: black solid 1px;
+    background-color: #eeff04;
+    color: black;
+  }
 `;
-export const ProjectWebsiteIcon = styled(RiWindowFill)`
-  /* font-size: 26px; */
-  color: #af9fff;
-  cursor: pointer;
-`;
+
 export const ProjectImg = styled.img`
   object-fit: cover;
   width: 100%;
@@ -267,12 +350,10 @@ export const CardLeftcontent = styled.div`
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  /* padding-top: 1rem;
-  padding-bottom: 1rem; */
   -webkit-box-align: center;
   -ms-flex-align: center;
-
   border-bottom: 1px solid #7b7b7b;
+  margin-top: 10px;
 `;
 export const CardTexBold = styled.div`
   font-weight: 700;
@@ -291,3 +372,10 @@ export const CardTexBold2 = styled.div`
   color: #fff;
   margin-bottom: 10px;
 `;
+// export const Arrow = styled.div`
+//   position: relative;
+//   right: 110px;
+//   top: 25px;
+//   transform: translate3d(0px, 0px, 0px) rotate(45deg);
+// `;
+export const Website = styled.a``;
