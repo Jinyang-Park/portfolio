@@ -1,12 +1,14 @@
 import { BsGithub } from 'react-icons/bs';
 import { RiWindowFill } from 'react-icons/ri';
+
 export const ProjectList = [
   {
     Title: 'Ollae',
     SubTitle: 'Loaction based community platform',
     Introduce:
       'It is a platform that provides dating services to members of single households or new generations who want to start a relationship with a casual meeting that is not deeply related to their personal lives.',
-    Img: '/assets/por2.gif',
+    Img: '/assets/OlleaGrid.png',
+    Alt: 'OlleaGrid',
     CardNumber: [
       {
         Number: '1',
@@ -50,7 +52,8 @@ export const ProjectList = [
       'Global fandom platform for the fans and artists around the world',
     Introduce:
       'The Bounce web platforms is artist-to-fan interactions and platforms for users to connect with each other.',
-    Img: '/assets/por2.gif',
+    Img: '/assets/Bounce.png',
+    Alt: 'Bounce',
     CardNumber: [
       {
         Number: '1',
@@ -89,7 +92,8 @@ export const ProjectList = [
     SubTitle: 'Adopt a pet',
     Introduce:
       'Search dogs, cats, rabbits, birds for adoption from thousands of shelters and rescue groups.',
-    Img: '/assets/por2.gif',
+    Img: '/assets/Applepet13.png',
+    Alt: 'ApplePet',
     CardNumber: [
       {
         Number: '1',

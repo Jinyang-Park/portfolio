@@ -1,21 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import { BsGithub } from 'react-icons/bs';
-import { RiWindowFill } from 'react-icons/ri';
 import { ProjectList } from './ProjectsList';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function Projects() {
-  // const [position, setPosition] = useState(0);
-  // function onScroll() {
-  //   // console.log(window.scrollY);
-  //   setPosition(window.scrollY - 0);
-  // }
-  // useEffect(() => {
-  //   window.addEventListener('scroll', onScroll);
-  //   return () => {
-  //     window.removeEventListener('scroll', onScroll);
-  //   };
-  // }, []);
+  useEffect(() => {
+    AOS.init();
+  });
   return (
     <>
       <ProjectBackground>
@@ -32,14 +24,14 @@ function Projects() {
             </ProjectIntroText2>
             {/*project1*/}
             {ProjectList.map((Project) => {
-              // console.log(
-              //   Project.CardNumber.map((x) => {
-              //     console.log(x.Number);
-              //   })
-              // );
               return (
                 <ProjectWrap>
-                  <ProjectIntroWrap>
+                  <ProjectIntroWrap
+                    data-aos='fade-left'
+                    data-aos-duration='800'
+                    data-aos-offset='300'
+                    data-aos-easing='ease-in-sine'
+                  >
                     <ProjectPost>
                       <ProjectTitle>{Project.Title}</ProjectTitle>
                       <ProjectSubTitle>{Project.SubTitle}</ProjectSubTitle>
@@ -79,8 +71,22 @@ function Projects() {
                     </ProjectPost>
                   </ProjectIntroWrap>
 
-                  <ProjectIntroWrap2>
-                    <ProjectImg src='/assets/por2.gif' />
+                  <ProjectIntroWrap2
+                    data-aos='fade-right'
+                    data-aos-duration='800'
+                    data-aos-offset='300'
+                    data-aos-easing='ease-in-sine'
+                  >
+                    {/*img 파일에 따라 ObjectFit css 다르게 주는 방법*/}
+                    {/*1. alt을 추가 2.style에 Project.Alt가 OlleaGrid이면 objectFit이 cover가 되게끔 삼항연산자사용*/}
+                    <ProjectImg
+                      src={Project.Img}
+                      alt={Project.Alt}
+                      style={{
+                        objectFit:
+                          Project.Alt === 'OlleaGrid' ? 'cover' : 'contain',
+                      }}
+                    />
                   </ProjectIntroWrap2>
                 </ProjectWrap>
               );
@@ -100,7 +106,7 @@ export const GloblaPadding = styled.div`
   margin-left: auto;
 `;
 export const ProjectBackground = styled.div`
-  height: 220vh;
+  height: 450vh;
   background-color: black;
 `;
 export const ProjectIntro = styled.h3`
@@ -125,7 +131,7 @@ export const ProjectIntrodetail = styled.span`
 export const ProjectIntroText = styled.div`
   position: relative;
   max-width: 100%;
-  padding-left: 70px;
+
   padding-right: 70px;
   display: flex;
   flex-wrap: wrap;
@@ -151,7 +157,7 @@ export const IntroCardPaddingGlobal = styled.div`
 `;
 
 export const ProjectWrap = styled.div`
-  margin-top: 128px;
+  margin-top: 150px;
   display: grid;
   width: 100%;
   margin-bottom: 7.75rem;
@@ -170,13 +176,10 @@ export const ProjectIntroWrap2 = styled.div`
   display: flex;
   /* padding: 1rem; */
   border-radius: 4.375rem;
-  background-color: #fff;
+  background-color: #eeeded;
   -webkit-transition: -webkit-transform 0.1s ease;
   transition: transform 0.1s ease;
   transition: transform 0.1s, -webkit-transform 0.1s ease;
-  transform: translate3d(-6rem, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
-    rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-  transform-style: preserve-3d;
 `;
 
 export const ProjectIntroWrap = styled.div`
@@ -201,9 +204,6 @@ export const ProjectIntroWrap = styled.div`
   -webkit-transition: -webkit-transform 0.1s;
   transition: transform 0.1s;
   transition: transform 0.1s, -webkit-transform 0.1s;
-  transform: translate3d(6rem, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
-    rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-  transform-style: preserve-3d;
 `;
 export const ProjectTitle = styled.h3`
   font-family: 'Darker Grotesque', sans-serif;
@@ -340,11 +340,12 @@ export const ProjectIcon = styled.div`
 `;
 
 export const ProjectImg = styled.img`
-  object-fit: cover;
+  object-fit: contain;
   width: 100%;
   height: 100%;
   border-radius: 4.375rem;
 `;
+
 export const CardLeftcontent = styled.div`
   display: -webkit-box;
   display: -webkit-flex;
