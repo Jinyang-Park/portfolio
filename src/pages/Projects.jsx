@@ -62,6 +62,9 @@ function Projects() {
                           return (
                             <>
                               <Website href={Web.Site} target='_blank'>
+                                {/* <ProjectIconTitle>
+                                  {Web.IconTitle}
+                                </ProjectIconTitle> */}
                                 <ProjectIcon>{Web.Icon_name}</ProjectIcon>
                               </Website>
                             </>
@@ -264,6 +267,10 @@ export const ProjectItem = styled.span`
 export const ProjectSite = styled.div`
   display: flex;
 `;
+export const ProjectIconTitle = styled.div`
+  font-family: 'Darker Grotesque', sans-serif;
+  color: #eeff04;
+`;
 export const ProjectIcon = styled.div`
   margin-top: 20px;
   margin-right: 15px;
@@ -379,4 +386,6 @@ export const CardTexBold2 = styled.div`
 //   top: 25px;
 //   transform: translate3d(0px, 0px, 0px) rotate(45deg);
 // `;
-export const Website = styled.a``;
+export const Website = styled.a`
+  display: flex;
+`;

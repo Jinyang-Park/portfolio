@@ -89,7 +89,7 @@ export const ProjectList = [
   },
   {
     Title: 'ApplePet',
-    SubTitle: 'Adopt a pet',
+    SubTitle: 'Pet adoption app',
     Introduce:
       'Search dogs, cats, rabbits, birds for adoption from thousands of shelters and rescue groups.',
     Img: '/assets/Applepet13.png',
@@ -121,6 +121,7 @@ export const ProjectList = [
     Site: [
       {
         Icon_name: <BsGithub />,
+        IconTitle: 'Vist Live Site',
         Site: 'https://github.com/Jinyang-Park/TeamApple',
       },
     ],

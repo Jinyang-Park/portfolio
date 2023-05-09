@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 function Header() {
-  const Main = () => {
-    Navigate('/');
+  const element = useRef < HTMLDivElement > null;
+  const onMoveBox = () => {
+    element.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
   return (
     <>
@@ -17,14 +18,14 @@ function Header() {
               <LogoImg src='/assets/star2.png' />
             </Link>
             <Navul>
-              <Navli>ABOUT</Navli>
+              <Navli onClick={onMoveBox}>ABOUT</Navli>
               <Navli>PROJECTS</Navli>
             </Navul>
           </NavWrapper>
           <Navul>
             {/* <Navli>ABOUT</Navli>
             <Navli>PROJECTS</Navli> */}
-            <Link to={'/Contact'}>
+            <Link>
               <Navli2>CONTACT</Navli2>
             </Link>
           </Navul>

@@ -2,6 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import About from './About';
 import Projects from './Projects';
+import Contact from './Contact';
+import Contact2 from './Contact2';
+import Footer from './Footer';
 
 function Main() {
   return (
@@ -56,6 +59,9 @@ function Main() {
       </Introduce>
       <About />
       <Projects />
+      <Contact />
+      <Contact2 />
+      <Footer />
     </>
   );
 }
@@ -121,21 +127,24 @@ export const IntronameWrap = styled.div`
   background-color: black;
   padding: 0px 20px;
 `;
-export const Introname = styled.h1`
+export const Introname = styled.span`
   font-size: 100px;
   font-family: 'Darker Grotesque', sans-serif;
   display: flex;
+  font-weight: 600;
   justify-content: center;
 `;
 export const IntrojobWrap = styled.div`
-  display: flex;
+  /* display: flex;
+  align-items: center; */
+
   height: 150px;
   color: #af9fff;
   background-color: black;
   border-radius: 0px 100px 100px 0px;
   overflow: hidden;
   position: relative;
-  width: 70%;
+  width: 73%;
 `;
 
 export const IntrojobWrap2 = styled.div`
@@ -148,24 +157,28 @@ export const IntrojobWrap2 = styled.div`
   background-color: black;
   padding: 0px 20px;
 `;
-export const Introjob = styled.span`
+export const Introjob = styled.h3`
   font-size: 100px;
+  /* font-weight: 500; */
   font-family: 'Darker Grotesque', sans-serif;
 `;
-export const Introjob3 = styled.div`
+export const Introjob3 = styled.h3`
   position: absolute;
   font-size: 100px;
   font-family: 'Darker Grotesque', sans-serif;
   justify-content: center;
+  /* font-weight: 500; */
   left: 600px;
+  line-height: 1.6;
 `;
-export const Introjob4 = styled.div`
+export const Introjob4 = styled.h3`
   position: absolute;
+  /* font-weight: 500; */
   font-size: 100px;
   font-family: 'Darker Grotesque', sans-serif;
   justify-content: center;
-
   left: 600px;
+  line-height: 1.6;
 `;
 
 export const Progress = styled.div`
@@ -188,8 +201,9 @@ export const Progress = styled.div`
   }
 `;
 
-export const Introjob2 = styled.span`
+export const Introjob2 = styled.h6`
   font-size: 100px;
+  /* font-weight: 500; */
   font-family: 'Darker Grotesque', sans-serif;
   display: flex;
   justify-content: center;
