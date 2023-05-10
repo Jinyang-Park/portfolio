@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import { ProjectList } from './ProjectsList';
+import { ProjectList } from '../utils/ProjectsList';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -62,9 +62,6 @@ function Projects() {
                           return (
                             <>
                               <Website href={Web.Site} target='_blank'>
-                                {/* <ProjectIconTitle>
-                                  {Web.IconTitle}
-                                </ProjectIconTitle> */}
                                 <ProjectIcon>{Web.Icon_name}</ProjectIcon>
                               </Website>
                             </>

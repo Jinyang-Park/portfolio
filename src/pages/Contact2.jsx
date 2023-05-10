@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import { BsLinkedin, BsGithub } from 'react-icons/bs';
 import { SiVelog } from 'react-icons/si';
 import styled from 'styled-components';
@@ -6,26 +6,51 @@ import { MdOutlineSend } from 'react-icons/md';
 import emailjs from '@emailjs/browser';
 
 function Contact2() {
-  const form = useRef();
+  const form = React.useRef(null);
+
+  const [check, setCheck] = useState(true);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
+  const [buttonText, setButtonText] = useState('Send');
 
   const onSubmit = (e) => {
     e.preventDefault();
 
     emailjs
       .sendForm(
-        'service_s0rfbpi',
-        'template_6xrhd4g',
+        process.env.REACT_APP_YOUR_SERVICE_ID,
+        process.env.REACT_APP_YOUR_TEMPLATE_ID,
         form.current,
-        'xzgUXfAD4b0g-OyXN'
+        process.env.REACT_APP_YOUR_API_KEYS
       )
       .then(
         (result) => {
           console.log(result.text);
+          setCheck(false);
+          // setButtonText(
+          //   'Thanks for your message. We will get back to you as soon as possible.'
+          // );
         },
         (error) => {
           console.log(error.text);
+          setCheck(true);
         }
       );
+  };
+
+  const handleName = (event) => {
+    setName(event.target.value);
+  };
+  const handleEmail = (event) => {
+    setEmail(event.target.value);
+  };
+  const handleSubject = (event) => {
+    setSubject(event.target.value);
+  };
+  const handleTextarea = (event) => {
+    setMessage(event.target.value);
   };
 
   return (
@@ -67,27 +92,54 @@ function Contact2() {
               <SecondDiv>
                 <BigDiv>
                   <InputDiv>
-                    <NameInput type='text' name='fromname' placeholder='Name' />
                     <NameInput
                       type='text'
+                      value={name}
+                      name='fromname'
+                      placeholder='Name'
+                      onChange={handleName}
+                      required
+                    />
+                    <NameInput
+                      type='email'
+                      value={email}
                       name='fromnemail'
                       placeholder='E-mail'
+                      onChange={handleEmail}
+                      required
                     />
                     <NameInput
                       type='text'
+                      value={subject}
                       name='fromsubject'
                       placeholder='Subject'
+                      onChange={handleSubject}
+                      required
                     />
                   </InputDiv>
                   <TextAreaDiv>
-                    <TextArea name='frommessage' placeholder='Message' />
+                    <TextArea
+                      value={message}
+                      name='frommessage'
+                      placeholder='Message'
+                      onChange={handleTextarea}
+                      required
+                    />
                   </TextAreaDiv>
                 </BigDiv>
-
-                <SendBtn type='submit'>
-                  <BtnIcon></BtnIcon>
-                  <BtnText>Send</BtnText>
-                </SendBtn>
+                {check ? (
+                  <SendBtn type='submit'>
+                    <BtnIcon></BtnIcon>
+                    <BtnText>Send</BtnText>
+                  </SendBtn>
+                ) : (
+                  <ChangeBtn type='submit'>
+                    <BtnText2>
+                      Thanks for your message.
+                      <br />I will get back to you as soon as possible.
+                    </BtnText2>
+                  </ChangeBtn>
+                )}
               </SecondDiv>
             </EmailInputForm>
           </EmailFormWrap>
@@ -467,15 +519,11 @@ export const SendDivWrap = styled.div`
 `;
 
 export const SendBtn = styled.button`
-  color: #1c1c16;
   background: #fff480;
-
+  color: #1c1c16;
   display: flex;
-
   justify-content: center;
-
   align-items: center;
-
   flex-direction: column;
   width: 30%;
   font-size: 17px;
@@ -484,8 +532,25 @@ export const SendBtn = styled.button`
   line-height: 100%;
   margin: 0;
   padding: 36px 44px;
-
   border-radius: 48px;
+`;
+export const ChangeBtn = styled.button`
+  font-family: 'Darker Grotesque', sans-serif;
+  color: #fff480;
+  background: none;
+  padding-top: 170px;
+
+  /* width: 30%; */
+  /* display: block; */
+  /* text-align: center; */
+  /* margin: 20px; */
+`;
+export const BtnDiv = styled.div`
+  display: inline-block;
+  align-items: flex-start;
+`;
+export const BtnText2 = styled.span`
+  font-size: 50px;
 `;
 export const BtnText = styled.span`
   font-size: 20px;
