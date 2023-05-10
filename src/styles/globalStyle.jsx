@@ -74,11 +74,13 @@ html {
 
     div {
         box-sizing: border-box;
+
     }
 
     main {
     display: block;
     }
+  
 
     /* ::-webkit-scrollbar {
     width: 10px;

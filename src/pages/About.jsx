@@ -14,7 +14,7 @@ function About() {
   }, []);
 
   return (
-    <>
+    <div id='about'>
       <AboutBackground>
         <Left>
           <ScrollLeftText style={{ transform: `translateX(${-position}px)` }}>
@@ -105,7 +105,7 @@ function About() {
           </IntroCardPaddingGlobal>
         </GloblaPadding>
       </AboutBackground>
-    </>
+    </div>
   );
 }
 

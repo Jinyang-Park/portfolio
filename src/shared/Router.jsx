@@ -5,11 +5,13 @@ import About from '../pages/About';
 import Projects from '../pages/Projects';
 import Contact from '../pages/Contact';
 import Header from '../pages/Header';
-import Home from '../pages/Contact2';
+import ScrollUpto from '../pages/ScrollUpto';
+import ScrollToTopButton from '../pages/ScrollToButton';
 
 const Router = () => {
   return (
     <BrowserRouter>
+      <ScrollUpto />
       <Header />
       <Routes>
         <Route path='/' element={<Main />}></Route>
@@ -17,6 +19,7 @@ const Router = () => {
         <Route path='/Projects' element={<Projects />}></Route>
         <Route path='/Contact' element={<Contact />}></Route>
       </Routes>
+      <ScrollToTopButton />
     </BrowserRouter>
   );
 };

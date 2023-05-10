@@ -8,7 +8,7 @@ import Footer from './Footer';
 
 function Main() {
   return (
-    <>
+    <div id='main'>
       <Introduce>
         <GloblaPadding>
           <MinimeHoduWrap>
@@ -55,14 +55,37 @@ function Main() {
           <MinimeWrap>
             <MinimeImg />
           </MinimeWrap>
+          <TitleBallon2>
+            <TitleTxtCol2>
+              <TitleTxt>Hello, There :)</TitleTxt>
+            </TitleTxtCol2>
+            <TitleTail>
+              <TitleSvg
+                width='14'
+                height='16'
+                viewBox='0 0 14 16'
+                fill='none'
+                xmlns='http://www.w3.org/2000/svg'
+                data-v-31c4c148=''
+              >
+                <TitlePath
+                  fill-rule='evenodd'
+                  clip-rule='evenodd'
+                  d='M0 0.516602C0 9.06769 3.26836 15.9997 13.7618 15.9997L14 16.0005C13.0623 15.2567 12.2689 14.3944 11.6314 13.4229C10.4112 11.5638 10 9.73924 10 5.406V0.516602H0Z'
+                  fill='#A6814C'
+                  data-v-31c4c148=''
+                ></TitlePath>
+              </TitleSvg>
+            </TitleTail>
+          </TitleBallon2>
         </GloblaPadding>
       </Introduce>
-      <About />
+      <About id='About' />
       <Projects />
       <Contact />
       <Contact2 />
       <Footer />
-    </>
+    </div>
   );
 }
 
@@ -74,7 +97,7 @@ export const GloblaPadding = styled.div`
   margin-left: auto;
 `;
 export const Introduce = styled.div`
-  padding-top: 80px;
+  padding-top: 50px;
   margin-bottom: 200px;
   background-color: #f5f5f5;
   /* display: flex; */
@@ -88,8 +111,24 @@ export const IntroContent = styled.div`
 export const TitleBallon = styled.div`
   position: absolute;
   display: flex;
-  margin-top: -130px;
-  margin-left: 19%;
+  margin-top: -120px;
+  margin-left: 18%;
+`;
+export const TitleBallon2 = styled.div`
+  position: absolute;
+  display: flex;
+  margin-top: -350px;
+  margin-left: 82%;
+`;
+export const TitleTxtCol2 = styled.span`
+  background-color: #a6814c;
+  /* font-size: 25px; */
+  line-height: 30px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  text-align: left;
+  color: #f9f5ef;
+  white-space: nowrap;
 `;
 export const TitleTxtCol = styled.span`
   background-color: #a6814c;
@@ -101,11 +140,12 @@ export const TitleTxtCol = styled.span`
   color: #f9f5ef;
   white-space: nowrap;
 `;
+
 export const TitleTxt = styled.span`
   position: relative;
-
+  font-family: 'Darker Grotesque', sans-serif;
   display: block;
-  font-size: 14px;
+  font-size: 18px;
 `;
 export const TitleTail = styled.i`
   position: absolute;

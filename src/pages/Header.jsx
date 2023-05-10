@@ -1,31 +1,57 @@
-import React, { useRef } from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import React from 'react';
 import styled from 'styled-components';
-
+import { Link } from 'react-scroll';
 function Header() {
-  const element = useRef < HTMLDivElement > null;
-  const onMoveBox = () => {
-    element.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
   return (
     <>
       <NavContainer>
         <Nav>
           <NavWrapper>
-            <Link to={'/'}>
-              {/* <LogoText>Jinyang Park</LogoText> */}
-              {/* <LogoImg src='/assets/JLogo.png' /> */}
+            {/* <div ref={Home} /> */}
+            <Link
+              activeClass='active'
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+              to='main'
+            >
               <LogoImg src='/assets/star2.png' />
             </Link>
             <Navul>
-              <Navli onClick={onMoveBox}>ABOUT</Navli>
-              <Navli>PROJECTS</Navli>
+              {/* <Link to='About'> */}
+              {/* <div onClick={onAboutClick} /> */}
+              <Link
+                activeClass='active'
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+                to='about'
+              >
+                <Navli>ABOUT</Navli>
+              </Link>
+              <Link
+                activeClass='active'
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+                to='projects'
+              >
+                <Navli>PROJECTS</Navli>
+              </Link>
             </Navul>
           </NavWrapper>
           <Navul>
-            {/* <Navli>ABOUT</Navli>
-            <Navli>PROJECTS</Navli> */}
-            <Link>
+            <Link
+              activeClass='active'
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+              to='contact'
+            >
               <Navli2>CONTACT</Navli2>
             </Link>
           </Navul>
@@ -51,7 +77,7 @@ export const Nav = styled.div`
   display: flex;
   justify-content: space-between;
 
-  padding: 30px 40px;
+  padding: 17px 40px;
   align-items: center;
 `;
 export const NavWrapper = styled.div`
@@ -72,6 +98,7 @@ export const LogoImg = styled.img`
   height: 60px;
   margin-right: 30px;
   background-repeat: no-repeat;
+  cursor: pointer;
 `;
 // export const LogoImg = styled.img`
 //   width: 32px;
@@ -83,26 +110,34 @@ export const Navul = styled.ul`
   display: flex;
 `;
 export const Navli = styled.li`
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
   list-style: none;
   padding: 2px 5px;
   font-family: 'Darker Grotesque', sans-serif;
   font-weight: 600;
   font-size: 20px;
-  margin-right: 30px;
+  margin-right: 20px;
+  padding: 30px 30px;
+  border-radius: 30px;
   color: black;
   cursor: pointer;
-  line-height: 1;
-  vertical-align: middle;
-  transition: color 0.3s, background-color 0.3s;
+  line-height: 0.15;
 
   &:hover {
-    padding: 2px 5px;
-    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    padding: 20px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 20px;
     background-color: #af9fff;
+    padding: 30px 30px;
     color: white;
-    transition: color 0.3s, background-color 0.3s;
-    vertical-align: middle;
   }
 `;
 

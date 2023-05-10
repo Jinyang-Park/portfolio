@@ -10,7 +10,7 @@ function Projects() {
   });
   return (
     <>
-      <ProjectBackground>
+      <ProjectBackground id='projects'>
         <GloblaPadding>
           <IntroCardPaddingGlobal>
             <ProjectIntroText>
@@ -28,7 +28,6 @@ function Projects() {
                 <ProjectWrap>
                   <ProjectIntroWrap
                     data-aos='fade-left'
-                    data-aos-duration='800'
                     data-aos-offset='300'
                     data-aos-easing='ease-in-sine'
                   >
@@ -73,7 +72,6 @@ function Projects() {
 
                   <ProjectIntroWrap2
                     data-aos='fade-right'
-                    data-aos-duration='800'
                     data-aos-offset='300'
                     data-aos-easing='ease-in-sine'
                   >
@@ -91,6 +89,32 @@ function Projects() {
                 </ProjectWrap>
               );
             })}
+            <MinimeHoduWrap>
+              <MinimeHouduImg />
+            </MinimeHoduWrap>
+            <TitleBallon>
+              <TitleTxtCol>
+                <TitleTxt>Hire Jinyang!</TitleTxt>
+              </TitleTxtCol>
+              <TitleTail>
+                <TitleSvg
+                  width='14'
+                  height='16'
+                  viewBox='0 0 14 16'
+                  fill='none'
+                  xmlns='http://www.w3.org/2000/svg'
+                  data-v-31c4c148=''
+                >
+                  <TitlePath
+                    fill-rule='evenodd'
+                    clip-rule='evenodd'
+                    d='M0 0.516602C0 9.06769 3.26836 15.9997 13.7618 15.9997L14 16.0005C13.0623 15.2567 12.2689 14.3944 11.6314 13.4229C10.4112 11.5638 10 9.73924 10 5.406V0.516602H0Z'
+                    fill='#A6814C'
+                    data-v-31c4c148=''
+                  ></TitlePath>
+                </TitleSvg>
+              </TitleTail>
+            </TitleBallon>
           </IntroCardPaddingGlobal>
         </GloblaPadding>
       </ProjectBackground>
@@ -157,7 +181,7 @@ export const IntroCardPaddingGlobal = styled.div`
 `;
 
 export const ProjectWrap = styled.div`
-  margin-top: 150px;
+  margin-top: 80px;
   display: grid;
   width: 100%;
   margin-bottom: 7.75rem;
@@ -386,3 +410,87 @@ export const CardTexBold2 = styled.div`
 export const Website = styled.a`
   display: flex;
 `;
+export const MinimeHoduWrap = styled.div`
+  padding-left: 80%;
+  /* width: -80%; */
+`;
+export const MinimeHouduImg = styled.figure`
+  @-webkit-keyframes hodu8 {
+    from {
+      background-position: 0px;
+    }
+    to {
+      background-position: -1424px;
+    } /* <-- width of spritesheet*/
+  }
+
+  @-moz-keyframes hodu8 {
+    from {
+      background-position: 0px;
+    }
+    to {
+      background-position: -1424px;
+    } /* <-- width of spritesheet*/
+  }
+
+  @-o-keyframes hodu8 {
+    from {
+      background-position: 0px;
+    }
+    to {
+      background-position: -1424px;
+    } /* <-- width of spritesheet*/
+  }
+
+  @keyframes hodu8 {
+    from {
+      background-position: 0px;
+    }
+    to {
+      background-position: -1424px;
+    } /* <-- width of spritesheet*/
+  }
+  width: 178px;
+  height: 315px;
+  /* width: 50%;
+  height: 50%; */
+  /* background-image: url('/assets/hodu4.png'); */
+  margin: 0 auto;
+  background-image: url('/assets/hodu8.png');
+  -webkit-animation: hodu8 2s steps(8) infinite;
+  -moz-animation: hodu8 2s steps(8) infinite;
+  -o-animation: hodu8 2s steps(8) infinite;
+  animation: hodu8 2s steps(8) infinite;
+`;
+export const TitleBallon = styled.div`
+  position: absolute;
+  display: flex;
+  margin-top: -300px;
+  margin-left: 74%;
+`;
+export const TitleTxtCol = styled.span`
+  background-color: #a6814c;
+  /* font-size: 25px; */
+  line-height: 30px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  text-align: left;
+  color: #f9f5ef;
+  white-space: nowrap;
+`;
+export const TitleTxt = styled.span`
+  position: relative;
+  font-family: 'Darker Grotesque', sans-serif;
+  display: block;
+  font-size: 18px;
+`;
+export const TitleTail = styled.i`
+  position: absolute;
+  width: 14px;
+  height: 17px;
+  transform: scaleX(-1);
+  bottom: -2px;
+  left: -4px;
+`;
+export const TitleSvg = styled.svg``;
+export const TitlePath = styled.path``;

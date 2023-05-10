@@ -8,7 +8,7 @@ function Contact() {
     AOS.init();
   });
   return (
-    <>
+    <div id='contact'>
       <ProjectBackground>
         <IntroCardPaddingGlobal>
           <ContactTitle>
@@ -57,7 +57,7 @@ function Contact() {
           </ContactInter>
         </IntroCardPaddingGlobal>
       </ProjectBackground>
-    </>
+    </div>
   );
 }
 
@@ -110,7 +110,7 @@ export const ContactAbout = styled.h1`
   /* display: flex; */
   font-size: 70px;
   font-family: 'Darker Grotesque', sans-serif;
-  line-height: 1;
+  line-height: 0.15;
 `;
 export const ContactWrap2 = styled.div`
   display: flex;
@@ -148,17 +148,17 @@ export const ContactWrap4 = styled.div`
 export const ContactAbout2 = styled.h1`
   font-size: 70px;
   font-family: 'Darker Grotesque', sans-serif;
-  line-height: 1;
+  line-height: 0.15;
 `;
 export const ContactAbout3 = styled.h1`
   font-size: 70px;
   font-family: 'Darker Grotesque', sans-serif;
-  line-height: 1;
+  line-height: 0.15;
 `;
 export const ContactAbout4 = styled.h1`
   font-size: 70px;
   font-family: 'Darker Grotesque', sans-serif;
-  line-height: 1;
+  line-height: 0.15;
 `;
 export const ContactHeartIcon = styled(AiFillHeart)`
   font-size: 100px;
@@ -182,23 +182,3 @@ export const LogoImg = styled.img`
   width: 100px;
   height: 100px;
 `;
-
-// animation: marquee 60s linear infinite;
-// @keyframes marquee {
-//   from {
-//     transform: translateX(0);
-//   }
-//   to {
-//     transform: translateX(-50%);
-//   }
-// }
-// /* &hover {
-//   -webkit-transform: translateY(calc(100% - 8rem));
-//   transform: translateY(calc(100% - 8rem));
-// } */
-// @media (hover: hover) and (min-width: 700px) {
-//   .animated-title .content {
-//     -webkit-transform: translateY(calc(100% - 8rem));
-//     transform: translateY(calc(100% - 8rem));
-//   }
-// }

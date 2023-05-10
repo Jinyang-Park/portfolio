@@ -13,7 +13,6 @@ function Contact2() {
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
-  const [buttonText, setButtonText] = useState('Send');
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -29,9 +28,6 @@ function Contact2() {
         (result) => {
           console.log(result.text);
           setCheck(false);
-          // setButtonText(
-          //   'Thanks for your message. We will get back to you as soon as possible.'
-          // );
         },
         (error) => {
           console.log(error.text);
@@ -151,7 +147,7 @@ function Contact2() {
 
 export default Contact2;
 export const ProjectBackground = styled.div`
-  height: 250vh;
+  height: 220vh;
   background-color: black;
 `;
 export const IntroCardPaddingGlobal = styled.div`
@@ -442,7 +438,7 @@ export const NameInput = styled.input`
   outline: none;
   box-shadow: inset 0 0 0 1px #1d1c16;
   border: 0;
-  color: #fff480;
+  color: #eeff04;
   font-weight: 475;
   background: #1d1c16;
   padding: 36px 63px;
@@ -451,10 +447,10 @@ export const NameInput = styled.input`
   border-radius: 48px;
   border: 1px solid#1d1c16;
   &::placeholder {
-    color: #fff480;
+    color: #eeff04;
   }
   &:focus {
-    border: 1px solid#fff480;
+    border: 1px solid#eeff04;
   }
 `;
 export const NameLabel = styled.label`
@@ -464,7 +460,7 @@ export const NameLabel = styled.label`
   display: flex;
   padding: 20px 80px;
   /* background-color: #1d1c16; */
-  color: #fff480;
+  color: #eeff04;
   padding: 0;
   margin: 0 40px;
   font-weight: 500;
@@ -489,7 +485,7 @@ export const TextArea = styled.textarea`
   font-family: 'Darker Grotesque', sans-serif;
   outline: none;
   border: 0;
-  color: #fff480;
+  color: #eeff04;
   font-weight: 475;
   width: 100%;
   height: 400px;
@@ -500,10 +496,10 @@ export const TextArea = styled.textarea`
   margin-right: 8px;
   border: 1px solid#1d1c16;
   &::placeholder {
-    color: #fff480;
+    color: #eeff04;
   }
   &:focus {
-    border: 1px solid#fff480;
+    border: 1px solid#eeff04;
   }
 `;
 export const SendDivWrap = styled.div`
@@ -519,7 +515,7 @@ export const SendDivWrap = styled.div`
 `;
 
 export const SendBtn = styled.button`
-  background: #fff480;
+  background: #eeff04;
   color: #1c1c16;
   display: flex;
   justify-content: center;
@@ -536,7 +532,7 @@ export const SendBtn = styled.button`
 `;
 export const ChangeBtn = styled.button`
   font-family: 'Darker Grotesque', sans-serif;
-  color: #fff480;
+  color: #eeff04;
   background: none;
   padding-top: 170px;
 
