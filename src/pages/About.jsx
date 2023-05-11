@@ -58,22 +58,35 @@ function About() {
 
                 <IntromyselfWrap>
                   <IntroCardMyself>
-                    Hi, I'm Dylan, the programme director at LIM.
+                    I am a front-end developer and designer based in Seoul,
+                    Korea.
                     <br />
                     <br />
-                    I completed my studies in Music Business Management at the
-                    University of Westminster and later specialised in Music
-                    Production & Sound Engineering at Abbey Road Institute in
-                    London. I've also been active in the music industry for more
-                    than 10 years, be that as a producer, performer or music
-                    journalist.
-                    <br />I created LIM to share my experience and synthesised
-                    it into an intensive 3-months-course to kickstart your music
-                    career. The target is to guide you through the essential
-                    skills of an industry professional and answer any question
-                    that a beginner might have. Let's save you the struggle of
-                    navigating your career blindly - by delivering a clear and
-                    structured way of learning.
+                    I started my career as a sportswear designer and product
+                    manager with more than two years. <br />
+                    Always I am curious about all things technology and design,
+                    from software engineering to UI/UX. <br />
+                    While working designer, I started learning software frontend
+                    development.
+                    <br /> I fell in love with web development when I studying
+                    software engineer, mostly focused on the frontend.
+                    <br /> I am excited about the mix of design and creativity,
+                    and technical skills. I enjoy the struggle and the
+                    satisfaction of figuring something out.
+                    <br />
+                    <br />
+                    I have been predominantly using React and Javascript, but I
+                    like to learn other frameworks as well.
+                    <br />I am focused on the details and accessible
+                    user-friendly websites and applications.
+                    <br />
+                    <br />
+                    After a little longer than I would have liked, I feel
+                    excited and determined to dive into a new career path in web
+                    development.
+                    <br />
+                    If you are interested in more details or working together,
+                    see my resume!
                   </IntroCardMyself>
                 </IntromyselfWrap>
                 <ResumeBtn
@@ -163,7 +176,7 @@ export const IntroCardWrap = styled.div`
   grid-column-gap: 16px;
   grid-row-gap: 16px;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 672px;
+  grid-template-rows: 720px;
   border-radius: 50px;
   background-color: #f5f5f5;
   top: -150px;
@@ -174,11 +187,11 @@ export const IntroCardSection = styled.div`
   padding-right: 20px; */
 `;
 export const IntroCardMyname = styled.h3`
-  font-size: 70px;
+  font-size: 50px;
   line-height: 1;
   font-weight: 700;
   letter-spacing: -3.5px;
-  margin-bottom: 64px;
+  margin-bottom: 44px;
 `;
 export const IntromyselfWrap = styled.div`
   width: 100%;
@@ -186,9 +199,10 @@ export const IntromyselfWrap = styled.div`
 `;
 export const IntroCardMyself = styled.p`
   margin-top: 0;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.2;
-  letter-spacing: -1px;
+  letter-spacing: -0.45px;
+  /* font-family: 'Darker Grotesque', sans-serif; */
 `;
 export const Intropic = styled.figure`
   width: 100%;
@@ -206,7 +220,7 @@ export const ResumeDownload = styled.span`
 `;
 
 export const ResumeBtn = styled.a`
-  margin-top: 50px;
+  margin-top: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
