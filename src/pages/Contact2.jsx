@@ -73,13 +73,16 @@ function Contact2() {
             Send me an email.
           </SubTitle>
           <SocialWrap>
-            <Website href={'https://www.linkedin.com/in/jinyang-park/'}>
+            <Website
+              href={'https://www.linkedin.com/in/jinyang-park/'}
+              target='_blank'
+            >
               <LinkedinIcon></LinkedinIcon>
             </Website>
-            <Website href={'https://github.com/Jinyang-Park'}>
+            <Website href={'https://github.com/Jinyang-Park'} target='_blank'>
               <GithubIcon></GithubIcon>
             </Website>
-            <Website href={'https://velog.io/@dbsskdud60'}>
+            <Website href={'https://velog.io/@dbsskdud60'} target='_blank'>
               <VelogIcon></VelogIcon>
             </Website>
           </SocialWrap>

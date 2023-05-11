@@ -14,7 +14,7 @@ function Main() {
           <MinimeHoduWrap>
             <MinimeHouduImg />
           </MinimeHoduWrap>
-          <TitleBallon>
+          {/* <TitleBallon>
             <TitleTxtCol>
               <TitleTxt>Hire Jinyang!</TitleTxt>
             </TitleTxtCol>
@@ -36,7 +36,7 @@ function Main() {
                 ></TitlePath>
               </TitleSvg>
             </TitleTail>
-          </TitleBallon>
+          </TitleBallon> */}
           <IntroContent>
             <IntronameWrap>
               <Introname>Hi. I'm Jinyang.</Introname>
@@ -117,7 +117,7 @@ export const TitleBallon = styled.div`
 export const TitleBallon2 = styled.div`
   position: absolute;
   display: flex;
-  margin-top: -350px;
+  margin-top: -340px;
   margin-left: 82%;
 `;
 export const TitleTxtCol2 = styled.span`
@@ -145,7 +145,7 @@ export const TitleTxt = styled.span`
   position: relative;
   font-family: 'Darker Grotesque', sans-serif;
   display: block;
-  font-size: 18px;
+  font-size: 20px;
 `;
 export const TitleTail = styled.i`
   position: absolute;

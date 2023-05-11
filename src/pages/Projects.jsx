@@ -466,7 +466,7 @@ export const TitleBallon = styled.div`
   position: absolute;
   display: flex;
   margin-top: -300px;
-  margin-left: 74%;
+  margin-left: 73%;
 `;
 export const TitleTxtCol = styled.span`
   background-color: #a6814c;
@@ -482,7 +482,7 @@ export const TitleTxt = styled.span`
   position: relative;
   font-family: 'Darker Grotesque', sans-serif;
   display: block;
-  font-size: 18px;
+  font-size: 20px;
 `;
 export const TitleTail = styled.i`
   position: absolute;
