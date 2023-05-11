@@ -98,7 +98,6 @@ export const LogoImg = styled.img`
   height: 60px;
   margin-right: 30px;
   background-repeat: no-repeat;
-  cursor: pointer;
 `;
 // export const LogoImg = styled.img`
 //   width: 32px;
