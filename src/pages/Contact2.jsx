@@ -150,12 +150,11 @@ function Contact2() {
 
 export default Contact2;
 export const ProjectBackground = styled.div`
-  height: 220vh;
+  padding-bottom: 50px;
   background-color: black;
 `;
 export const IntroCardPaddingGlobal = styled.div`
   padding-top: 0px;
-
   padding-left: 130px;
   padding-right: 130px;
 `;
@@ -437,14 +436,14 @@ export const EmailFormWrap = styled.div`
 export const EmailInputForm = styled.form``;
 export const NameInput = styled.input`
   font-family: 'Darker Grotesque', sans-serif;
-  font-size: 20px;
+  font-size: 22px;
   outline: none;
   box-shadow: inset 0 0 0 1px #1d1c16;
   border: 0;
   color: #eeff04;
   font-weight: 475;
   background: #1d1c16;
-  padding: 36px 63px;
+  padding: 36px 70px;
   margin-bottom: 8px;
   margin-right: 8px;
   border-radius: 48px;
@@ -484,7 +483,7 @@ export const InputColDiv = styled.div`
   min-width: 100px;
 `;
 export const TextArea = styled.textarea`
-  font-size: 20px;
+  font-size: 22px;
   font-family: 'Darker Grotesque', sans-serif;
   outline: none;
   border: 0;
@@ -494,7 +493,7 @@ export const TextArea = styled.textarea`
   height: 400px;
   resize: none;
   background: #1d1c16;
-  padding: 36px 60px;
+  padding: 36px 70px;
   border-radius: 48px;
   margin-right: 8px;
   border: 1px solid#1d1c16;
@@ -524,8 +523,8 @@ export const SendBtn = styled.button`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 30%;
-  font-size: 17px;
+  width: 100%;
+  font-size: 22px;
   font-weight: 725;
   letter-spacing: -0.01em;
   line-height: 100%;

@@ -11,112 +11,112 @@ function Projects() {
   return (
     <>
       <ProjectBackground id='projects'>
-        <GloblaPadding>
-          <IntroCardPaddingGlobal>
-            <ProjectIntroText>
-              <LogoImg src='/assets/star2.png' />
-              <ProjectIntro>Featured Projects</ProjectIntro>
-            </ProjectIntroText>
-            <ProjectIntroText2>
-              <ProjectIntrodetail>
-                Each project is unique. Here are some of my works.
-              </ProjectIntrodetail>
-            </ProjectIntroText2>
-            {/*project1*/}
-            {ProjectList.map((Project) => {
-              return (
-                <ProjectWrap>
-                  <ProjectIntroWrap
-                    data-aos='fade-left'
-                    data-aos-offset='300'
-                    data-aos-easing='ease-in-sine'
-                  >
-                    <ProjectPost>
-                      <ProjectTitle>{Project.Title}</ProjectTitle>
-                      <ProjectSubTitle>{Project.SubTitle}</ProjectSubTitle>
+        {/* <GloblaPadding> */}
+        <IntroCardPaddingGlobal>
+          <ProjectIntroText>
+            <LogoImg src='/assets/star2.png' />
+            <ProjectIntro>Featured Projects</ProjectIntro>
+          </ProjectIntroText>
+          <ProjectIntroText2>
+            <ProjectIntrodetail>
+              Each project is unique. Here are some of my works.
+            </ProjectIntrodetail>
+          </ProjectIntroText2>
+          {/*project1*/}
+          {ProjectList.map((Project) => {
+            return (
+              <ProjectWrap>
+                <ProjectIntroWrap
+                  data-aos='fade-left'
+                  data-aos-offset='300'
+                  data-aos-easing='ease-in-sine'
+                >
+                  <ProjectPost>
+                    <ProjectTitle>{Project.Title}</ProjectTitle>
+                    <ProjectSubTitle>{Project.SubTitle}</ProjectSubTitle>
 
-                      <ProjectAbout>About</ProjectAbout>
-                      <ProjectIntroduce>{Project.Introduce}</ProjectIntroduce>
-                      {Project.CardNumber.map((List) => {
+                    <ProjectAbout>About</ProjectAbout>
+                    <ProjectIntroduce>{Project.Introduce}</ProjectIntroduce>
+                    {Project.CardNumber.map((List) => {
+                      return (
+                        <CardLeftcontent>
+                          <CardTexBold>{List.Number}&nbsp;</CardTexBold>
+                          <CardTexBold2>{List.Content}</CardTexBold2>
+                        </CardLeftcontent>
+                      );
+                    })}
+
+                    <ProjectSkils>Technologies</ProjectSkils>
+                    <ProjectSkilsItem>
+                      {Project.SkilsItem.map((Item) => {
                         return (
-                          <CardLeftcontent>
-                            <CardTexBold>{List.Number}&nbsp;</CardTexBold>
-                            <CardTexBold2>{List.Content}</CardTexBold2>
-                          </CardLeftcontent>
+                          <>
+                            <ProjectItem>{Item}</ProjectItem>
+                          </>
                         );
                       })}
+                    </ProjectSkilsItem>
+                    <ProjectSite>
+                      {Project.Site.map((Web) => {
+                        return (
+                          <>
+                            <Website href={Web.Site} target='_blank'>
+                              <ProjectIcon>{Web.Icon_name}</ProjectIcon>
+                            </Website>
+                          </>
+                        );
+                      })}
+                    </ProjectSite>
+                  </ProjectPost>
+                </ProjectIntroWrap>
 
-                      <ProjectSkils>Technologies</ProjectSkils>
-                      <ProjectSkilsItem>
-                        {Project.SkilsItem.map((Item) => {
-                          return (
-                            <>
-                              <ProjectItem>{Item}</ProjectItem>
-                            </>
-                          );
-                        })}
-                      </ProjectSkilsItem>
-                      <ProjectSite>
-                        {Project.Site.map((Web) => {
-                          return (
-                            <>
-                              <Website href={Web.Site} target='_blank'>
-                                <ProjectIcon>{Web.Icon_name}</ProjectIcon>
-                              </Website>
-                            </>
-                          );
-                        })}
-                      </ProjectSite>
-                    </ProjectPost>
-                  </ProjectIntroWrap>
-
-                  <ProjectIntroWrap2
-                    data-aos='fade-right'
-                    data-aos-offset='300'
-                    data-aos-easing='ease-in-sine'
-                  >
-                    {/*img 파일에 따라 ObjectFit css 다르게 주는 방법*/}
-                    {/*1. alt을 추가 2.style에 Project.Alt가 OlleaGrid이면 objectFit이 cover가 되게끔 삼항연산자사용*/}
-                    <ProjectImg
-                      src={Project.Img}
-                      alt={Project.Alt}
-                      style={{
-                        objectFit:
-                          Project.Alt === 'OlleaGrid' ? 'cover' : 'contain',
-                      }}
-                    />
-                  </ProjectIntroWrap2>
-                </ProjectWrap>
-              );
-            })}
-            <MinimeHoduWrap>
-              <MinimeHouduImg />
-            </MinimeHoduWrap>
-            <TitleBallon>
-              <TitleTxtCol>
-                <TitleTxt>Hire Jinyang!</TitleTxt>
-              </TitleTxtCol>
-              <TitleTail>
-                <TitleSvg
-                  width='14'
-                  height='16'
-                  viewBox='0 0 14 16'
-                  fill='none'
-                  xmlns='http://www.w3.org/2000/svg'
-                  data-v-31c4c148=''
+                <ProjectIntroWrap2
+                  data-aos='fade-right'
+                  data-aos-offset='300'
+                  data-aos-easing='ease-in-sine'
                 >
-                  <TitlePath
-                    fill-rule='evenodd'
-                    clip-rule='evenodd'
-                    d='M0 0.516602C0 9.06769 3.26836 15.9997 13.7618 15.9997L14 16.0005C13.0623 15.2567 12.2689 14.3944 11.6314 13.4229C10.4112 11.5638 10 9.73924 10 5.406V0.516602H0Z'
-                    fill='#A6814C'
-                    data-v-31c4c148=''
-                  ></TitlePath>
-                </TitleSvg>
-              </TitleTail>
-            </TitleBallon>
-          </IntroCardPaddingGlobal>
-        </GloblaPadding>
+                  {/*img 파일에 따라 ObjectFit css 다르게 주는 방법*/}
+                  {/*1. alt을 추가 2.style에 Project.Alt가 OlleaGrid이면 objectFit이 cover가 되게끔 삼항연산자사용*/}
+                  <ProjectImg
+                    src={Project.Img}
+                    alt={Project.Alt}
+                    style={{
+                      objectFit:
+                        Project.Alt === 'OlleaGrid' ? 'cover' : 'contain',
+                    }}
+                  />
+                </ProjectIntroWrap2>
+              </ProjectWrap>
+            );
+          })}
+          <MinimeHoduWrap>
+            <MinimeHouduImg />
+          </MinimeHoduWrap>
+          <TitleBallon>
+            <TitleTxtCol>
+              <TitleTxt>Hire Jinyang!</TitleTxt>
+            </TitleTxtCol>
+            <TitleTail>
+              <TitleSvg
+                width='14'
+                height='16'
+                viewBox='0 0 14 16'
+                fill='none'
+                xmlns='http://www.w3.org/2000/svg'
+                data-v-31c4c148=''
+              >
+                <TitlePath
+                  fill-rule='evenodd'
+                  clip-rule='evenodd'
+                  d='M0 0.516602C0 9.06769 3.26836 15.9997 13.7618 15.9997L14 16.0005C13.0623 15.2567 12.2689 14.3944 11.6314 13.4229C10.4112 11.5638 10 9.73924 10 5.406V0.516602H0Z'
+                  fill='#A6814C'
+                  data-v-31c4c148=''
+                ></TitlePath>
+              </TitleSvg>
+            </TitleTail>
+          </TitleBallon>
+        </IntroCardPaddingGlobal>
+        {/* </GloblaPadding> */}
       </ProjectBackground>
     </>
   );
@@ -124,13 +124,10 @@ function Projects() {
 
 export default Projects;
 export const GloblaPadding = styled.div`
-  width: 100%;
-  max-width: 90rem;
-  margin-right: auto;
-  margin-left: auto;
+  /* width: 100%; */
 `;
 export const ProjectBackground = styled.div`
-  height: 450vh;
+  padding-bottom: 20px;
   background-color: black;
 `;
 export const ProjectIntro = styled.h3`
@@ -178,6 +175,9 @@ export const IntroCardPaddingGlobal = styled.div`
 
   padding-left: 130px;
   padding-right: 130px;
+  max-width: 90rem;
+  margin-right: auto;
+  margin-left: auto;
 `;
 
 export const ProjectWrap = styled.div`
@@ -466,7 +466,7 @@ export const TitleBallon = styled.div`
   position: absolute;
   display: flex;
   margin-top: -300px;
-  margin-left: 73%;
+  margin-left: 1150px;
 `;
 export const TitleTxtCol = styled.span`
   background-color: #a6814c;

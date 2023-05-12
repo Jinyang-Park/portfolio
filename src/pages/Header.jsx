@@ -71,6 +71,7 @@ export const NavContainer = styled.div`
   top: 0;
   right: 0;
   bottom: auto;
+
   background-color: #f5f5f5;
 `;
 export const Nav = styled.div`

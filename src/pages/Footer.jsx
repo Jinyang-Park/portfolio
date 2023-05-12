@@ -33,11 +33,10 @@ function Footer() {
 
 export default Footer;
 export const ProjectBackground = styled.div`
-  height: 20vh;
+  padding-bottom: 30px;
   background-color: black;
 `;
 export const IntroCardPaddingGlobal = styled.div`
-  padding-top: 40px;
   padding-left: 50px;
   padding-right: 50px;
 `;

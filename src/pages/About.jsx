@@ -46,77 +46,76 @@ function About() {
             DEVELOPED WITH SKILL & PASSION DEVELOPED WITH SKILL & PASSION
           </ScrollrightText>
         </Right>
-        <GloblaPadding>
-          <IntroCardPaddingGlobal>
-            <IntroCardWrap style={{ opacity: (position - 100) / 50 }}>
-              <IntroCardSection>
-                <IntroCardMyname>
-                  Hello,
-                  <br />
-                  I'm Jinyang
-                </IntroCardMyname>
+        {/* <GloblaPadding> */}
+        <IntroCardPaddingGlobal>
+          <IntroCardWrap style={{ opacity: (position - 100) / 50 }}>
+            <IntroCardSection>
+              <IntroCardMyname>
+                Hello,
+                <br />
+                I'm Jinyang
+              </IntroCardMyname>
 
-                <IntromyselfWrap>
-                  <IntroCardMyself>
-                    I am a front-end developer and designer based in Seoul,
-                    Korea.
-                    <br />
-                    <br />
-                    I started my career as a sportswear designer and product
-                    manager with more than two years. <br />
-                    Always I am curious about all things technology and design,
-                    from software engineering to UI/UX. <br />
-                    While working designer, I started learning software frontend
-                    development.
-                    <br /> I fell in love with web development when I studying
-                    software engineer, mostly focused on the frontend.
-                    <br /> I am excited about the mix of design and creativity,
-                    and technical skills. I enjoy the struggle and the
-                    satisfaction of figuring something out.
-                    <br />
-                    <br />
-                    I have been predominantly using React and Javascript, but I
-                    like to learn other frameworks as well.
-                    <br />I am focused on the details and accessible
-                    user-friendly websites and applications.
-                    <br />
-                    <br />
-                    After a little longer than I would have liked, I feel
-                    excited and determined to dive into a new career path in web
-                    development.
-                    <br />
-                    If you are interested in more details or working together,
-                    see my resume!
-                  </IntroCardMyself>
-                </IntromyselfWrap>
-                <ResumeBtn
-                  href='/assets/resume.pdf'
-                  target='_blank'
-                  rel='noreferrer'
-                >
-                  Resume
-                  <Arrow>
-                    <ArrowSvg
-                      width='21'
-                      height='16'
-                      viewBox='0 0 21 16'
-                      fill='none'
-                      xmlns='http://www.w3.org/2000/svg'
-                      data-v-64da5e37=''
-                    >
-                      <ArrowPath
-                        d='M13.216 0H11.474C11.942 3.12 13.554 5.772 15.998 7.124L0 7.046V8.736L15.998 8.658C13.554 10.01 11.942 12.662 11.474 15.782H13.216C13.762 11.804 16.57 8.58 20.626 8.58V7.202C16.57 7.202 13.762 3.978 13.216 0Z'
-                        fill='#222222'
-                        data-v-1e2ff580=''
-                      ></ArrowPath>
-                    </ArrowSvg>
-                  </Arrow>
-                </ResumeBtn>
-              </IntroCardSection>
-              <Intropic />
-            </IntroCardWrap>
-          </IntroCardPaddingGlobal>
-        </GloblaPadding>
+              <IntromyselfWrap>
+                <IntroCardMyself>
+                  I am a front-end developer and designer based in Seoul, Korea.
+                  <br />
+                  <br />
+                  I started my career as a sportswear designer and product
+                  manager with more than two years. <br />
+                  Always I am curious about all things technology and design,
+                  from software engineering to UI/UX. <br />
+                  While working designer, I started learning software frontend
+                  development.
+                  <br /> I fell in love with web development when I studying
+                  software engineer, mostly focused on the frontend.
+                  <br /> I am excited about the mix of design and creativity,
+                  and technical skills. I enjoy the struggle and the
+                  satisfaction of figuring something out.
+                  <br />
+                  <br />
+                  I have been predominantly using React and Javascript, but I
+                  like to learn other frameworks as well.
+                  <br />I am focused on the details and accessible user-friendly
+                  websites and applications.
+                  <br />
+                  <br />
+                  After a little longer than I would have liked, I feel excited
+                  and determined to dive into a new career path in web
+                  development.
+                  <br />
+                  If you are interested in more details or working together, see
+                  my resume!
+                </IntroCardMyself>
+              </IntromyselfWrap>
+              <ResumeBtn
+                href='/assets/resume.pdf'
+                target='_blank'
+                rel='noreferrer'
+              >
+                Resume
+                <Arrow>
+                  <ArrowSvg
+                    width='21'
+                    height='16'
+                    viewBox='0 0 21 16'
+                    fill='none'
+                    xmlns='http://www.w3.org/2000/svg'
+                    data-v-64da5e37=''
+                  >
+                    <ArrowPath
+                      d='M13.216 0H11.474C11.942 3.12 13.554 5.772 15.998 7.124L0 7.046V8.736L15.998 8.658C13.554 10.01 11.942 12.662 11.474 15.782H13.216C13.762 11.804 16.57 8.58 20.626 8.58V7.202C16.57 7.202 13.762 3.978 13.216 0Z'
+                      fill='#222222'
+                      data-v-1e2ff580=''
+                    ></ArrowPath>
+                  </ArrowSvg>
+                </Arrow>
+              </ResumeBtn>
+            </IntroCardSection>
+            <Intropic />
+          </IntroCardWrap>
+        </IntroCardPaddingGlobal>
+        {/* </GloblaPadding> */}
       </AboutBackground>
     </div>
   );
@@ -132,7 +131,7 @@ export const GloblaPadding = styled.div`
 export const AboutBackground = styled.div`
   /* width: 100%; */
   overflow: hidden;
-  height: 230vh;
+  padding-bottom: 200px;
   /* overflow: hidden; */
   background-color: #af9fff;
 `;
@@ -164,6 +163,10 @@ export const ScrollrightText = styled.div`
   font-weight: 600;
 `;
 export const IntroCardPaddingGlobal = styled.div`
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 0px;
+  max-width: 90rem;
   padding-left: 130px;
   padding-right: 130px;
 `;

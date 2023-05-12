@@ -63,7 +63,7 @@ function Contact() {
 
 export default Contact;
 export const ProjectBackground = styled.div`
-  height: 160vh;
+  padding-bottom: 300px;
   background-color: #f5f5f5;
 `;
 export const IntroCardPaddingGlobal = styled.div`

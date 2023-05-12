@@ -10,7 +10,8 @@ function Main() {
   return (
     <div id='main'>
       <Introduce>
-        <GloblaPadding>
+        {/* <GloblaPadding> */}
+        <IntroCardPaddingGlobal>
           <MinimeHoduWrap>
             <MinimeHouduImg />
           </MinimeHoduWrap>
@@ -42,7 +43,7 @@ function Main() {
               <Introname>Hi. I'm Jinyang.</Introname>
             </IntronameWrap>
             <IntrojobWrap>
-              <Introjob3>Developer </Introjob3>
+              <Introjob3>Developer</Introjob3>
               <Progress>
                 <Introjob4>Developer </Introjob4>
                 <Introjob>A Frontend </Introjob>
@@ -78,7 +79,8 @@ function Main() {
               </TitleSvg>
             </TitleTail>
           </TitleBallon2>
-        </GloblaPadding>
+        </IntroCardPaddingGlobal>
+        {/* </GloblaPadding> */}
       </Introduce>
       <About id='About' />
       <Projects />
@@ -90,15 +92,19 @@ function Main() {
 }
 
 export default Main;
+export const IntroCardPaddingGlobal = styled.div`
+  padding-top: 0px;
+  padding-left: 80px;
+  padding-right: 8px;
+`;
 export const GloblaPadding = styled.div`
   width: 100%;
-  max-width: 90rem;
-  margin-right: auto;
-  margin-left: auto;
+  /* max-width: 90rem; */
 `;
 export const Introduce = styled.div`
   padding-top: 50px;
-  margin-bottom: 200px;
+
+  margin-bottom: 250px;
   background-color: #f5f5f5;
   /* display: flex; */
 `;
@@ -112,13 +118,13 @@ export const TitleBallon = styled.div`
   position: absolute;
   display: flex;
   margin-top: -120px;
-  margin-left: 18%;
+  margin-left: 20px;
 `;
 export const TitleBallon2 = styled.div`
   position: absolute;
   display: flex;
   margin-top: -340px;
-  margin-left: 82%;
+  margin-left: 1380px;
 `;
 export const TitleTxtCol2 = styled.span`
   background-color: #a6814c;
@@ -158,7 +164,7 @@ export const TitleTail = styled.i`
 export const TitleSvg = styled.svg``;
 export const TitlePath = styled.path``;
 export const IntronameWrap = styled.div`
-  width: 50%;
+  width: 750px;
   justify-content: center;
   align-items: center;
   height: 150px;
@@ -184,11 +190,11 @@ export const IntrojobWrap = styled.div`
   border-radius: 0px 100px 100px 0px;
   overflow: hidden;
   position: relative;
-  width: 73%;
+  width: 1050px;
 `;
 
 export const IntrojobWrap2 = styled.div`
-  width: 40%;
+  width: 650px;
   justify-content: center;
   align-items: center;
   height: 150px;
@@ -228,7 +234,7 @@ export const Progress = styled.div`
   border-radius: 0px 100px 100px 0px;
   background-color: #af9fff;
   overflow: hidden;
-  width: 55%;
+  width: 600px;
   padding: 0px 60px;
   animation: Progress 4s ease-in-out Infinite alternate;
   @keyframes Progress {
@@ -251,7 +257,7 @@ export const Introjob2 = styled.h6`
 export const MinimeWrap = styled.div`
   position: absolute;
   top: 400px;
-  left: 70%;
+  left: 1200px;
   /* padding-top: 50px; */
 `;
 
