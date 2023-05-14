@@ -3,23 +3,10 @@ import styled from 'styled-components';
 import { AiFillHeart } from 'react-icons/ai';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { useMediaQuery } from 'react-responsive';
-import ContactMobile from './ContactMobile';
-function Contact() {
+function ContactMobile() {
   useEffect(() => {
     AOS.init();
   });
-
-  const isMobile = useMediaQuery({ query: '(max-width:768px)' });
-
-  // 모바일일 경우
-  if (isMobile) {
-    return (
-      <>
-        <ContactMobile />
-      </>
-    );
-  }
   return (
     <div id='contact'>
       <ProjectBackground>
@@ -46,27 +33,30 @@ function Contact() {
             </ContactWrap2>
           </ContactInter>
           <ContactInter>
-            <ContactWrap3>
-              <ContactAbout3>WEBFLOW</ContactAbout3>
-            </ContactWrap3>
-            <ContactWrap4>
-              <ContactAbout4>DEVELOPMENT</ContactAbout4>
-            </ContactWrap4>
-            <ContactWrap4>
-              <ContactAbout4>IDEA</ContactAbout4>
-            </ContactWrap4>
+            <ContactThirdLine>
+              <ContactWrap3>
+                <ContactAbout3>WEBFLOW</ContactAbout3>
+              </ContactWrap3>
+              <ContactWrap4>
+                <ContactAbout4>DEVELOPMENT</ContactAbout4>
+              </ContactWrap4>
+            </ContactThirdLine>
+            <ContactfourthLine>
+              <ContactWrap4>
+                <ContactAbout4>IDEA</ContactAbout4>
+              </ContactWrap4>
+              <HeartIconWrap data-aos='fade-up'>
+                <ContactHeartIcon></ContactHeartIcon>
+              </HeartIconWrap>
+              <ContactWrap2>
+                <ContactAbout2>BRANDING</ContactAbout2>
+              </ContactWrap2>
+            </ContactfourthLine>
           </ContactInter>
           <ContactInter>
             <ContactWrap4>
               <ContactAbout3>GRAPHIC DESIGN</ContactAbout3>
             </ContactWrap4>
-            <HeartIconWrap data-aos='fade-up'>
-              <ContactHeartIcon></ContactHeartIcon>
-              {/* <ContactHeartIcon2></ContactHeartIcon2> */}
-            </HeartIconWrap>
-            <ContactWrap2>
-              <ContactAbout2>BRANDING</ContactAbout2>
-            </ContactWrap2>
           </ContactInter>
         </IntroCardPaddingGlobal>
       </ProjectBackground>
@@ -74,24 +64,24 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default ContactMobile;
 export const ProjectBackground = styled.div`
-  padding-bottom: 300px;
+  padding-bottom: 110px;
   background-color: #f5f5f5;
 `;
 export const IntroCardPaddingGlobal = styled.div`
   padding-top: 0px;
 
-  padding-left: 130px;
-  padding-right: 130px;
+  padding-left: 20px;
+  padding-right: 20px;
 `;
 export const ContactTitle = styled.h2`
-  padding-top: 160px;
-  padding-bottom: 160px;
+  padding-top: 110px;
+  padding-bottom: 50px;
   display: flex;
   justify-content: center;
   font-family: 'Darker Grotesque', sans-serif;
-  font-size: 40px;
+  font-size: 1.5rem;
   line-height: 1.2;
   font-weight: 700;
   /* letter-spacing: -1px; */
@@ -104,78 +94,83 @@ export const ContantTitleColorChange = styled.span`
   margin-right: 5px;
 `;
 export const ContactInter = styled.div`
-  display: flex;
-  justify-content: center;
   /* align-items: flex-start; */
 `;
 export const ContactWrap = styled.div`
   display: flex;
-
   align-items: center;
   width: fit-content;
-  height: 120px;
+  height: 70px;
   color: #af9fff;
   border-radius: 100px;
   background-color: black;
-  padding: 0px 30px;
+  padding: 0px 20px;
 `;
 export const ContactAbout = styled.h1`
   /* display: flex; */
-  font-size: 70px;
+  font-size: 25px;
   font-family: 'Darker Grotesque', sans-serif;
-  line-height: 0.15;
 `;
 export const ContactWrap2 = styled.div`
   display: flex;
   align-items: center;
   width: fit-content;
-  height: 120px;
+  height: 70px;
   color: black;
   border-radius: 100px;
   background-color: #af9fff;
-  padding: 0px 30px;
+  padding: 0px 20px;
   /* margin-left: 5px; */
+`;
+export const ContactThirdLine = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+export const ContactfourthLine = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 export const ContactWrap3 = styled.div`
   display: flex;
-
   align-items: center;
   width: fit-content;
-  height: 120px;
+  height: 70px;
   color: black;
   border-radius: 100px;
   background-color: #af9fff;
-  padding: 0px 30px;
+  padding: 0px 20px;
   border-radius: 0px 100px 100px 0px;
 `;
 export const ContactWrap4 = styled.div`
   display: flex;
   align-items: center;
   width: fit-content;
-  height: 120px;
+  height: 70px;
   color: #af9fff;
   border-radius: 100px;
   background-color: black;
   padding: 0px 30px;
+  left: -50px;
 `;
 export const ContactAbout2 = styled.h1`
-  font-size: 70px;
+  font-size: 25px;
   font-family: 'Darker Grotesque', sans-serif;
-  line-height: 0.15;
 `;
 export const ContactAbout3 = styled.h1`
-  font-size: 70px;
+  font-size: 25px;
   font-family: 'Darker Grotesque', sans-serif;
-  line-height: 0.15;
+  /* line-height: 0.15; */
 `;
 export const ContactAbout4 = styled.h1`
-  font-size: 70px;
+  font-size: 25px;
   font-family: 'Darker Grotesque', sans-serif;
   line-height: 0.15;
 `;
 export const ContactHeartIcon = styled(AiFillHeart)`
-  font-size: 100px;
+  font-size: 60px;
   color: black;
+  object-fit: contain;
 `;
 // export const ContactHeartIcon2 = styled(AiOutlineHeart)`
 //   font-size: 80px;
@@ -183,15 +178,12 @@ export const ContactHeartIcon = styled(AiFillHeart)`
 // `;
 export const HeartIconWrap = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
 `;
 export const LogoWrap = styled.div`
-  display: flex;
-  justify-content: center;
-  padding-right: 320px;
+  position: absolute;
+  padding-left: 200px;
 `;
 export const LogoImg = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
 `;

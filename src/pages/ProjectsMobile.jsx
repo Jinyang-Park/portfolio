@@ -157,7 +157,7 @@ export const ProjectIntroText = styled.div`
   /* padding-right: 70px; */
   display: flex;
   flex-wrap: wrap;
-  padding-top: 150px;
+  padding-top: 110px;
   margin: 0px auto;
   justify-content: center;
   align-items: center;

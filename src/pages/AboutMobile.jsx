@@ -126,8 +126,8 @@ export const GloblaPadding = styled.div`
 export const AboutBackground = styled.div`
   /* width: 100%; */
   overflow: hidden;
-  padding-bottom: 200px;
-  padding-top: 100px;
+  padding-bottom: 110px;
+  padding-top: 110px;
   /* overflow: hidden; */
   background-color: #af9fff;
 `;

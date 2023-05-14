@@ -4,10 +4,8 @@ import { SiVelog } from 'react-icons/si';
 import styled from 'styled-components';
 import { MdOutlineSend } from 'react-icons/md';
 import emailjs from '@emailjs/browser';
-import Contact2Mobile from './Contact2Mobile';
-import { useMediaQuery } from 'react-responsive';
 
-function Contact2() {
+function Contact2Mobile() {
   const form = React.useRef(null);
 
   const [check, setCheck] = useState(true);
@@ -50,17 +48,6 @@ function Contact2() {
   const handleTextarea = (event) => {
     setMessage(event.target.value);
   };
-
-  const isMobile = useMediaQuery({ query: '(max-width:768px)' });
-
-  // 모바일일 경우
-  if (isMobile) {
-    return (
-      <>
-        <Contact2Mobile />
-      </>
-    );
-  }
 
   return (
     <>
@@ -161,7 +148,7 @@ function Contact2() {
   );
 }
 
-export default Contact2;
+export default Contact2Mobile;
 export const ProjectBackground = styled.div`
   padding-bottom: 50px;
   background-color: black;
@@ -194,17 +181,17 @@ export const ContactTitleWrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 160px;
-  padding-bottom: 160px;
+  padding-top: 110px;
+  padding-bottom: 80px;
 `;
 export const Title = styled.h1`
-  font-size: 40px;
+  font-size: 1.5rem;
   font-family: 'Darker Grotesque', sans-serif;
   line-height: 1;
   color: #eeff04;
 `;
 export const SubTitle = styled.span`
-  font-size: 70px;
+  font-size: 50px;
   font-family: 'Darker Grotesque', sans-serif;
   line-height: 1;
   color: #eeff04;
@@ -218,17 +205,13 @@ export const ContantTitleColorChange = styled.span`
 `;
 export const SocialWrap = styled.div`
   display: flex;
-  flex-direction: row;
-  margin-top: 32px;
-  min-width: 100px;
-
-  margin-bottom: 4px;
+  justify-content: space-between;
 `;
 export const LinkedinIcon = styled(BsLinkedin)`
   margin-top: 20px;
-  margin-right: 15px;
+  margin-right: 10px;
   display: flex;
-  padding: 20px 80px;
+  padding: 15px 40px;
   border-radius: 30px;
   border: #eeff04 solid 1px;
   color: #eeff04;
@@ -300,9 +283,9 @@ export const LinkedinIcon = styled(BsLinkedin)`
 `;
 export const GithubIcon = styled(BsGithub)`
   margin-top: 20px;
-  margin-right: 15px;
+  margin-right: 10px;
   display: flex;
-  padding: 20px 80px;
+  padding: 15px 40px;
   border-radius: 30px;
   border: #eeff04 solid 1px;
   color: #eeff04;
@@ -374,9 +357,9 @@ export const GithubIcon = styled(BsGithub)`
 `;
 export const VelogIcon = styled(SiVelog)`
   margin-top: 20px;
-  margin-right: 15px;
+  margin-right: 10px;
   display: flex;
-  padding: 20px 80px;
+  padding: 15px 40px;
   border-radius: 30px;
   border: #eeff04 solid 1px;
   color: #eeff04;
@@ -464,38 +447,21 @@ export const EmailFormWrap = styled.div`
   flex-direction: column;
   width: 100%;
   padding-top: 50px;
-  @media all and (max-width: 768px) {
-    //브라우저 창 width가 768px보다 작아지는 순간부터 적용
-    //모바일
-
-    /* width: 100%;
-    padding-top: 50px; */
-  }
-  @media all and (min-width: 768px) {
-    //브라우저 창 width가 768px보다 커지는 순간부터 적용
-    //태블릿
-  }
-  @media all and (max-width: 1024px) {
-    //브라우저 창 width가 1024px보다 작아지는 순간부터 적용
-    //태블릿
-  }
-  @media all and (min-width: 1920px) {
-    //브라우저 창 width가 1920px보다 커지는 순간부터 적용
-    //데스크탑
-    padding-top: 150px;
-  }
 `;
 export const EmailInputForm = styled.form``;
 export const NameInput = styled.input`
-  font-family: 'Darker Grotesque', sans-serif;
+  width: 70%;
   font-size: 22px;
+  padding: 36px 50px;
+  font-family: 'Darker Grotesque', sans-serif;
+
   outline: none;
   box-shadow: inset 0 0 0 1px #1d1c16;
   border: 0;
   color: #eeff04;
   font-weight: 475;
   background: #1d1c16;
-  padding: 36px 70px;
+
   margin-bottom: 8px;
   margin-right: 8px;
   border-radius: 48px;
@@ -505,26 +471,6 @@ export const NameInput = styled.input`
   }
   &:focus {
     border: 1px solid#eeff04;
-  }
-  @media all and (max-width: 768px) {
-    //브라우저 창 width가 768px보다 작아지는 순간부터 적용
-    //모바일
-    width: 80%;
-    font-size: 16px;
-    padding: 36px 70px;
-  }
-  @media all and (min-width: 768px) {
-    //브라우저 창 width가 768px보다 커지는 순간부터 적용
-    //태블릿
-  }
-  @media all and (max-width: 1024px) {
-    //브라우저 창 width가 1024px보다 작아지는 순간부터 적용
-    //태블릿
-  }
-  @media all and (min-width: 1920px) {
-    //브라우저 창 width가 1920px보다 커지는 순간부터 적용
-    //데스크탑
-    padding-top: 150px;
   }
 `;
 export const NameLabel = styled.label`
@@ -538,46 +484,11 @@ export const NameLabel = styled.label`
   pointer-events: none;
 `;
 export const InputDiv = styled.div`
-  display: flex;
-  @media all and (max-width: 768px) {
-    //브라우저 창 width가 768px보다 작아지는 순간부터 적용
-    //모바일
-    display: inline-block;
-  }
-  @media all and (min-width: 768px) {
-    //브라우저 창 width가 768px보다 커지는 순간부터 적용
-    //태블릿
-  }
-  @media all and (max-width: 1024px) {
-    //브라우저 창 width가 1024px보다 작아지는 순간부터 적용
-    //태블릿
-  }
-  @media all and (min-width: 1920px) {
-    //브라우저 창 width가 1920px보다 커지는 순간부터 적용
-    //데스크탑
-    padding-top: 150px;
-  }
+  display: inline-block;
 `;
 export const TextAreaDiv = styled.div`
   display: flex;
-  @media all and (max-width: 768px) {
-    //브라우저 창 width가 768px보다 작아지는 순간부터 적용
-    //모바일
-    margin-bottom: 8px;
-  }
-  @media all and (min-width: 768px) {
-    //브라우저 창 width가 768px보다 커지는 순간부터 적용
-    //태블릿
-  }
-  @media all and (max-width: 1024px) {
-    //브라우저 창 width가 1024px보다 작아지는 순간부터 적용
-    //태블릿
-  }
-  @media all and (min-width: 1920px) {
-    //브라우저 창 width가 1920px보다 커지는 순간부터 적용
-    //데스크탑
-    padding-top: 150px;
-  }
+  margin-bottom: 8px;
 `;
 
 export const InputColDiv = styled.div`
@@ -597,7 +508,7 @@ export const TextArea = styled.textarea`
   height: 400px;
   resize: none;
   background: #1d1c16;
-  padding: 36px 70px;
+  padding: 36px 40px;
   border-radius: 48px;
   margin-right: 8px;
   border: 1px solid#1d1c16;
@@ -637,10 +548,11 @@ export const SendBtn = styled.button`
   border-radius: 48px;
 `;
 export const ChangeBtn = styled.button`
+  display: contents;
   font-family: 'Darker Grotesque', sans-serif;
   color: #eeff04;
   background: none;
-  padding-top: 170px;
+  padding-top: 20px;
 
   /* width: 30%; */
   /* display: block; */
@@ -652,7 +564,7 @@ export const BtnDiv = styled.div`
   align-items: flex-start;
 `;
 export const BtnText2 = styled.span`
-  font-size: 50px;
+  font-size: 40px;
 `;
 export const BtnText = styled.span`
   font-size: 20px;
@@ -663,23 +575,5 @@ export const BigDiv = styled.div`
   /* display: flex; */
 `;
 export const SecondDiv = styled.div`
-  display: flex;
-  @media all and (max-width: 768px) {
-    //브라우저 창 width가 768px보다 작아지는 순간부터 적용
-    //모바일
-    display: inline-block;
-  }
-  @media all and (min-width: 768px) {
-    //브라우저 창 width가 768px보다 커지는 순간부터 적용
-    //태블릿
-  }
-  @media all and (max-width: 1024px) {
-    //브라우저 창 width가 1024px보다 작아지는 순간부터 적용
-    //태블릿
-  }
-  @media all and (min-width: 1920px) {
-    //브라우저 창 width가 1920px보다 커지는 순간부터 적용
-    //데스크탑
-    padding-top: 150px;
-  }
+  display: inline-block;
 `;

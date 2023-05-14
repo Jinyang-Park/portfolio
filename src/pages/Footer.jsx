@@ -42,10 +42,18 @@ export default Footer;
 export const ProjectBackground = styled.div`
   padding-bottom: 30px;
   background-color: black;
+  @media all and (max-width: 768px) {
+    padding-bottom: 30px;
+  }
 `;
 export const IntroCardPaddingGlobal = styled.div`
   padding-left: 50px;
   padding-right: 50px;
+  @media all and (max-width: 768px) {
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-right: 20px;
+  }
 `;
 export const CIocn = styled(BiCopyright)`
   margin-left: 5px;
@@ -56,6 +64,12 @@ export const Nav = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media all and (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 export const NavWrapper = styled.div`
   display: flex;
@@ -70,6 +84,9 @@ export const LogoImg = styled.img`
   margin-right: 30px;
   background-repeat: no-repeat;
   cursor: pointer;
+  @media all and (max-width: 768px) {
+    margin-right: 0px;
+  }
 `;
 // export const LogoImg = styled.img`
 //   width: 32px;
@@ -93,6 +110,12 @@ export const Navli = styled.li`
   cursor: pointer;
   line-height: 1;
   vertical-align: middle;
+  @media all and (max-width: 768px) {
+    font-size: 16px;
+    line-height: 1;
+    margin-right: 0px;
+    padding: 30px 0px;
+  }
 `;
 
 export const Navli2 = styled.li`
@@ -107,4 +130,9 @@ export const Navli2 = styled.li`
   line-height: 0;
   color: #fff;
   line-height: 0.15;
+  @media all and (max-width: 768px) {
+    font-size: 16px;
+    line-height: 1;
+    padding: 0px;
+  }
 `;
