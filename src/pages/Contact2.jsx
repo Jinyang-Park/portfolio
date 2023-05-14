@@ -157,6 +157,25 @@ export const IntroCardPaddingGlobal = styled.div`
   padding-top: 0px;
   padding-left: 130px;
   padding-right: 130px;
+  @media all and (max-width: 768px) {
+    //브라우저 창 width가 768px보다 작아지는 순간부터 적용
+    //모바일
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  @media all and (min-width: 768px) {
+    //브라우저 창 width가 768px보다 커지는 순간부터 적용
+    //태블릿
+  }
+  @media all and (max-width: 1024px) {
+    //브라우저 창 width가 1024px보다 작아지는 순간부터 적용
+    //태블릿
+  }
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1920px보다 커지는 순간부터 적용
+    //데스크탑
+    padding-top: 150px;
+  }
 `;
 export const ContactTitleWrap = styled.div`
   display: flex;
@@ -432,6 +451,26 @@ export const EmailFormWrap = styled.div`
   flex-direction: column;
   width: 100%;
   padding-top: 50px;
+  @media all and (max-width: 768px) {
+    //브라우저 창 width가 768px보다 작아지는 순간부터 적용
+    //모바일
+
+    /* width: 100%;
+    padding-top: 50px; */
+  }
+  @media all and (min-width: 768px) {
+    //브라우저 창 width가 768px보다 커지는 순간부터 적용
+    //태블릿
+  }
+  @media all and (max-width: 1024px) {
+    //브라우저 창 width가 1024px보다 작아지는 순간부터 적용
+    //태블릿
+  }
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1920px보다 커지는 순간부터 적용
+    //데스크탑
+    padding-top: 150px;
+  }
 `;
 export const EmailInputForm = styled.form``;
 export const NameInput = styled.input`
@@ -454,26 +493,78 @@ export const NameInput = styled.input`
   &:focus {
     border: 1px solid#eeff04;
   }
+  @media all and (max-width: 768px) {
+    //브라우저 창 width가 768px보다 작아지는 순간부터 적용
+    //모바일
+    width: 80%;
+    font-size: 16px;
+    padding: 36px 70px;
+  }
+  @media all and (min-width: 768px) {
+    //브라우저 창 width가 768px보다 커지는 순간부터 적용
+    //태블릿
+  }
+  @media all and (max-width: 1024px) {
+    //브라우저 창 width가 1024px보다 작아지는 순간부터 적용
+    //태블릿
+  }
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1920px보다 커지는 순간부터 적용
+    //데스크탑
+    padding-top: 150px;
+  }
 `;
 export const NameLabel = styled.label`
-  /* position: absolute; */
   font-size: 16px;
-
   display: flex;
   padding: 20px 80px;
-  /* background-color: #1d1c16; */
   color: #eeff04;
   padding: 0;
   margin: 0 40px;
   font-weight: 500;
-  /* transform-origin: left top; */
   pointer-events: none;
 `;
 export const InputDiv = styled.div`
   display: flex;
+  @media all and (max-width: 768px) {
+    //브라우저 창 width가 768px보다 작아지는 순간부터 적용
+    //모바일
+    display: inline-block;
+  }
+  @media all and (min-width: 768px) {
+    //브라우저 창 width가 768px보다 커지는 순간부터 적용
+    //태블릿
+  }
+  @media all and (max-width: 1024px) {
+    //브라우저 창 width가 1024px보다 작아지는 순간부터 적용
+    //태블릿
+  }
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1920px보다 커지는 순간부터 적용
+    //데스크탑
+    padding-top: 150px;
+  }
 `;
 export const TextAreaDiv = styled.div`
   display: flex;
+  @media all and (max-width: 768px) {
+    //브라우저 창 width가 768px보다 작아지는 순간부터 적용
+    //모바일
+    margin-bottom: 8px;
+  }
+  @media all and (min-width: 768px) {
+    //브라우저 창 width가 768px보다 커지는 순간부터 적용
+    //태블릿
+  }
+  @media all and (max-width: 1024px) {
+    //브라우저 창 width가 1024px보다 작아지는 순간부터 적용
+    //태블릿
+  }
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1920px보다 커지는 순간부터 적용
+    //데스크탑
+    padding-top: 150px;
+  }
 `;
 
 export const InputColDiv = styled.div`
@@ -560,5 +651,22 @@ export const BigDiv = styled.div`
 `;
 export const SecondDiv = styled.div`
   display: flex;
-  /* flex-direction: column; */
+  @media all and (max-width: 768px) {
+    //브라우저 창 width가 768px보다 작아지는 순간부터 적용
+    //모바일
+    display: inline-block;
+  }
+  @media all and (min-width: 768px) {
+    //브라우저 창 width가 768px보다 커지는 순간부터 적용
+    //태블릿
+  }
+  @media all and (max-width: 1024px) {
+    //브라우저 창 width가 1024px보다 작아지는 순간부터 적용
+    //태블릿
+  }
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1920px보다 커지는 순간부터 적용
+    //데스크탑
+    padding-top: 150px;
+  }
 `;

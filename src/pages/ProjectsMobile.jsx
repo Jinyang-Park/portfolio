@@ -3,22 +3,11 @@ import styled from 'styled-components';
 import { ProjectList } from '../utils/ProjectsList';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import ProjectsMobile from './ProjectsMobile';
-import { useMediaQuery } from 'react-responsive';
-function Projects() {
+
+function ProjectsMobile() {
   useEffect(() => {
     AOS.init();
   });
-  const isMobile = useMediaQuery({ query: '(max-width:768px)' });
-
-  // 모바일일 경우
-  if (isMobile) {
-    return (
-      <>
-        <ProjectsMobile />
-      </>
-    );
-  }
   return (
     <>
       <ProjectBackground id='projects'>
@@ -30,7 +19,9 @@ function Projects() {
           </ProjectIntroText>
           <ProjectIntroText2>
             <ProjectIntrodetail>
-              Each project is unique. Here are some of my works.
+              Each project is unique.
+              <br />
+              Here are some of my works.
             </ProjectIntrodetail>
           </ProjectIntroText2>
           {/*project1*/}
@@ -133,7 +124,7 @@ function Projects() {
   );
 }
 
-export default Projects;
+export default ProjectsMobile;
 export const GloblaPadding = styled.div`
   /* width: 100%; */
 `;
@@ -144,7 +135,7 @@ export const ProjectBackground = styled.div`
 export const ProjectIntro = styled.h3`
   font-family: 'Darker Grotesque', sans-serif;
   font-weight: 600;
-  font-size: 88px;
+  font-size: 2.15rem;
   color: #af9fff;
   /* margin-bottom: 0px 0px 50px 0px; */
   animation: 100s ease-in-out;
@@ -155,27 +146,26 @@ export const ProjectIntrodetail = styled.span`
   font-family: 'Darker Grotesque', sans-serif;
   /* font-weight: 600; */
   line-height: 0.76;
-  font-size: 28px;
+  font-size: 1.2rem;
   color: #fff;
   letter-spacing: -1px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 `;
 export const ProjectIntroText = styled.div`
   position: relative;
   max-width: 100%;
-
-  padding-right: 70px;
+  /* padding-right: 70px; */
   display: flex;
   flex-wrap: wrap;
-  padding-top: 192px;
+  padding-top: 150px;
   margin: 0px auto;
   justify-content: center;
   align-items: center;
 `;
 export const LogoImg = styled.img`
   /* position: absolute; */
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   margin-bottom: 50px;
 `;
 export const ProjectIntroText2 = styled.div`
@@ -184,8 +174,8 @@ export const ProjectIntroText2 = styled.div`
 export const IntroCardPaddingGlobal = styled.div`
   padding-top: 0px;
 
-  padding-left: 130px;
-  padding-right: 130px;
+  padding-left: 20px;
+  padding-right: 20px;
   max-width: 90rem;
   margin-right: auto;
   margin-left: auto;
@@ -193,7 +183,7 @@ export const IntroCardPaddingGlobal = styled.div`
 
 export const ProjectWrap = styled.div`
   margin-top: 80px;
-  display: grid;
+  /* display: grid; */
   width: 100%;
   margin-bottom: 7.75rem;
   grid-auto-columns: 1fr;
@@ -210,7 +200,7 @@ export const ProjectIntroWrap2 = styled.div`
   position: relative;
   display: flex;
   /* padding: 1rem; */
-  border-radius: 4.375rem;
+  border-radius: 1.8rem;
   background-color: #eeeded;
   -webkit-transition: -webkit-transform 0.1s ease;
   transition: transform 0.1s ease;
@@ -224,7 +214,7 @@ export const ProjectIntroWrap = styled.div`
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 4rem;
+  padding: 1rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -234,7 +224,7 @@ export const ProjectIntroWrap = styled.div`
   -webkit-align-items: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
-  border-radius: 4.375rem;
+  border-radius: 1.8rem;
   background-color: #1b1b1f;
   -webkit-transition: -webkit-transform 0.1s;
   transition: transform 0.1s;
@@ -243,12 +233,12 @@ export const ProjectIntroWrap = styled.div`
 export const ProjectTitle = styled.h3`
   font-family: 'Darker Grotesque', sans-serif;
   font-weight: 600;
-  font-size: 50px;
+  font-size: 2.5rem;
   color: #af9fff;
 `;
 export const ProjectSubTitle = styled.p`
   font-family: 'Darker Grotesque', sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   color: #fff;
   margin-bottom: 25px;
 `;
@@ -257,32 +247,32 @@ export const ProjectPost = styled.div``;
 export const ProjectAbout = styled.h4`
   font-family: 'Darker Grotesque', sans-serif;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 18px;
   color: #af9fff;
 `;
 export const ProjectIntroduce = styled.p`
   font-family: 'Darker Grotesque', sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   color: #fff;
   margin-bottom: 25px;
 `;
 export const ProjectSkils = styled.h4`
   font-family: 'Darker Grotesque', sans-serif;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 18px;
   color: #af9fff;
   margin-top: 25px;
   margin-bottom: 15px;
 `;
 export const ProjectSkilsItem = styled.p`
-  max-width: 462px;
+  /* max-width: 462px; */
   /* width: fit-content; */
   display: grid;
-  -webkit-box-align: center;
-  align-items: center;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  justify-items: center;
-  grid-row-gap: 10px;
+  /* -webkit-box-align: center;
+  align-items: center; */
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  /* justify-items: center; */
+  grid-row-gap: 8px;
 `;
 export const ProjectItem = styled.span`
   width: max-content;
@@ -298,6 +288,8 @@ export const ProjectItem = styled.span`
 `;
 export const ProjectSite = styled.div`
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 export const ProjectIconTitle = styled.div`
   font-family: 'Darker Grotesque', sans-serif;
@@ -305,9 +297,9 @@ export const ProjectIconTitle = styled.div`
 `;
 export const ProjectIcon = styled.div`
   margin-top: 20px;
-  margin-right: 15px;
+
   display: flex;
-  padding: 10px 100px;
+  padding: 10px 60px;
   border-radius: 30px;
   border: #eeff04 solid 1px;
   color: #eeff04;
@@ -422,7 +414,7 @@ export const Website = styled.a`
   display: flex;
 `;
 export const MinimeHoduWrap = styled.div`
-  padding-left: 80%;
+  padding-left: 5%;
   /* width: -80%; */
 `;
 export const MinimeHouduImg = styled.figure`
@@ -477,7 +469,7 @@ export const TitleBallon = styled.div`
   position: absolute;
   display: flex;
   margin-top: -300px;
-  margin-left: 1150px;
+  margin-left: 210px;
 `;
 export const TitleTxtCol = styled.span`
   background-color: #a6814c;

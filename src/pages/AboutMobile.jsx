@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { useMediaQuery } from 'react-responsive';
 
-import AboutMobile from './AboutMobile';
-
-function About() {
+function AboutMobile() {
   const [position, setPosition] = useState(0);
   function onScroll() {
-    setPosition(window.scrollY - 800);
+    setPosition(window.scrollY - 300);
   }
   useEffect(() => {
     window.addEventListener('scroll', onScroll);
@@ -15,17 +12,6 @@ function About() {
       window.removeEventListener('scroll', onScroll);
     };
   }, []);
-
-  const isMobile = useMediaQuery({ query: '(max-width:768px)' });
-
-  // 모바일일 경우
-  if (isMobile) {
-    return (
-      <>
-        <AboutMobile />
-      </>
-    );
-  }
 
   return (
     <div id='about'>
@@ -35,14 +21,11 @@ function About() {
             ATTENTION TO-DETAIL&nbsp;
             <ScrollLeftBlack>ATTENTION TO-DETAIL</ScrollLeftBlack>
             ATENTION TO-DETAIL ATTENTION TO-DETAIL ATTENTION TO-DETAIL ATTENTION
-            TO-DETAIL ATTENTION TO-DETAIL ATTENTION TO-DETAIL ATTENTION
-            TO-DETAIL ATTENTION TO-DETAIL
+            TO-DETAIL
           </ScrollLeftText>
         </Left>
         <Right>
           <ScrollrightText style={{ transform: `translateX(${position}px)` }}>
-            RESPONSIVE DESIGN RESPONSIVE DESIGN RESPONSIVE DESIGN RESPONSIVE
-            DESIGN RESPONSIVE DESIGN RESPONSIVE DESIGN RESPONSIVE DESIGN
             RESPONSIVE DESIGN RESPONSIVE DESIGN RESPONSIVE DESIGN RESPONSIVE
           </ScrollrightText>
         </Right>
@@ -50,19 +33,17 @@ function About() {
           <ScrollLeftText style={{ transform: `translateX(${-position}px)` }}>
             <ScrollLeftBlack>TEAM ORIENTED TEAM ORIENTED&nbsp;</ScrollLeftBlack>
             TEAM ORIENTED TEAM ORIENTED TEAM ORIENTED TEAM ORIENTED TEAM
-            ORIENTED TEAM ORIENTED TEAM ORIENTED TEAM ORIENTED TEAM ORIENTED
+            ORIENTED
           </ScrollLeftText>
         </Left>
         <Right>
           <ScrollrightText style={{ transform: `translateX(${position}px)` }}>
             DEVELOPED WITH SKILL & PASSION DEVELOPED WITH SKILL & PASSION
-            DEVELOPED WITH SKILL & PASSION DEVELOPED WITH SKILL & PASSION
-            DEVELOPED WITH SKILL & PASSION DEVELOPED WITH SKILL & PASSION
           </ScrollrightText>
         </Right>
         {/* <GloblaPadding> */}
         <IntroCardPaddingGlobal>
-          <IntroCardWrap style={{ opacity: (position - 100) / 50 }}>
+          <IntroCardWrap>
             <IntroCardSection>
               <IntroCardMyname>
                 Hello,
@@ -135,10 +116,10 @@ function About() {
   );
 }
 
-export default About;
+export default AboutMobile;
 export const GloblaPadding = styled.div`
   width: 100%;
-  max-width: 90rem;
+  /* max-width: 90rem; */
   margin-right: auto;
   margin-left: auto;
 `;
@@ -146,15 +127,15 @@ export const AboutBackground = styled.div`
   /* width: 100%; */
   overflow: hidden;
   padding-bottom: 200px;
+  padding-top: 100px;
   /* overflow: hidden; */
   background-color: #af9fff;
 `;
 export const Left = styled.div`
-  top: 100%;
-  width: 1050vw;
+  width: 800vw;
 `;
 export const ScrollLeftText = styled.div`
-  font-size: 100px;
+  font-size: 3.2rem;
   font-family: 'Darker Grotesque', sans-serif;
   color: white;
   font-weight: 600;
@@ -165,13 +146,13 @@ export const ScrollLeftBlack = styled.span`
 export const Right = styled.div`
   /* position: relative; */
   /* width: 1050vw; */
-  top: 100%;
-  width: 1050vw;
+
+  width: 800vw;
   /* right: -800px;
   white-space: nowrap; */
 `;
 export const ScrollrightText = styled.div`
-  font-size: 100px;
+  font-size: 3.2rem;
   font-family: 'Darker Grotesque', sans-serif;
   color: white;
   font-weight: 600;
@@ -181,20 +162,20 @@ export const IntroCardPaddingGlobal = styled.div`
   margin-left: auto;
   padding-top: 0px;
   max-width: 90rem;
-  padding-left: 130px;
-  padding-right: 130px;
+  padding-left: 15px;
+  padding-right: 15px;
 `;
 export const IntroCardWrap = styled.div`
   display: grid;
   margin: 0 auto;
   width: 100%;
-  padding: 4rem;
-  grid-auto-columns: 1fr;
-  grid-column-gap: 16px;
-  grid-row-gap: 16px;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 720px;
-  border-radius: 50px;
+  padding: 1rem;
+  /* grid-auto-columns: 1fr; */
+  grid-column-gap: 2rem;
+  /* grid-row-gap: 16px; */
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  border-radius: 0.875rem;
   background-color: #f5f5f5;
   top: -150px;
   animation: 100s ease-in-out;
@@ -204,11 +185,11 @@ export const IntroCardSection = styled.div`
   padding-right: 20px; */
 `;
 export const IntroCardMyname = styled.h3`
-  font-size: 50px;
+  font-size: 2.15rem;
   line-height: 1;
   font-weight: 700;
   letter-spacing: -3.5px;
-  margin-bottom: 44px;
+  margin-bottom: 6rem;
 `;
 export const IntromyselfWrap = styled.div`
   width: 100%;
@@ -216,14 +197,19 @@ export const IntromyselfWrap = styled.div`
 `;
 export const IntroCardMyself = styled.p`
   margin-top: 0;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.2;
-  letter-spacing: -0.45px;
+
   /* font-family: 'Darker Grotesque', sans-serif; */
 `;
 export const Intropic = styled.figure`
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  left: 220px;
+  display: block;
+  width: 7.75rem;
+  height: 7.75rem;
+  border-radius: 0.9rem;
+  background-size: cover;
   background-image: url('/assets/jinyangpark.jpg');
   background-repeat: no-repeat;
 `;
@@ -237,16 +223,19 @@ export const ResumeDownload = styled.span`
 `;
 
 export const ResumeBtn = styled.a`
+  font-size: 16px;
+
+  padding: 15px;
   margin-top: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   width: fit-content;
   background-color: #eeff04;
-  padding: 20px 40px;
+
   border-radius: 30px;
   font-weight: 600;
-  font-size: 22px;
+
   font-family: 'Darker Grotesque', sans-serif;
   line-height: 0;
   color: #222;

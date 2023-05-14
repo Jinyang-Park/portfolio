@@ -1,15 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 import { BiCopyright } from 'react-icons/bi';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-scroll';
 function Footer() {
   return (
     <>
       <ProjectBackground>
         <IntroCardPaddingGlobal>
           <NavContainer>
-            <Nav>
-              <Link to={'/'}>
+            <Nav id='main'>
+              <Link
+                activeClass='active'
+                // spy={true}
+                // smooth={true}
+                // offset={50}
+                // duration={500}
+                to='main'
+              >
                 <LogoImg src='/assets/star2.png' />
               </Link>
               <Navul>
@@ -62,6 +69,7 @@ export const LogoImg = styled.img`
   height: 60px;
   margin-right: 30px;
   background-repeat: no-repeat;
+  cursor: pointer;
 `;
 // export const LogoImg = styled.img`
 //   width: 32px;

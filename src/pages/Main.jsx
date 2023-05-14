@@ -5,10 +5,22 @@ import Projects from './Projects';
 import Contact from './Contact';
 import Contact2 from './Contact2';
 import Footer from './Footer';
+import { useMediaQuery } from 'react-responsive';
+import MainMobile from './MainMobile';
 
 function Main() {
+  const isMobile = useMediaQuery({ query: '(max-width:768px)' });
+
+  // 모바일일 경우
+  if (isMobile) {
+    return (
+      <>
+        <MainMobile />
+      </>
+    );
+  }
   return (
-    <div id='main'>
+    <>
       <Introduce>
         {/* <GloblaPadding> */}
         <IntroCardPaddingGlobal>
@@ -87,15 +99,15 @@ function Main() {
       <Contact />
       <Contact2 />
       <Footer />
-    </div>
+    </>
   );
 }
 
 export default Main;
 export const IntroCardPaddingGlobal = styled.div`
-  padding-top: 0px;
+  /* padding-top: 0px;
   padding-left: 80px;
-  padding-right: 8px;
+  padding-right: 8px; */
 `;
 export const GloblaPadding = styled.div`
   width: 100%;
@@ -103,9 +115,14 @@ export const GloblaPadding = styled.div`
 `;
 export const Introduce = styled.div`
   padding-top: 50px;
-
   margin-bottom: 250px;
   background-color: #f5f5f5;
+
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1920px보다 커지는 순간부터 적용
+    //데스크탑
+    padding-top: 150px;
+  }
   /* display: flex; */
 `;
 export const IntroContent = styled.div`
@@ -124,7 +141,12 @@ export const TitleBallon2 = styled.div`
   position: absolute;
   display: flex;
   margin-top: -340px;
-  margin-left: 1380px;
+  margin-left: 1300px;
+  //브라우저 창 width가 1920px보다 커지는 순간부터 적용
+  //데스크탑
+  padding-top: 150px;
+
+  /* padding-top: 50px; */
 `;
 export const TitleTxtCol2 = styled.span`
   background-color: #a6814c;
@@ -172,6 +194,25 @@ export const IntronameWrap = styled.div`
   border-radius: 100px;
   background-color: black;
   padding: 0px 20px;
+  @media all and (max-width: 768px) {
+    //브라우저 창 width가 768px보다 작아지는 순간부터 적용
+    //모바일
+    width: 320px;
+    height: 100px;
+  }
+  @media all and (min-width: 768px) {
+    //브라우저 창 width가 768px보다 커지는 순간부터 적용
+    //태블릿
+  }
+  @media all and (max-width: 1024px) {
+    //브라우저 창 width가 1024px보다 작아지는 순간부터 적용
+    //태블릿
+  }
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1920px보다 커지는 순간부터 적용
+    //데스크탑
+    padding-top: 150px;
+  }
 `;
 export const Introname = styled.span`
   font-size: 100px;
@@ -179,6 +220,26 @@ export const Introname = styled.span`
   display: flex;
   font-weight: 600;
   justify-content: center;
+  @media all and (max-width: 768px) {
+    //브라우저 창 width가 768px보다 작아지는 순간부터 적용
+    //모바일
+    font-size: 50px;
+    font-family: 'Darker Grotesque', sans-serif;
+    line-height: 2;
+  }
+  @media all and (min-width: 768px) {
+    //브라우저 창 width가 768px보다 커지는 순간부터 적용
+    //태블릿
+  }
+  @media all and (max-width: 1024px) {
+    //브라우저 창 width가 1024px보다 작아지는 순간부터 적용
+    //태블릿
+  }
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1920px보다 커지는 순간부터 적용
+    //데스크탑
+    padding-top: 150px;
+  }
 `;
 export const IntrojobWrap = styled.div`
   /* display: flex;
@@ -191,6 +252,25 @@ export const IntrojobWrap = styled.div`
   overflow: hidden;
   position: relative;
   width: 1050px;
+  @media all and (max-width: 768px) {
+    //브라우저 창 width가 768px보다 작아지는 순간부터 적용
+    //모바일
+    width: 520px;
+    height: 100px;
+  }
+  @media all and (min-width: 768px) {
+    //브라우저 창 width가 768px보다 커지는 순간부터 적용
+    //태블릿
+  }
+  @media all and (max-width: 1024px) {
+    //브라우저 창 width가 1024px보다 작아지는 순간부터 적용
+    //태블릿
+  }
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1920px보다 커지는 순간부터 적용
+    //데스크탑
+    padding-top: 150px;
+  }
 `;
 
 export const IntrojobWrap2 = styled.div`
@@ -202,11 +282,50 @@ export const IntrojobWrap2 = styled.div`
   border-radius: 100px;
   background-color: black;
   padding: 0px 20px;
+  @media all and (max-width: 768px) {
+    //브라우저 창 width가 768px보다 작아지는 순간부터 적용
+    //모바일
+    width: 280px;
+    height: 100px;
+  }
+  @media all and (min-width: 768px) {
+    //브라우저 창 width가 768px보다 커지는 순간부터 적용
+    //태블릿
+  }
+  @media all and (max-width: 1024px) {
+    //브라우저 창 width가 1024px보다 작아지는 순간부터 적용
+    //태블릿
+  }
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1920px보다 커지는 순간부터 적용
+    //데스크탑
+    padding-top: 150px;
+  }
 `;
 export const Introjob = styled.h3`
   font-size: 100px;
   /* font-weight: 500; */
   font-family: 'Darker Grotesque', sans-serif;
+  @media all and (max-width: 768px) {
+    //브라우저 창 width가 768px보다 작아지는 순간부터 적용
+    //모바일
+    font-size: 50px;
+    font-family: 'Darker Grotesque', sans-serif;
+    line-height: 2;
+  }
+  @media all and (min-width: 768px) {
+    //브라우저 창 width가 768px보다 커지는 순간부터 적용
+    //태블릿
+  }
+  @media all and (max-width: 1024px) {
+    //브라우저 창 width가 1024px보다 작아지는 순간부터 적용
+    //태블릿
+  }
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1920px보다 커지는 순간부터 적용
+    //데스크탑
+    padding-top: 150px;
+  }
 `;
 export const Introjob3 = styled.h3`
   position: absolute;
@@ -216,6 +335,27 @@ export const Introjob3 = styled.h3`
   /* font-weight: 500; */
   left: 600px;
   line-height: 1.6;
+  @media all and (max-width: 768px) {
+    //브라우저 창 width가 768px보다 작아지는 순간부터 적용
+    //모바일
+    font-size: 50px;
+    font-family: 'Darker Grotesque', sans-serif;
+    left: 300px;
+    line-height: 2;
+  }
+  @media all and (min-width: 768px) {
+    //브라우저 창 width가 768px보다 커지는 순간부터 적용
+    //태블릿
+  }
+  @media all and (max-width: 1024px) {
+    //브라우저 창 width가 1024px보다 작아지는 순간부터 적용
+    //태블릿
+  }
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1920px보다 커지는 순간부터 적용
+    //데스크탑
+    padding-top: 150px;
+  }
 `;
 export const Introjob4 = styled.h3`
   position: absolute;
@@ -225,6 +365,27 @@ export const Introjob4 = styled.h3`
   justify-content: center;
   left: 600px;
   line-height: 1.6;
+  @media all and (max-width: 768px) {
+    //브라우저 창 width가 768px보다 작아지는 순간부터 적용
+    //모바일
+    font-size: 50px;
+    font-family: 'Darker Grotesque', sans-serif;
+    left: 300px;
+    line-height: 2;
+  }
+  @media all and (min-width: 768px) {
+    //브라우저 창 width가 768px보다 커지는 순간부터 적용
+    //태블릿
+  }
+  @media all and (max-width: 1024px) {
+    //브라우저 창 width가 1024px보다 작아지는 순간부터 적용
+    //태블릿
+  }
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1920px보다 커지는 순간부터 적용
+    //데스크탑
+    padding-top: 150px;
+  }
 `;
 
 export const Progress = styled.div`
@@ -237,6 +398,7 @@ export const Progress = styled.div`
   width: 600px;
   padding: 0px 60px;
   animation: Progress 4s ease-in-out Infinite alternate;
+
   @keyframes Progress {
     from {
       width: 55%;
@@ -244,6 +406,34 @@ export const Progress = styled.div`
     to {
       width: 105%;
     }
+  }
+  @media all and (max-width: 768px) {
+    //브라우저 창 width가 768px보다 작아지는 순간부터 적용
+    //모바일
+    height: 100px;
+    width: 350px;
+    padding: 0px 30px;
+    @keyframes Progress {
+      from {
+        width: 54%;
+      }
+      to {
+        width: 105%;
+      }
+    }
+  }
+  @media all and (min-width: 768px) {
+    //브라우저 창 width가 768px보다 커지는 순간부터 적용
+    //태블릿
+  }
+  @media all and (max-width: 1024px) {
+    //브라우저 창 width가 1024px보다 작아지는 순간부터 적용
+    //태블릿
+  }
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1920px보다 커지는 순간부터 적용
+    //데스크탑
+    padding-top: 150px;
   }
 `;
 
@@ -253,11 +443,51 @@ export const Introjob2 = styled.h6`
   font-family: 'Darker Grotesque', sans-serif;
   display: flex;
   justify-content: center;
+  @media all and (max-width: 768px) {
+    //브라우저 창 width가 768px보다 작아지는 순간부터 적용
+    //모바일
+    font-size: 50px;
+    font-family: 'Darker Grotesque', sans-serif;
+    left: 300px;
+    line-height: 2;
+  }
+  @media all and (min-width: 768px) {
+    //브라우저 창 width가 768px보다 커지는 순간부터 적용
+    //태블릿
+  }
+  @media all and (max-width: 1024px) {
+    //브라우저 창 width가 1024px보다 작아지는 순간부터 적용
+    //태블릿
+  }
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1920px보다 커지는 순간부터 적용
+    //데스크탑
+    padding-top: 150px;
+  }
 `;
 export const MinimeWrap = styled.div`
   position: absolute;
   top: 400px;
-  left: 1200px;
+  left: 1080px;
+  @media all and (max-width: 768px) {
+    //브라우저 창 width가 768px보다 작아지는 순간부터 적용
+    //모바일
+    top: 500px;
+    left: 370px;
+  }
+  @media all and (min-width: 768px) {
+    //브라우저 창 width가 768px보다 커지는 순간부터 적용
+    //태블릿
+  }
+  @media all and (max-width: 1024px) {
+    //브라우저 창 width가 1024px보다 작아지는 순간부터 적용
+    //태블릿
+  }
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1920px보다 커지는 순간부터 적용
+    //데스크탑
+    padding-top: 150px;
+  }
   /* padding-top: 50px; */
 `;
 

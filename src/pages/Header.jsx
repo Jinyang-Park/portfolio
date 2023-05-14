@@ -1,19 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-scroll';
+import { Website } from './Projects';
 function Header() {
   return (
     <>
       <NavContainer>
-        <Nav>
+        <Nav id='main'>
           <NavWrapper>
             {/* <div ref={Home} /> */}
             <Link
               activeClass='active'
-              spy={true}
-              smooth={true}
-              offset={50}
-              duration={500}
+              // spy={true}
+              // smooth={true}
+              // offset={50}
+              // duration={500}
               to='main'
             >
               <LogoImg src='/assets/star2.png' />
@@ -77,35 +78,31 @@ export const NavContainer = styled.div`
 export const Nav = styled.div`
   display: flex;
   justify-content: space-between;
-
   padding: 17px 40px;
   align-items: center;
+  @media all and (max-width: 768px) {
+    padding: 20px 20px;
+    justify-content: left;
+  }
 `;
 export const NavWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
 `;
-// export const LogoText = styled.span`
-//   font-family: 'Darker Grotesque', sans-serif;
-//   color: black;
-//   text-transform: none;
-//   margin-right: 30px;
-//   font-size: 20px;
-// `;
+
 export const LogoImg = styled.img`
   color: black;
   width: 60px;
   height: 60px;
   margin-right: 30px;
   background-repeat: no-repeat;
+  cursor: pointer;
+  @media all and (max-width: 768px) {
+    margin-right: 10px;
+  }
 `;
-// export const LogoImg = styled.img`
-//   width: 32px;
-//   height: 44px;
-//   margin-right: 30px;
-//   background-repeat: no-repeat;
-// `;
+
 export const Navul = styled.ul`
   display: flex;
 `;
@@ -138,6 +135,26 @@ export const Navli = styled.li`
     background-color: #af9fff;
     padding: 30px 30px;
     color: white;
+  }
+  @media all and (max-width: 768px) {
+    font-size: 16px;
+    margin-right: 5px;
+    padding: 15px 15px;
+
+    &:hover {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: fit-content;
+      padding: 15px 15px;
+
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 16px;
+      background-color: #af9fff;
+
+      color: white;
+    }
   }
 `;
 
@@ -214,5 +231,10 @@ export const Navli2 = styled.li`
     animation: Navli2 1s ease;
     -webkit-animation-iteration-count: 1;
     animation-iteration-count: 1;
+  }
+  @media all and (max-width: 768px) {
+    font-size: 16px;
+    margin-right: 5px;
+    padding: 15px 15px;
   }
 `;
