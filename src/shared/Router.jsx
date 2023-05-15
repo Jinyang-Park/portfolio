@@ -7,8 +7,10 @@ import Contact from '../pages/Contact';
 import Header from '../pages/Header';
 import ScrollUpto from '../pages/ScrollUpto';
 import ScrollToTopButton from '../pages/ScrollToButton';
-
+import { useMediaQuery } from 'react-responsive';
 const Router = () => {
+  const isMobile = useMediaQuery({ query: '(max-width:768px)' });
+
   return (
     <BrowserRouter>
       <ScrollUpto />
@@ -19,7 +21,7 @@ const Router = () => {
         <Route path='/Projects' element={<Projects />}></Route>
         <Route path='/Contact' element={<Contact />}></Route>
       </Routes>
-      <ScrollToTopButton />
+      {isMobile ? <></> : <ScrollToTopButton />}
     </BrowserRouter>
   );
 };
