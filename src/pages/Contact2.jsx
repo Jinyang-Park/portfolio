@@ -170,24 +170,10 @@ export const IntroCardPaddingGlobal = styled.div`
   padding-top: 0px;
   padding-left: 130px;
   padding-right: 130px;
-  @media all and (max-width: 768px) {
-    //브라우저 창 width가 768px보다 작아지는 순간부터 적용
-    //모바일
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  @media all and (min-width: 768px) {
-    //브라우저 창 width가 768px보다 커지는 순간부터 적용
-    //태블릿
-  }
-  @media all and (max-width: 1024px) {
-    //브라우저 창 width가 1024px보다 작아지는 순간부터 적용
-    //태블릿
-  }
   @media all and (min-width: 1920px) {
-    //브라우저 창 width가 1920px보다 커지는 순간부터 적용
+    //브라우저 창 width가 1023px보다 커지는 순간부터 적용
     //데스크탑
-    padding-top: 150px;
+    /* padding: 20px 100px; */
   }
 `;
 export const ContactTitleWrap = styled.div`
@@ -202,12 +188,22 @@ export const Title = styled.h1`
   font-family: 'Darker Grotesque', sans-serif;
   line-height: 1;
   color: #eeff04;
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1023px보다 커지는 순간부터 적용
+    //데스크탑
+    font-size: 60px;
+  }
 `;
 export const SubTitle = styled.span`
   font-size: 70px;
   font-family: 'Darker Grotesque', sans-serif;
   line-height: 1;
   color: #eeff04;
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1023px보다 커지는 순간부터 적용
+    //데스크탑
+    font-size: 80px;
+  }
 `;
 export const ContantTitleColorChange = styled.span`
   position: relative;
@@ -297,6 +293,11 @@ export const LinkedinIcon = styled(BsLinkedin)`
     background-color: #eeff04;
     color: black;
   }
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1023px보다 커지는 순간부터 적용
+    //데스크탑
+    padding: 20px 100px;
+  }
 `;
 export const GithubIcon = styled(BsGithub)`
   margin-top: 20px;
@@ -370,6 +371,11 @@ export const GithubIcon = styled(BsGithub)`
     border: black solid 1px;
     background-color: #eeff04;
     color: black;
+  }
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1023px보다 커지는 순간부터 적용
+    //데스크탑
+    padding: 20px 100px;
   }
 `;
 export const VelogIcon = styled(SiVelog)`
@@ -445,6 +451,11 @@ export const VelogIcon = styled(SiVelog)`
     background-color: #eeff04;
     color: black;
   }
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1023px보다 커지는 순간부터 적용
+    //데스크탑
+    padding: 20px 100px;
+  }
 `;
 export const Website = styled.a`
   display: flex;
@@ -464,25 +475,9 @@ export const EmailFormWrap = styled.div`
   flex-direction: column;
   width: 100%;
   padding-top: 50px;
-  @media all and (max-width: 768px) {
-    //브라우저 창 width가 768px보다 작아지는 순간부터 적용
-    //모바일
-
-    /* width: 100%;
-    padding-top: 50px; */
-  }
-  @media all and (min-width: 768px) {
-    //브라우저 창 width가 768px보다 커지는 순간부터 적용
-    //태블릿
-  }
-  @media all and (max-width: 1024px) {
-    //브라우저 창 width가 1024px보다 작아지는 순간부터 적용
-    //태블릿
-  }
   @media all and (min-width: 1920px) {
-    //브라우저 창 width가 1920px보다 커지는 순간부터 적용
+    //브라우저 창 width가 1023px보다 커지는 순간부터 적용
     //데스크탑
-    padding-top: 150px;
   }
 `;
 export const EmailInputForm = styled.form``;
@@ -506,25 +501,11 @@ export const NameInput = styled.input`
   &:focus {
     border: 1px solid#eeff04;
   }
-  @media all and (max-width: 768px) {
-    //브라우저 창 width가 768px보다 작아지는 순간부터 적용
-    //모바일
-    width: 80%;
-    font-size: 16px;
-    padding: 36px 70px;
-  }
-  @media all and (min-width: 768px) {
-    //브라우저 창 width가 768px보다 커지는 순간부터 적용
-    //태블릿
-  }
-  @media all and (max-width: 1024px) {
-    //브라우저 창 width가 1024px보다 작아지는 순간부터 적용
-    //태블릿
-  }
   @media all and (min-width: 1920px) {
-    //브라우저 창 width가 1920px보다 커지는 순간부터 적용
+    //브라우저 창 width가 1023px보다 커지는 순간부터 적용
     //데스크탑
-    padding-top: 150px;
+    font-size: 25px;
+    padding: 36px 100px;
   }
 `;
 export const NameLabel = styled.label`
@@ -539,44 +520,16 @@ export const NameLabel = styled.label`
 `;
 export const InputDiv = styled.div`
   display: flex;
-  @media all and (max-width: 768px) {
-    //브라우저 창 width가 768px보다 작아지는 순간부터 적용
-    //모바일
-    display: inline-block;
-  }
-  @media all and (min-width: 768px) {
-    //브라우저 창 width가 768px보다 커지는 순간부터 적용
-    //태블릿
-  }
-  @media all and (max-width: 1024px) {
-    //브라우저 창 width가 1024px보다 작아지는 순간부터 적용
-    //태블릿
-  }
   @media all and (min-width: 1920px) {
-    //브라우저 창 width가 1920px보다 커지는 순간부터 적용
+    //브라우저 창 width가 1023px보다 커지는 순간부터 적용
     //데스크탑
-    padding-top: 150px;
   }
 `;
 export const TextAreaDiv = styled.div`
   display: flex;
-  @media all and (max-width: 768px) {
-    //브라우저 창 width가 768px보다 작아지는 순간부터 적용
-    //모바일
-    margin-bottom: 8px;
-  }
-  @media all and (min-width: 768px) {
-    //브라우저 창 width가 768px보다 커지는 순간부터 적용
-    //태블릿
-  }
-  @media all and (max-width: 1024px) {
-    //브라우저 창 width가 1024px보다 작아지는 순간부터 적용
-    //태블릿
-  }
   @media all and (min-width: 1920px) {
-    //브라우저 창 width가 1920px보다 커지는 순간부터 적용
+    //브라우저 창 width가 1023px보다 커지는 순간부터 적용
     //데스크탑
-    padding-top: 150px;
   }
 `;
 
@@ -607,6 +560,11 @@ export const TextArea = styled.textarea`
   &:focus {
     border: 1px solid#eeff04;
   }
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1023px보다 커지는 순간부터 적용
+    //데스크탑
+    padding: 40px 100px;
+  }
 `;
 export const SendDivWrap = styled.div`
   width: 100%;
@@ -635,6 +593,11 @@ export const SendBtn = styled.button`
   margin: 0;
   padding: 36px 44px;
   border-radius: 48px;
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1023px보다 커지는 순간부터 적용
+    //데스크탑
+    width: 100%;
+  }
 `;
 export const ChangeBtn = styled.button`
   font-family: 'Darker Grotesque', sans-serif;
@@ -650,9 +613,20 @@ export const ChangeBtn = styled.button`
 export const BtnDiv = styled.div`
   display: inline-block;
   align-items: flex-start;
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1023px보다 커지는 순간부터 적용
+    //데스크탑
+    margin-top: 10px;
+  }
 `;
 export const BtnText2 = styled.span`
   font-size: 50px;
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1023px보다 커지는 순간부터 적용
+    //데스크탑
+
+    font-size: 52px;
+  }
 `;
 export const BtnText = styled.span`
   font-size: 20px;
@@ -664,22 +638,8 @@ export const BigDiv = styled.div`
 `;
 export const SecondDiv = styled.div`
   display: flex;
-  @media all and (max-width: 768px) {
-    //브라우저 창 width가 768px보다 작아지는 순간부터 적용
-    //모바일
-    display: inline-block;
-  }
-  @media all and (min-width: 768px) {
-    //브라우저 창 width가 768px보다 커지는 순간부터 적용
-    //태블릿
-  }
-  @media all and (max-width: 1024px) {
-    //브라우저 창 width가 1024px보다 작아지는 순간부터 적용
-    //태블릿
-  }
   @media all and (min-width: 1920px) {
-    //브라우저 창 width가 1920px보다 커지는 순간부터 적용
+    //브라우저 창 width가 1023px보다 커지는 순간부터 적용
     //데스크탑
-    padding-top: 150px;
   }
 `;

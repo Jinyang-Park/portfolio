@@ -163,19 +163,6 @@ export const IntroCardPaddingGlobal = styled.div`
     padding-left: 20px;
     padding-right: 20px;
   }
-  @media all and (min-width: 768px) {
-    //브라우저 창 width가 768px보다 커지는 순간부터 적용
-    //태블릿
-  }
-  @media all and (max-width: 1024px) {
-    //브라우저 창 width가 1024px보다 작아지는 순간부터 적용
-    //태블릿
-  }
-  @media all and (min-width: 1920px) {
-    //브라우저 창 width가 1920px보다 커지는 순간부터 적용
-    //데스크탑
-    padding-top: 150px;
-  }
 `;
 export const ContactTitleWrap = styled.div`
   display: flex;

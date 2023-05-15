@@ -423,7 +423,11 @@ export const Website = styled.a`
 `;
 export const MinimeHoduWrap = styled.div`
   padding-left: 80%;
-  /* width: -80%; */
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1023px보다 커지는 순간부터 적용
+    //데스크탑
+    padding-left: 100%;
+  }
 `;
 export const MinimeHouduImg = styled.figure`
   @-webkit-keyframes hodu8 {
@@ -478,6 +482,12 @@ export const TitleBallon = styled.div`
   display: flex;
   margin-top: -300px;
   margin-left: 1150px;
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1023px보다 커지는 순간부터 적용
+    //데스크탑
+    margin-top: -300px;
+    margin-left: 1320px;
+  }
 `;
 export const TitleTxtCol = styled.span`
   background-color: #a6814c;

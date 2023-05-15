@@ -94,6 +94,10 @@ export const ContactTitle = styled.h2`
   font-size: 40px;
   line-height: 1.2;
   font-weight: 700;
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1023px보다 커지는 순간부터 적용
+    font-size: 60px;
+  }
   /* letter-spacing: -1px; */
 `;
 export const ContantTitleColorChange = styled.span`
@@ -118,12 +122,23 @@ export const ContactWrap = styled.div`
   border-radius: 100px;
   background-color: black;
   padding: 0px 30px;
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1023px보다 커지는 순간부터 적용
+    //데스크탑
+    height: 180px;
+    padding: 0px 30px;
+  }
 `;
 export const ContactAbout = styled.h1`
   /* display: flex; */
   font-size: 70px;
   font-family: 'Darker Grotesque', sans-serif;
   line-height: 0.15;
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1023px보다 커지는 순간부터 적용
+    //데스크탑
+    font-size: 82px;
+  }
 `;
 export const ContactWrap2 = styled.div`
   display: flex;
@@ -134,6 +149,12 @@ export const ContactWrap2 = styled.div`
   border-radius: 100px;
   background-color: #af9fff;
   padding: 0px 30px;
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1023px보다 커지는 순간부터 적용
+    //데스크탑
+    height: 180px;
+    padding: 0px 30px;
+  }
   /* margin-left: 5px; */
 `;
 export const ContactWrap3 = styled.div`
@@ -147,6 +168,12 @@ export const ContactWrap3 = styled.div`
   background-color: #af9fff;
   padding: 0px 30px;
   border-radius: 0px 100px 100px 0px;
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1023px보다 커지는 순간부터 적용
+    //데스크탑
+    height: 180px;
+    padding: 0px 30px;
+  }
 `;
 export const ContactWrap4 = styled.div`
   display: flex;
@@ -157,25 +184,52 @@ export const ContactWrap4 = styled.div`
   border-radius: 100px;
   background-color: black;
   padding: 0px 30px;
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1023px보다 커지는 순간부터 적용
+    //데스크탑
+    height: 180px;
+    padding: 0px 30px;
+  }
 `;
 export const ContactAbout2 = styled.h1`
   font-size: 70px;
   font-family: 'Darker Grotesque', sans-serif;
   line-height: 0.15;
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1023px보다 커지는 순간부터 적용
+    //데스크탑
+    font-size: 82px;
+    line-height: 0;
+  }
 `;
 export const ContactAbout3 = styled.h1`
   font-size: 70px;
   font-family: 'Darker Grotesque', sans-serif;
   line-height: 0.15;
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1023px보다 커지는 순간부터 적용
+    //데스크탑
+    font-size: 82px;
+  }
 `;
 export const ContactAbout4 = styled.h1`
   font-size: 70px;
   font-family: 'Darker Grotesque', sans-serif;
   line-height: 0.15;
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1023px보다 커지는 순간부터 적용
+    //데스크탑
+    font-size: 82px;
+  }
 `;
 export const ContactHeartIcon = styled(AiFillHeart)`
   font-size: 100px;
   color: black;
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1023px보다 커지는 순간부터 적용
+    //데스크탑
+    font-size: 120px;
+  }
 `;
 // export const ContactHeartIcon2 = styled(AiOutlineHeart)`
 //   font-size: 80px;
@@ -190,8 +244,19 @@ export const LogoWrap = styled.div`
   display: flex;
   justify-content: center;
   padding-right: 320px;
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1023px보다 커지는 순간부터 적용
+    //데스크탑
+    padding-right: 380px;
+  }
 `;
 export const LogoImg = styled.img`
   width: 100px;
   height: 100px;
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1023px보다 커지는 순간부터 적용
+    //데스크탑
+    width: 120px;
+    height: 120px;
+  }
 `;

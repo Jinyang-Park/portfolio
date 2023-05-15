@@ -84,6 +84,11 @@ export const Nav = styled.div`
     padding: 20px 20px;
     justify-content: left;
   }
+  @media all and (min-width: 1023px) {
+    //브라우저 창 width가 1023px보다 커지는 순간부터 적용
+    //데스크탑
+    padding: 30px 40px;
+  }
 `;
 export const NavWrapper = styled.div`
   display: flex;
@@ -100,6 +105,12 @@ export const LogoImg = styled.img`
   cursor: pointer;
   @media all and (max-width: 768px) {
     margin-right: 10px;
+  }
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1023px보다 커지는 순간부터 적용
+    //데스크탑
+    width: 70px;
+    height: 70px;
   }
 `;
 
@@ -155,6 +166,26 @@ export const Navli = styled.li`
 
       color: white;
     }
+  }
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1023px보다 커지는 순간부터 적용
+    //데스크탑
+    font-size: 25px;
+    margin-right: 20px;
+    padding: 30px 30px;
+  }
+  &:hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    font-size: 25px;
+    margin-right: 20px;
+    padding: 30px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    background-color: #af9fff;
+    color: white;
   }
 `;
 
@@ -236,5 +267,12 @@ export const Navli2 = styled.li`
     font-size: 16px;
     margin-right: 5px;
     padding: 15px 15px;
+  }
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1023px보다 커지는 순간부터 적용
+    //데스크탑
+    font-size: 25px;
+    margin-right: 20px;
+    padding: 30px 30px;
   }
 `;
