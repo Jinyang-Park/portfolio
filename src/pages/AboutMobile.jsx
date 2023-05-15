@@ -4,7 +4,7 @@ import styled from 'styled-components';
 function AboutMobile() {
   const [position, setPosition] = useState(0);
   function onScroll() {
-    setPosition(window.scrollY - 300);
+    setPosition(window.scrollY - 800);
   }
   useEffect(() => {
     window.addEventListener('scroll', onScroll);
@@ -26,6 +26,7 @@ function AboutMobile() {
         </Left>
         <Right>
           <ScrollrightText style={{ transform: `translateX(${position}px)` }}>
+            RESPONSIVE DESIGN RESPONSIVE DESIGN RESPONSIVE DESIGN RESPONSIVE
             RESPONSIVE DESIGN RESPONSIVE DESIGN RESPONSIVE DESIGN RESPONSIVE
           </ScrollrightText>
         </Right>
@@ -147,7 +148,7 @@ export const Right = styled.div`
   /* position: relative; */
   /* width: 1050vw; */
 
-  width: 800vw;
+  width: 1500vw;
   /* right: -800px;
   white-space: nowrap; */
 `;
