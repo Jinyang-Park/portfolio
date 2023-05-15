@@ -20,8 +20,7 @@ function AboutMobile() {
           <ScrollLeftText style={{ transform: `translateX(${-position}px)` }}>
             ATTENTION TO-DETAIL&nbsp;
             <ScrollLeftBlack>ATTENTION TO-DETAIL</ScrollLeftBlack>
-            ATENTION TO-DETAIL ATTENTION TO-DETAIL ATTENTION TO-DETAIL ATTENTION
-            TO-DETAIL
+            ATENTION TO-DETAIL ATTENTION TO-DETAIL ATTENTION TO-DETAIL
           </ScrollLeftText>
         </Left>
         <Right>
