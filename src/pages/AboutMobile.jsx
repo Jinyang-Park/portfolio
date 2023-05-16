@@ -84,7 +84,7 @@ function AboutMobile() {
                 </IntroCardMyself>
               </IntromyselfWrap>
               <ResumeBtn
-                href='/assets/JIN YANG PARK(English).pdf'
+                href='/assets/JIN YANG(English).pdf'
                 target='_blank'
                 rel='noreferrer'
               >
