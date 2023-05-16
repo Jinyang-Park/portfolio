@@ -84,7 +84,7 @@ function AboutMobile() {
                 </IntroCardMyself>
               </IntromyselfWrap>
               <ResumeBtn
-                href='/assets/resume.pdf'
+                href='/assets/JIN YANG PARK(English).pdf'
                 target='_blank'
                 rel='noreferrer'
               >
@@ -133,6 +133,7 @@ export const AboutBackground = styled.div`
 `;
 export const Left = styled.div`
   width: 800vw;
+  overflow-x: hidden;
 `;
 export const ScrollLeftText = styled.div`
   font-size: 3.2rem;
@@ -148,6 +149,7 @@ export const Right = styled.div`
   /* width: 1050vw; */
 
   width: 1500vw;
+  overflow-x: hidden;
   /* right: -800px;
   white-space: nowrap; */
 `;

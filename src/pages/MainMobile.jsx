@@ -230,7 +230,7 @@ export const Introjob2 = styled.h6`
 export const MinimeWrap = styled.div`
   position: absolute;
   top: 600px;
-  left: -10px;
+  left: -25px;
 `;
 
 export const MinimeImg = styled.figure`
