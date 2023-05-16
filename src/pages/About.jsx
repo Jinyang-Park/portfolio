@@ -103,7 +103,7 @@ function About() {
                 </IntroCardMyself>
               </IntromyselfWrap>
               <ResumeBtn
-                href='/assets/resume.pdf'
+                href='/assets/JIN YANG PARK(English).pdf'
                 target='_blank'
                 rel='noreferrer'
               >
