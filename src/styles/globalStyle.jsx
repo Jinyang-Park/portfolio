@@ -5,6 +5,14 @@ const GlobalStyle = createGlobalStyle`
         scroll-behavior: smooth;
         margin: 0;
         padding: 0;
+        
+        *::-webkit-scrollbar {
+    border: none;
+    background-color: transparent;
+ } /* webkit browsers(safari, chrome) */
+
+    scrollbar-color: #404040b3 transparent; /*firefox*/
+
     }
 html {
     scroll-behavior: smooth;
@@ -17,6 +25,7 @@ html {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         overflow: visible 
+        
     }
 
 
