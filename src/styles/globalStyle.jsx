@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
     }
 html {
     scroll-behavior: smooth;
-
+    overflow: visible 
 }
     body{
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -16,15 +16,9 @@ html {
         sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-
+        overflow: visible 
     }
-    .no-scroll{
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-  &::-webkit-scrollbar {
-    display: none; /* Chrome, Safari and Opera */
-  }
-}
+
 
     h1,
     h2,
