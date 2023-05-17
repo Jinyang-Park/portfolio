@@ -9,6 +9,8 @@ const GlobalStyle = createGlobalStyle`
 html {
     scroll-behavior: smooth;
     /* overflow-y: hidden; */
+    width: 100%;
+    height: 100%;
 }
     body{
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -16,7 +18,9 @@ html {
         sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        overflow-x: hidden;
+        width: 100%;
+    height: 100%;
+    
     }
 
     h1,
