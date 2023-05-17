@@ -20,25 +20,23 @@ function AboutMobile() {
           <ScrollLeftText style={{ transform: `translateX(${-position}px)` }}>
             ATTENTION TO-DETAIL&nbsp;
             <ScrollLeftBlack>ATTENTION TO-DETAIL</ScrollLeftBlack>
-            ATENTION TO-DETAIL ATTENTION TO-DETAIL ATTENTION TO-DETAIL
+            ATENTION
           </ScrollLeftText>
         </Left>
         <Right>
           <ScrollrightText style={{ transform: `translateX(${position}px)` }}>
-            RESPONSIVE DESIGN RESPONSIVE DESIGN RESPONSIVE DESIGN RESPONSIVE
-            RESPONSIVE DESIGN RESPONSIVE DESIGN RESPONSIVE DESIGN RESPONSIVE
+            RESPONSIVE DESIGN RESPONSIVE DESIGN RESPONSIVE
           </ScrollrightText>
         </Right>
         <Left>
           <ScrollLeftText style={{ transform: `translateX(${-position}px)` }}>
             <ScrollLeftBlack>TEAM ORIENTED TEAM ORIENTED&nbsp;</ScrollLeftBlack>
-            TEAM ORIENTED TEAM ORIENTED TEAM ORIENTED TEAM ORIENTED TEAM
-            ORIENTED
+            TEAM
           </ScrollLeftText>
         </Left>
         <Right>
           <ScrollrightText style={{ transform: `translateX(${position}px)` }}>
-            DEVELOPED WITH SKILL & PASSION DEVELOPED WITH SKILL & PASSION
+            DEVELOPED WITH SKILL & PASSION DEVELOPED WITH SKILL
           </ScrollrightText>
         </Right>
         {/* <GloblaPadding> */}

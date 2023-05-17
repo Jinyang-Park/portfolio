@@ -25,7 +25,7 @@ function ContactMobile() {
             </ContactWrap>
 
             <ContactWrap2
-              data-aos='fade-left'
+              data-aos='fade-down'
               data-aos-offset='300'
               data-aos-easing='ease-in-sine'
             >

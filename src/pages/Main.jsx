@@ -105,6 +105,7 @@ function Main() {
 }
 
 export default Main;
+
 export const IntroCardPaddingGlobal = styled.div`
   /* padding-top: 0px;
   padding-left: 80px;

@@ -202,7 +202,7 @@ export const ProjectWrap = styled.div`
 `;
 
 export const ProjectIntroWrap2 = styled.div`
-  width: 100%;
+  /* width: 100%; */
   position: relative;
   display: flex;
   /* padding: 1rem; */
