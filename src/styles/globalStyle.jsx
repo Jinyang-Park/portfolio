@@ -42,7 +42,7 @@ html {
     }
 
     body{
-        /* background-color: #f5f5f5; */
+        background-color: #f5f5f5;
         font-size: 16px;
         /* overflow: overlay; */
         /* line-height: 1.7; */
