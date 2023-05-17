@@ -6,14 +6,6 @@ const GlobalStyle = createGlobalStyle`
         scroll-behavior: smooth;
         margin: 0;
         padding: 0;
-        
-        *::-webkit-scrollbar-track {
-    display: none;
-    background-color: transparent;
-}
-
-    scrollbar-color: #404040b3 transparent; /*firefox*/
-
     }
 html {
     scroll-behavior: smooth;
@@ -52,8 +44,16 @@ html {
     body{
         background-color: #f5f5f5;
         font-size: 16px;
-        overflow: overlay;
+        /* overflow: overlay; */
         /* line-height: 1.7; */
+        *::-webkit-scrollbar-track {
+    display: none;
+    background-color: transparent;
+}
+
+    scrollbar-color: #404040b3 transparent; /*firefox*/
+
+    
     }
 
     ul{
