@@ -173,19 +173,19 @@ export const Navli = styled.li`
     font-size: 25px;
     margin-right: 20px;
     padding: 30px 30px;
-  }
-  &:hover {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: fit-content;
-    font-size: 25px;
-    margin-right: 20px;
-    padding: 30px 30px;
-    border-radius: 50px;
-    font-weight: 600;
-    background-color: #af9fff;
-    color: white;
+    &:hover {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: fit-content;
+      font-size: 25px;
+      margin-right: 20px;
+      padding: 30px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      background-color: #af9fff;
+      color: white;
+    }
   }
 `;
 

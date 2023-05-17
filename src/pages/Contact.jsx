@@ -58,14 +58,14 @@ function Contact() {
           </ContactInter>
           <ContactInter>
             <ContactWrap4>
-              <ContactAbout3>GRAPHIC DESIGN</ContactAbout3>
+              <ContactAbout3>USER EXPERIENCES</ContactAbout3>
             </ContactWrap4>
             <HeartIconWrap data-aos='fade-up'>
               <ContactHeartIcon></ContactHeartIcon>
               {/* <ContactHeartIcon2></ContactHeartIcon2> */}
             </HeartIconWrap>
             <ContactWrap2>
-              <ContactAbout2>BRANDING</ContactAbout2>
+              <ContactAbout2>ANIMATION</ContactAbout2>
             </ContactWrap2>
           </ContactInter>
         </IntroCardPaddingGlobal>

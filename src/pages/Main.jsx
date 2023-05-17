@@ -29,7 +29,7 @@ function Main() {
           </MinimeHoduWrap>
           {/* <TitleBallon>
             <TitleTxtCol>
-              <TitleTxt>Hire Jinyang!</TitleTxt>
+              <TitleTxt>xD</TitleTxt>
             </TitleTxtCol>
             <TitleTail>
               <TitleSvg
@@ -65,6 +65,7 @@ function Main() {
               <Introjob2>& Designer.</Introjob2>
             </IntrojobWrap2>
           </IntroContent>
+
           <MinimeWrap>
             <MinimeImg />
           </MinimeWrap>
@@ -136,17 +137,18 @@ export const IntroContent = styled.div`
     padding-right: 100px;
   }
 `;
+
 export const TitleBallon = styled.div`
   position: absolute;
   display: flex;
   margin-top: -120px;
-  margin-left: 20px;
+  margin-left: 300px;
 `;
 export const TitleBallon2 = styled.div`
   position: absolute;
   display: flex;
-  margin-top: -340px;
-  margin-left: 1300px;
+  margin-top: -370px;
+  margin-left: 1320px;
   @media all and (min-width: 1920px) {
     //브라우저 창 width가 1023px보다 커지는 순간부터 적용
     //데스크탑

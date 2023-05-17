@@ -3,6 +3,7 @@ import { RiWindowFill } from 'react-icons/ri';
 
 export const ProjectList = [
   {
+    id: 1,
     Title: 'Ollae',
     SubTitle: 'Loaction based community platform',
     Introduce:
@@ -47,6 +48,7 @@ export const ProjectList = [
     ],
   },
   {
+    id: 2,
     Title: 'Bounce',
     SubTitle:
       'Global fandom platform for the fans and artists around the world',
@@ -88,6 +90,7 @@ export const ProjectList = [
     ],
   },
   {
+    id: 3,
     Title: 'ApplePet',
     SubTitle: 'Pet adoption app',
     Introduce:

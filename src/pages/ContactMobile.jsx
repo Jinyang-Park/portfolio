@@ -45,18 +45,20 @@ function ContactMobile() {
               <ContactWrap4>
                 <ContactAbout4>IDEA</ContactAbout4>
               </ContactWrap4>
-              <HeartIconWrap data-aos='fade-up'>
-                <ContactHeartIcon></ContactHeartIcon>
-              </HeartIconWrap>
               <ContactWrap2>
-                <ContactAbout2>BRANDING</ContactAbout2>
+                <ContactAbout3>USER EXPERIENCES</ContactAbout3>
               </ContactWrap2>
             </ContactfourthLine>
           </ContactInter>
           <ContactInter>
-            <ContactWrap4>
-              <ContactAbout3>GRAPHIC DESIGN</ContactAbout3>
-            </ContactWrap4>
+            <ContactfourthLine>
+              <ContactWrap4>
+                <ContactAbout2>ANIMATION</ContactAbout2>
+              </ContactWrap4>
+              <HeartIconWrap data-aos='fade-up'>
+                <ContactHeartIcon></ContactHeartIcon>
+              </HeartIconWrap>
+            </ContactfourthLine>
           </ContactInter>
         </IntroCardPaddingGlobal>
       </ProjectBackground>
@@ -128,7 +130,6 @@ export const ContactThirdLine = styled.div`
 `;
 export const ContactfourthLine = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
 `;
 export const ContactWrap3 = styled.div`
@@ -158,7 +159,7 @@ export const ContactAbout2 = styled.h1`
   font-family: 'Darker Grotesque', sans-serif;
 `;
 export const ContactAbout3 = styled.h1`
-  font-size: 25px;
+  font-size: 23px;
   font-family: 'Darker Grotesque', sans-serif;
   /* line-height: 0.15; */
 `;

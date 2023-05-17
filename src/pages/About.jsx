@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useMediaQuery } from 'react-responsive';
-
 import AboutMobile from './AboutMobile';
+import { AiFillHtml5 } from 'react-icons/ai';
+import { DiCss3 } from 'react-icons/di';
+import { SiJavascript } from 'react-icons/si';
+import { SkilsList } from './../utils/SkilsList';
 
 function About() {
   const [position, setPosition] = useState(0);
@@ -128,7 +131,24 @@ function About() {
             </IntroCardSection>
             <Intropic />
           </IntroCardWrap>
+          {/* <ToolWrap>
+            <ToolText>Tool & Technologies</ToolText>
+          </ToolWrap> */}
         </IntroCardPaddingGlobal>
+        {/* <AnimatedWrap>
+          <AnimateTrack>
+            <MarqueeInner>
+              {SkilsList.map((skils) => {
+                return (
+                  <IconWapper key={skils.id}>
+                    <Icon>{skils.Icon}</Icon>
+                    <IconText>{skils.Text}</IconText>
+                  </IconWapper>
+                );
+              })}
+            </MarqueeInner>
+          </AnimateTrack>
+        </AnimatedWrap> */}
         {/* </GloblaPadding> */}
       </AboutBackground>
     </div>
@@ -136,6 +156,57 @@ function About() {
 }
 
 export default About;
+export const ToolWrap = styled.div`
+  display: flex;
+  justify-content: center;
+  /* padding-top: 160px; */
+`;
+export const ToolText = styled.h3`
+  font-family: 'Darker Grotesque', sans-serif;
+  font-size: 40px;
+  line-height: 1.2;
+  font-weight: 700;
+`;
+export const AnimatedWrap = styled.div`
+  padding-top: 150px;
+  position: relative;
+  height: auto;
+
+  @keyframes marquee {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: -100%;
+    }
+  }
+`;
+export const AnimateTrack = styled.marquee`
+  overflow-x: hidden;
+  overflow-y: hidden;
+`;
+export const MarqueeInner = styled.div`
+  position: relative;
+  display: flex;
+  width: 300%;
+  /* animation: marquee 5s linear infinite; */
+`;
+export const Icon = styled.div`
+  font-size: 50px;
+`;
+
+export const IconText = styled.h6`
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Darker Grotesque', sans-serif;
+`;
+export const IconWapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+`;
 export const GloblaPadding = styled.div`
   width: 100%;
   max-width: 90rem;
@@ -145,7 +216,7 @@ export const GloblaPadding = styled.div`
 export const AboutBackground = styled.div`
   /* width: 100%; */
   overflow: hidden;
-  padding-bottom: 200px;
+  padding-bottom: 280px;
   /* overflow: hidden; */
   background-color: #af9fff;
 `;

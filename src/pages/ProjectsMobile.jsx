@@ -27,7 +27,7 @@ function ProjectsMobile() {
           {/*project1*/}
           {ProjectList.map((Project) => {
             return (
-              <ProjectWrap>
+              <ProjectWrap key={Project.id}>
                 <ProjectIntroWrap
                   data-aos='fade-left'
                   data-aos-offset='300'
@@ -41,7 +41,7 @@ function ProjectsMobile() {
                     <ProjectIntroduce>{Project.Introduce}</ProjectIntroduce>
                     {Project.CardNumber.map((List) => {
                       return (
-                        <CardLeftcontent>
+                        <CardLeftcontent key={List.id}>
                           <CardTexBold>{List.Number}&nbsp;</CardTexBold>
                           <CardTexBold2>{List.Content}</CardTexBold2>
                         </CardLeftcontent>
@@ -53,7 +53,7 @@ function ProjectsMobile() {
                       {Project.SkilsItem.map((Item) => {
                         return (
                           <>
-                            <ProjectItem>{Item}</ProjectItem>
+                            <ProjectItem key={Item.id}>{Item}</ProjectItem>
                           </>
                         );
                       })}
@@ -62,7 +62,11 @@ function ProjectsMobile() {
                       {Project.Site.map((Web) => {
                         return (
                           <>
-                            <Website href={Web.Site} target='_blank'>
+                            <Website
+                              kye={Web.id}
+                              href={Web.Site}
+                              target='_blank'
+                            >
                               <ProjectIcon>{Web.Icon_name}</ProjectIcon>
                             </Website>
                           </>
