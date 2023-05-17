@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
     }
 html {
     scroll-behavior: smooth;
-    overflow: visible 
+    overflow: overlay
 }
     body{
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -24,7 +24,7 @@ html {
         sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        overflow: visible 
+        overflow: overlay
         
     }
 
