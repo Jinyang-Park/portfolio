@@ -6,10 +6,10 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         
-        *::-webkit-scrollbar {
-    border: none;
+        *::-webkit-scrollbar-track {
+    display: none;
     background-color: transparent;
- } /* webkit browsers(safari, chrome) */
+}
 
     scrollbar-color: #404040b3 transparent; /*firefox*/
 
