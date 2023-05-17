@@ -42,13 +42,14 @@ html {
     }
 
     body{
-        background-color: #f5f5f5;
+        /* background-color: #f5f5f5; */
         font-size: 16px;
         /* overflow: overlay; */
         /* line-height: 1.7; */
         *::-webkit-scrollbar-track {
     display: none;
     background-color: transparent;
+    overflow-x: hidden;
 }
 
     scrollbar-color: #404040b3 transparent; /*firefox*/
