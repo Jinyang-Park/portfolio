@@ -8,9 +8,7 @@ const GlobalStyle = createGlobalStyle`
     }
 html {
     scroll-behavior: smooth;
-    /* overflow-y: hidden; */
-    width: 100%;
-    height: 100%;
+
 }
     body{
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -18,10 +16,15 @@ html {
         sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        width: 100%;
-    height: 100%;
-    
+
     }
+    .no-scroll{
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+}
 
     h1,
     h2,
