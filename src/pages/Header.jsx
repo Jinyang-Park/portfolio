@@ -82,7 +82,6 @@ export const Nav = styled.div`
   align-items: center;
   @media all and (max-width: 768px) {
     padding: 20px 20px;
-    justify-content: left;
   }
   @media all and (min-width: 1023px) {
     //브라우저 창 width가 1023px보다 커지는 순간부터 적용

@@ -29,7 +29,8 @@ function ProjectsMobile() {
             return (
               <ProjectWrap key={Project.id}>
                 <ProjectIntroWrap
-                  data-aos='fade-left'
+                  data-aos='fade-up'
+                  data-aos-anchor-placement='top-bottom'
                   data-aos-offset='300'
                   data-aos-easing='ease-in-sine'
                 >
@@ -77,7 +78,8 @@ function ProjectsMobile() {
                 </ProjectIntroWrap>
 
                 <ProjectIntroWrap2
-                  data-aos='fade-right'
+                  data-aos='fade-up'
+                  data-aos-anchor-placement='top-bottom'
                   data-aos-offset='300'
                   data-aos-easing='ease-in-sine'
                 >
