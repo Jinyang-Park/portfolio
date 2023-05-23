@@ -564,6 +564,7 @@ export const TextArea = styled.textarea`
     //브라우저 창 width가 1023px보다 커지는 순간부터 적용
     //데스크탑
     padding: 40px 100px;
+    font-size: 25px;
   }
 `;
 export const SendDivWrap = styled.div`
