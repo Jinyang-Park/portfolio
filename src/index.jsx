@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './utils/i18n'; // import만 해두면 된다.
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

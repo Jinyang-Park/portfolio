@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next'; // 1. react-i18next import
 
 function AboutMobile() {
+  const { i18n, t } = useTranslation();
+
   const [position, setPosition] = useState(0);
   function onScroll() {
     setPosition(window.scrollY - 800);
@@ -51,34 +54,28 @@ function AboutMobile() {
 
               <IntromyselfWrap>
                 <IntroCardMyself>
-                  I am a front-end developer and designer based in Seoul, Korea.
+                  {t('aboutdescription.part1')}
                   <br />
                   <br />
-                  I started my career as a sportswear designer and product
-                  manager with more than two years. <br />
-                  Always I am curious about all things technology and design,
-                  from software engineering to UI/UX. <br />
-                  While working designer, I started learning software frontend
-                  development.
-                  <br /> I fell in love with web development when I studying
-                  software engineer, mostly focused on the frontend.
-                  <br /> I am excited about the mix of design and creativity,
-                  and technical skills. I enjoy the struggle and the
-                  satisfaction of figuring something out.
+                  {i18n
+                    .t('aboutdescription.part2')
+                    .split('\n')
+                    .map((line) => (
+                      <div>{line}</div>
+                    ))}
+                  {/* <p>{t('aboutdescription.part2')}</p> */}
+
                   <br />
+                  {i18n
+                    .t('aboutdescription.part3')
+                    .split('\n')
+                    .map((line) => (
+                      <div>{line}</div>
+                    ))}
+                  {/* {t('aboutdescription.part3')} */}
+
                   <br />
-                  I have been predominantly using React and Javascript, but I
-                  like to learn other frameworks as well.
-                  <br />I am focused on the details and accessible user-friendly
-                  websites and applications.
-                  <br />
-                  <br />
-                  After a little longer than I would have liked, I feel excited
-                  and determined to dive into a new career path in web
-                  development.
-                  <br />
-                  If you are interested in more details or working together, see
-                  my resume!
+                  {t('aboutdescription.part4')}
                 </IntroCardMyself>
               </IntromyselfWrap>
               <ResumeBtn

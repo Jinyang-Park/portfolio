@@ -1,8 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-scroll';
-import { Website } from './Projects';
+import { SlGlobe } from 'react-icons/sl';
+// import i18n from 'locales/i18n';
+import { useTranslation } from 'react-i18next';
 function Header() {
+  const { i18n } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+    console.log(lng);
+  };
   return (
     <>
       <NavContainer>
@@ -32,6 +40,7 @@ function Header() {
               >
                 <Navli>ABOUT</Navli>
               </Link>
+
               <Link
                 activeClass='active'
                 spy={true}
@@ -45,16 +54,31 @@ function Header() {
             </Navul>
           </NavWrapper>
           <Navul>
-            <Link
-              activeClass='active'
-              spy={true}
-              smooth={true}
-              offset={50}
-              duration={500}
-              to='contact'
-            >
-              <Navli2>CONTACT</Navli2>
-            </Link>
+            <NavLangWrap>
+              <LangItem>
+                <LangWrap>
+                  <UL>
+                    <LI>
+                      <a onClick={() => changeLanguage('ko')}>KOR</a>
+                    </LI>
+                    <LI>
+                      <a onClick={() => changeLanguage('en')}>ENG</a>
+                    </LI>
+                  </UL>
+                </LangWrap>
+                <LangIcon></LangIcon>
+              </LangItem>
+              <Link
+                activeClass='active'
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+                to='contact'
+              >
+                <Navli2>CONTACT</Navli2>
+              </Link>
+            </NavLangWrap>
           </Navul>
         </Nav>
       </NavContainer>
@@ -63,7 +87,48 @@ function Header() {
 }
 
 export default Header;
-
+export const NavLangWrap = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+`;
+export const LangItem = styled.div`
+  display: none;
+  border: 3px solid #af9fff;
+  padding: 15px 20px;
+  opacity: 1;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* position: absolute; */
+  /* right: -10px; */
+  /* top: 50%; */
+  /* transform: translateY(-50%); */
+  background: transparent;
+  border-radius: 30px;
+  /* width: 85px; */
+  /* opacity: 0.5; */
+  transition: all 0.3s;
+`;
+export const LangIcon = styled(SlGlobe)`
+  font-size: 25px;
+  cursor: pointer;
+`;
+export const LangWrap = styled.div``;
+export const UL = styled.ul`
+  list-style: none;
+  cursor: pointer;
+`;
+export const LI = styled.li`
+  display: inline-block;
+  font-weight: 600;
+  font-size: 20px;
+  font-family: 'Darker Grotesque', sans-serif;
+  line-height: 1;
+  margin-right: 8px;
+`;
 export const NavContainer = styled.div`
   /* width: 100%; */
   /* position: fixed; */
