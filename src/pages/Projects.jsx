@@ -7,15 +7,13 @@ import { useMediaQuery } from 'react-responsive';
 import { useTranslation } from 'react-i18next';
 import { BsGithub } from 'react-icons/bs';
 import { RiWindowFill } from 'react-icons/ri';
+import { changeLanguage } from 'i18next';
 
 function Projects() {
   const { i18n, t } = useTranslation();
 
   // 바뀌는 언어를 체크
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-    // console.log(changeLanguage);
-  };
+  // console.log(i18n.language);
 
   useEffect(() => {
     AOS.init();
@@ -57,10 +55,10 @@ function Projects() {
                   >
                     <ProjectPost>
                       <ProjectTitle>{Project.Title}</ProjectTitle>
-                      {/*바뀌는 언어로 style 삼항연산자를 작성/ 콘솔로그 찍어보면 바뀐 언어로 찍힘 */}
+                      {/*바뀌는 언어를 체크 */}
                       <ProjectSubTitle
                         style={{
-                          fontSize: changeLanguage === 'en' ? '20' : '',
+                          fontSize: i18n.language === 'en' ? '20px' : '',
                         }}
                       >
                         {Project.SubTitle}
@@ -69,7 +67,7 @@ function Projects() {
                       <ProjectAbout>About</ProjectAbout>
                       <ProjectIntroduce
                         style={{
-                          fontSize: changeLanguage === 'en' ? '20' : '',
+                          fontSize: i18n.language === 'en' ? '20px' : '',
                         }}
                       >
                         {Project.Introduce}
@@ -79,7 +77,7 @@ function Projects() {
                           <CardTexBold>{List.Number}&nbsp;</CardTexBold>
                           <CardTexBold2
                             style={{
-                              fontSize: changeLanguage === 'en' ? '16' : '',
+                              fontSize: i18n.language === 'en' ? '16px' : '',
                             }}
                           >
                             {List.Content}
