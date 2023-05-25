@@ -1,13 +1,18 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import { ProjectList } from '../utils/ProjectsList';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useTranslation } from 'react-i18next';
+import { BsGithub } from 'react-icons/bs';
+import { RiWindowFill } from 'react-icons/ri';
 
 function ProjectsMobile() {
+  const { t } = useTranslation();
+
   useEffect(() => {
     AOS.init();
   });
+
   return (
     <>
       <ProjectBackground id='projects'>
@@ -25,7 +30,7 @@ function ProjectsMobile() {
             </ProjectIntrodetail>
           </ProjectIntroText2>
           {/*project1*/}
-          {ProjectList.map((Project) => {
+          {t('translationList', { returnObjects: true }).map((Project) => {
             return (
               <ProjectWrap key={Project.id}>
                 <ProjectIntroWrap
@@ -68,7 +73,12 @@ function ProjectsMobile() {
                               href={Web.Site}
                               target='_blank'
                             >
-                              <ProjectIcon>{Web.Icon_name}</ProjectIcon>
+                              {/*더 좋은 삼항연산자 생각해보기*/}
+                              {Web.Icon_name === '<BsGithub />' ? (
+                                <ProjectIcon></ProjectIcon>
+                              ) : (
+                                <ProjectIcon2></ProjectIcon2>
+                              )}
                             </Website>
                           </>
                         );
@@ -301,11 +311,85 @@ export const ProjectIconTitle = styled.div`
   font-family: 'Darker Grotesque', sans-serif;
   color: #eeff04;
 `;
-export const ProjectIcon = styled.div`
+export const ProjectIcon = styled(BsGithub)`
   margin-top: 20px;
-
+  margin-right: 15px;
   display: flex;
-  padding: 10px 60px;
+  padding: 10px 100px;
+  border-radius: 30px;
+  border: #eeff04 solid 1px;
+  color: #eeff04;
+  cursor: pointer;
+  line-height: 0.15;
+  transition: all 0.3s ease;
+
+  @-webkit-keyframes ProjectIcon {
+    15% {
+      -webkit-transform: translateY(5px);
+      transform: translateY(5px);
+    }
+    30% {
+      -webkit-transform: translateY(-5px);
+      transform: translateY(-5px);
+    }
+    50% {
+      -webkit-transform: translateY(3px);
+      transform: translateY(3px);
+    }
+    65% {
+      -webkit-transform: translateY(-3px);
+      transform: translateY(-3px);
+    }
+    80% {
+      -webkit-transform: translateY(2px);
+      transform: translateY(2px);
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+  @keyframes ProjectIcon {
+    15% {
+      -webkit-transform: translateY(5px);
+      transform: translateY(5px);
+    }
+    30% {
+      -webkit-transform: translateY(-5px);
+      transform: translateY(-5px);
+    }
+    50% {
+      -webkit-transform: translateY(3px);
+      transform: translateY(3px);
+    }
+    65% {
+      -webkit-transform: translateY(-3px);
+      transform: translateY(-3px);
+    }
+    80% {
+      -webkit-transform: translateY(2px);
+      transform: translateY(2px);
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+  &:hover {
+    -webkit-animation: ProjectIcon 1s ease;
+    animation: ProjectIcon 1s ease;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    border: black solid 1px;
+    background-color: #eeff04;
+    color: black;
+  }
+`;
+export const ProjectIcon2 = styled(RiWindowFill)`
+  margin-top: 20px;
+  margin-right: 15px;
+  display: flex;
+  padding: 10px 100px;
   border-radius: 30px;
   border: #eeff04 solid 1px;
   color: #eeff04;

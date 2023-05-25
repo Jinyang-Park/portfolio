@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import { ProjectList } from '../utils/ProjectsList';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import ProjectsMobile from './ProjectsMobile';
@@ -10,7 +9,13 @@ import { BsGithub } from 'react-icons/bs';
 import { RiWindowFill } from 'react-icons/ri';
 
 function Projects() {
-  const { t } = useTranslation();
+  const { i18n, t } = useTranslation();
+
+  // 바뀌는 언어를 체크
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+    // console.log(changeLanguage);
+  };
 
   useEffect(() => {
     AOS.init();
@@ -52,14 +57,33 @@ function Projects() {
                   >
                     <ProjectPost>
                       <ProjectTitle>{Project.Title}</ProjectTitle>
-                      <ProjectSubTitle>{Project.SubTitle}</ProjectSubTitle>
+                      {/*바뀌는 언어로 style 삼항연산자를 작성/ 콘솔로그 찍어보면 바뀐 언어로 찍힘 */}
+                      <ProjectSubTitle
+                        style={{
+                          fontSize: changeLanguage === 'en' ? '20' : '',
+                        }}
+                      >
+                        {Project.SubTitle}
+                      </ProjectSubTitle>
 
                       <ProjectAbout>About</ProjectAbout>
-                      <ProjectIntroduce>{Project.Introduce}</ProjectIntroduce>
+                      <ProjectIntroduce
+                        style={{
+                          fontSize: changeLanguage === 'en' ? '20' : '',
+                        }}
+                      >
+                        {Project.Introduce}
+                      </ProjectIntroduce>
                       {Project.CardNumber.map((List) => (
                         <CardLeftcontent key={List.id}>
                           <CardTexBold>{List.Number}&nbsp;</CardTexBold>
-                          <CardTexBold2>{List.Content}</CardTexBold2>
+                          <CardTexBold2
+                            style={{
+                              fontSize: changeLanguage === 'en' ? '16' : '',
+                            }}
+                          >
+                            {List.Content}
+                          </CardTexBold2>
                         </CardLeftcontent>
                       ))}
 
@@ -79,7 +103,12 @@ function Projects() {
                               href={Web.Site}
                               target='_blank'
                             >
-                              <ProjectIcon>{Web.Icon_name}</ProjectIcon>
+                              {/*더 좋은 삼항연산자 생각해보기*/}
+                              {Web.Icon_name === '<BsGithub />' ? (
+                                <ProjectIcon></ProjectIcon>
+                              ) : (
+                                <ProjectIcon2></ProjectIcon2>
+                              )}
                             </Website>
                           </>
                         ))}
@@ -255,7 +284,7 @@ export const ProjectTitle = styled.h3`
 `;
 export const ProjectSubTitle = styled.p`
   font-family: 'Darker Grotesque', sans-serif;
-  font-size: 20px;
+  font-size: 17px;
   color: #fff;
   margin-bottom: 25px;
 `;
@@ -269,7 +298,7 @@ export const ProjectAbout = styled.h4`
 `;
 export const ProjectIntroduce = styled.p`
   font-family: 'Darker Grotesque', sans-serif;
-  font-size: 20px;
+  font-size: 17px;
   color: #fff;
   margin-bottom: 25px;
 `;
@@ -310,7 +339,81 @@ export const ProjectIconTitle = styled.div`
   font-family: 'Darker Grotesque', sans-serif;
   color: #eeff04;
 `;
-export const ProjectIcon = styled(BsGithub, RiWindowFill)`
+export const ProjectIcon = styled(BsGithub)`
+  margin-top: 20px;
+  margin-right: 15px;
+  display: flex;
+  padding: 10px 100px;
+  border-radius: 30px;
+  border: #eeff04 solid 1px;
+  color: #eeff04;
+  cursor: pointer;
+  line-height: 0.15;
+  transition: all 0.3s ease;
+
+  @-webkit-keyframes ProjectIcon {
+    15% {
+      -webkit-transform: translateY(5px);
+      transform: translateY(5px);
+    }
+    30% {
+      -webkit-transform: translateY(-5px);
+      transform: translateY(-5px);
+    }
+    50% {
+      -webkit-transform: translateY(3px);
+      transform: translateY(3px);
+    }
+    65% {
+      -webkit-transform: translateY(-3px);
+      transform: translateY(-3px);
+    }
+    80% {
+      -webkit-transform: translateY(2px);
+      transform: translateY(2px);
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+  @keyframes ProjectIcon {
+    15% {
+      -webkit-transform: translateY(5px);
+      transform: translateY(5px);
+    }
+    30% {
+      -webkit-transform: translateY(-5px);
+      transform: translateY(-5px);
+    }
+    50% {
+      -webkit-transform: translateY(3px);
+      transform: translateY(3px);
+    }
+    65% {
+      -webkit-transform: translateY(-3px);
+      transform: translateY(-3px);
+    }
+    80% {
+      -webkit-transform: translateY(2px);
+      transform: translateY(2px);
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+  &:hover {
+    -webkit-animation: ProjectIcon 1s ease;
+    animation: ProjectIcon 1s ease;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    border: black solid 1px;
+    background-color: #eeff04;
+    color: black;
+  }
+`;
+export const ProjectIcon2 = styled(RiWindowFill)`
   margin-top: 20px;
   margin-right: 15px;
   display: flex;
@@ -415,7 +518,7 @@ export const CardTexBold2 = styled.div`
   letter-spacing: -0.1px;
   margin-left: 20px;
   font-family: 'Darker Grotesque', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   color: #fff;
   margin-bottom: 10px;
 `;
