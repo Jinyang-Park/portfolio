@@ -5,7 +5,13 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import ProjectsMobile from './ProjectsMobile';
 import { useMediaQuery } from 'react-responsive';
+import { useTranslation } from 'react-i18next';
+import { BsGithub } from 'react-icons/bs';
+import { RiWindowFill } from 'react-icons/ri';
+
 function Projects() {
+  const { t } = useTranslation();
+
   useEffect(() => {
     AOS.init();
   });
@@ -19,6 +25,7 @@ function Projects() {
       </>
     );
   }
+  // console.log(t('resources.translationListko', { returnObjects: true }));
   return (
     <>
       <ProjectBackground id='projects'>
@@ -34,42 +41,38 @@ function Projects() {
             </ProjectIntrodetail>
           </ProjectIntroText2>
           {/*project1*/}
-          {ProjectList.map((Project) => {
+          {t('translationList', { returnObjects: true }).map((Project) => {
             return (
-              <ProjectWrap key={Project.id}>
-                <ProjectIntroWrap
-                  data-aos='fade-left'
-                  data-aos-offset='300'
-                  data-aos-easing='ease-in-sine'
-                >
-                  <ProjectPost>
-                    <ProjectTitle>{Project.Title}</ProjectTitle>
-                    <ProjectSubTitle>{Project.SubTitle}</ProjectSubTitle>
+              <>
+                <ProjectWrap key={Project.id}>
+                  <ProjectIntroWrap
+                    data-aos='fade-left'
+                    data-aos-offset='300'
+                    data-aos-easing='ease-in-sine'
+                  >
+                    <ProjectPost>
+                      <ProjectTitle>{Project.Title}</ProjectTitle>
+                      <ProjectSubTitle>{Project.SubTitle}</ProjectSubTitle>
 
-                    <ProjectAbout>About</ProjectAbout>
-                    <ProjectIntroduce>{Project.Introduce}</ProjectIntroduce>
-                    {Project.CardNumber.map((List) => {
-                      return (
+                      <ProjectAbout>About</ProjectAbout>
+                      <ProjectIntroduce>{Project.Introduce}</ProjectIntroduce>
+                      {Project.CardNumber.map((List) => (
                         <CardLeftcontent key={List.id}>
                           <CardTexBold>{List.Number}&nbsp;</CardTexBold>
                           <CardTexBold2>{List.Content}</CardTexBold2>
                         </CardLeftcontent>
-                      );
-                    })}
+                      ))}
 
-                    <ProjectSkils>Technologies</ProjectSkils>
-                    <ProjectSkilsItem>
-                      {Project.SkilsItem.map((Item) => {
-                        return (
+                      <ProjectSkils>Technologies</ProjectSkils>
+                      <ProjectSkilsItem>
+                        {Project.SkilsItem.map((Item) => (
                           <>
                             <ProjectItem key={Item.id}>{Item}</ProjectItem>
                           </>
-                        );
-                      })}
-                    </ProjectSkilsItem>
-                    <ProjectSite>
-                      {Project.Site.map((Web) => {
-                        return (
+                        ))}
+                      </ProjectSkilsItem>
+                      <ProjectSite>
+                        {Project.Site.map((Web) => (
                           <>
                             <Website
                               key={Web.id}
@@ -79,29 +82,29 @@ function Projects() {
                               <ProjectIcon>{Web.Icon_name}</ProjectIcon>
                             </Website>
                           </>
-                        );
-                      })}
-                    </ProjectSite>
-                  </ProjectPost>
-                </ProjectIntroWrap>
+                        ))}
+                      </ProjectSite>
+                    </ProjectPost>
+                  </ProjectIntroWrap>
 
-                <ProjectIntroWrap2
-                  data-aos='fade-right'
-                  data-aos-offset='300'
-                  data-aos-easing='ease-in-sine'
-                >
-                  {/*img 파일에 따라 ObjectFit css 다르게 주는 방법*/}
-                  {/*1. alt을 추가 2.style에 Project.Alt가 OlleaGrid이면 objectFit이 cover가 되게끔 삼항연산자사용*/}
-                  <ProjectImg
-                    src={Project.Img}
-                    alt={Project.Alt}
-                    style={{
-                      objectFit:
-                        Project.Alt === 'OlleaGrid' ? 'cover' : 'contain',
-                    }}
-                  />
-                </ProjectIntroWrap2>
-              </ProjectWrap>
+                  <ProjectIntroWrap2
+                    data-aos='fade-right'
+                    data-aos-offset='300'
+                    data-aos-easing='ease-in-sine'
+                  >
+                    {/*img 파일에 따라 ObjectFit css 다르게 주는 방법*/}
+                    {/*1. alt을 추가 2.style에 Project.Alt가 OlleaGrid이면 objectFit이 cover가 되게끔 삼항연산자사용*/}
+                    <ProjectImg
+                      src={Project.Img}
+                      alt={Project.Alt}
+                      style={{
+                        objectFit:
+                          Project.Alt === 'OlleaGrid' ? 'cover' : 'contain',
+                      }}
+                    />
+                  </ProjectIntroWrap2>
+                </ProjectWrap>
+              </>
             );
           })}
           <MinimeHoduWrap>
@@ -307,7 +310,7 @@ export const ProjectIconTitle = styled.div`
   font-family: 'Darker Grotesque', sans-serif;
   color: #eeff04;
 `;
-export const ProjectIcon = styled.div`
+export const ProjectIcon = styled(BsGithub, RiWindowFill)`
   margin-top: 20px;
   margin-right: 15px;
   display: flex;

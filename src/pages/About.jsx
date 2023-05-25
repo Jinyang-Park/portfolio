@@ -77,8 +77,7 @@ function About() {
                   {t('aboutdescription.part1')}
                   <br />
                   <br />
-                  {i18n
-                    .t('aboutdescription.part2')
+                  {t('aboutdescription.part2', { returnObjects: true })
                     .split('\n')
                     .map((line) => (
                       <div>{line}</div>
@@ -86,8 +85,7 @@ function About() {
                   {/* <p>{t('aboutdescription.part2')}</p> */}
 
                   <br />
-                  {i18n
-                    .t('aboutdescription.part3')
+                  {t('aboutdescription.part3', { returnObjects: true })
                     .split('\n')
                     .map((line) => (
                       <div>{line}</div>
