@@ -7,7 +7,6 @@ import { useMediaQuery } from 'react-responsive';
 import { useTranslation } from 'react-i18next';
 import { BsGithub } from 'react-icons/bs';
 import { RiWindowFill } from 'react-icons/ri';
-import { changeLanguage } from 'i18next';
 
 function Projects() {
   const { i18n, t } = useTranslation();
@@ -28,7 +27,7 @@ function Projects() {
       </>
     );
   }
-  // console.log(t('resources.translationListko', { returnObjects: true }));
+
   return (
     <>
       <ProjectBackground id='projects'>
@@ -291,12 +290,12 @@ export const ProjectPost = styled.div``;
 export const ProjectAbout = styled.h4`
   font-family: 'Darker Grotesque', sans-serif;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 22px;
   color: #af9fff;
 `;
 export const ProjectIntroduce = styled.p`
   font-family: 'Darker Grotesque', sans-serif;
-  font-size: 17px;
+  font-size: 16px;
   color: #fff;
   margin-bottom: 25px;
 `;
@@ -317,6 +316,7 @@ export const ProjectSkilsItem = styled.p`
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   justify-items: center;
   grid-row-gap: 10px;
+  justify-items: start;
 `;
 export const ProjectItem = styled.span`
   width: max-content;
@@ -338,7 +338,7 @@ export const ProjectIconTitle = styled.div`
   color: #eeff04;
 `;
 export const ProjectIcon = styled(BsGithub)`
-  margin-top: 20px;
+  margin-top: 30px;
   margin-right: 15px;
   display: flex;
   padding: 10px 100px;
@@ -412,7 +412,7 @@ export const ProjectIcon = styled(BsGithub)`
   }
 `;
 export const ProjectIcon2 = styled(RiWindowFill)`
-  margin-top: 20px;
+  margin-top: 30px;
   margin-right: 15px;
   display: flex;
   padding: 10px 100px;
@@ -494,22 +494,17 @@ export const ProjectImg = styled.img`
 `;
 
 export const CardLeftcontent = styled.div`
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   border-bottom: 1px solid #7b7b7b;
   margin-top: 10px;
+  align-items: baseline;
 `;
 export const CardTexBold = styled.div`
   font-weight: 700;
   font-size: 25px;
-  line-height: 1;
+  /* line-height: 1; */
   letter-spacing: -2px;
   font-family: 'Darker Grotesque', sans-serif;
-
   color: #fff;
 `;
 export const CardTexBold2 = styled.div`
@@ -518,7 +513,7 @@ export const CardTexBold2 = styled.div`
   font-family: 'Darker Grotesque', sans-serif;
   font-size: 14px;
   color: #fff;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 `;
 // export const Arrow = styled.div`
 //   position: relative;

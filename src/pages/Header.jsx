@@ -1,17 +1,47 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-scroll';
 import { SlGlobe } from 'react-icons/sl';
-// import i18n from 'locales/i18n';
 import { useTranslation } from 'react-i18next';
+import ChangelngModal from './ChangelngModal';
+
 function Header() {
+  const [isOpenModal, setIsOpenModal] = useState(false);
+
   const { i18n } = useTranslation();
 
+  //마우스 호버시 다국어
+  const [style, setStyle] = useState({ display: 'none' });
+
+  // 클릭한 언어 이벤트
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
   };
+
+  // 모달 열기
+  const openModal = () => {
+    setIsOpenModal(true);
+    // 모달창 2초후 사라짐
+    setTimeout(() => {
+      setIsOpenModal(false);
+    }, 2000);
+  };
+
+  // 모달 닫기
+  const closeModal = () => {
+    setIsOpenModal(false);
+  };
+
   return (
     <>
+      {isOpenModal && (
+        <ChangelngModal
+          openModal={openModal}
+          closeModal={closeModal}
+          setIsOpenModal={setIsOpenModal}
+          isOpenModal={isOpenModal}
+        />
+      )}
       <NavContainer>
         <Nav id='main'>
           <NavWrapper>
@@ -55,18 +85,52 @@ function Header() {
           <Navul>
             <NavLangWrap>
               <LangItem>
-                <LangWrap>
-                  <UL>
-                    <LI>
-                      <a onClick={() => changeLanguage('ko')}>KOR</a>
-                    </LI>
-                    <LI>
-                      <a onClick={() => changeLanguage('en')}>ENG</a>
-                    </LI>
-                  </UL>
+                <LangWrap
+                  onMouseEnter={(e) => {
+                    setStyle({
+                      display: 'block',
+                      border: '3px solid #af9fff',
+                      width: '170px',
+                      transform: 'translateX(30%)',
+                      padding: '15px 40px 15px 30px',
+                      borderRadius: '30px',
+                    });
+                  }}
+                  onMouseLeave={(e) => {
+                    setStyle({
+                      display: 'none',
+                      padding: '15px 20px',
+                    });
+                  }}
+                >
+                  <BigWrap style={style}>
+                    <UL onClick={openModal}>
+                      <LI>
+                        <a
+                          onClick={() => changeLanguage('ko')}
+                          style={{
+                            color: i18n.language === 'ko' ? '#af9fff' : '',
+                          }}
+                        >
+                          KOR
+                        </a>
+                      </LI>
+                      <LI>
+                        <a
+                          onClick={() => changeLanguage('en')}
+                          style={{
+                            color: i18n.language === 'en' ? '#af9fff' : '',
+                          }}
+                        >
+                          ENG
+                        </a>
+                      </LI>
+                    </UL>
+                  </BigWrap>
+                  <LangIcon></LangIcon>
                 </LangWrap>
-                <LangIcon></LangIcon>
               </LangItem>
+
               <Link
                 activeClass='active'
                 spy={true}
@@ -86,36 +150,43 @@ function Header() {
 }
 
 export default Header;
+export const BigWrap = styled.div``;
 export const NavLangWrap = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
 `;
 export const LangItem = styled.div`
-  display: none;
-  border: 3px solid #af9fff;
-  padding: 15px 20px;
+  /* border: 3px solid #af9fff; */
+  /* padding: 15px 20px; */
   opacity: 1;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
   /* position: absolute; */
   /* right: -10px; */
   /* top: 50%; */
   /* transform: translateY(-50%); */
   background: transparent;
-  border-radius: 30px;
+
   /* width: 85px; */
   /* opacity: 0.5; */
   transition: all 0.3s;
 `;
 export const LangIcon = styled(SlGlobe)`
-  font-size: 25px;
+  font-size: 30px;
   cursor: pointer;
+  margin-right: 30px;
 `;
-export const LangWrap = styled.div``;
+export const LangWrap = styled.div`
+  transition: all 0.3s;
+  height: auto;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  /* opacity: 0.5; */
+`;
 export const UL = styled.ul`
   list-style: none;
   cursor: pointer;
@@ -126,12 +197,9 @@ export const LI = styled.li`
   font-size: 20px;
   font-family: 'Darker Grotesque', sans-serif;
   line-height: 1;
-  margin-right: 8px;
+  margin-right: 10px;
 `;
 export const NavContainer = styled.div`
-  /* width: 100%; */
-  /* position: fixed; */
-  /* position: fixed; */
   left: 0;
   top: 0;
   right: 0;

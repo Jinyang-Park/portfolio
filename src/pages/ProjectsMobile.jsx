@@ -289,6 +289,7 @@ export const ProjectSkilsItem = styled.p`
   grid-template-columns: 1fr 1fr 1fr 1fr;
   /* justify-items: center; */
   grid-row-gap: 8px;
+  justify-items: start;
 `;
 export const ProjectItem = styled.span`
   width: max-content;
@@ -315,7 +316,7 @@ export const ProjectIcon = styled(BsGithub)`
   margin-top: 20px;
   margin-right: 15px;
   display: flex;
-  padding: 10px 100px;
+  padding: 10px 60px;
   border-radius: 30px;
   border: #eeff04 solid 1px;
   color: #eeff04;
@@ -389,7 +390,7 @@ export const ProjectIcon2 = styled(RiWindowFill)`
   margin-top: 20px;
   margin-right: 15px;
   display: flex;
-  padding: 10px 100px;
+  padding: 10px 60px;
   border-radius: 30px;
   border: #eeff04 solid 1px;
   color: #eeff04;

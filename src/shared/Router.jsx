@@ -8,6 +8,8 @@ import Header from '../pages/Header';
 import ScrollUpto from '../pages/ScrollUpto';
 import ScrollToTopButton from '../pages/ScrollToButton';
 import { useMediaQuery } from 'react-responsive';
+import ChangelngModal from '../pages/ChangelngModal';
+
 const Router = () => {
   const isMobile = useMediaQuery({ query: '(max-width:768px)' });
 

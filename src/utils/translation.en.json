@@ -110,12 +110,12 @@
       "SkilsItem": [
         "React-Native",
         "Redux-toolkit",
-        "Illustrator",
+        "Redux-Thunk",
         "Axios",
         "Firebase",
         "Vercel",
         "Figma",
-        "Redux-Thunk"
+        "Illustrator"
       ],
       "Site": [
         {
