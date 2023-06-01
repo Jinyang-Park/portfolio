@@ -39,7 +39,6 @@ function Header() {
           openModal={openModal}
           closeModal={closeModal}
           setIsOpenModal={setIsOpenModal}
-          isOpenModal={isOpenModal}
         />
       )}
       <NavContainer>
@@ -155,19 +154,21 @@ export const NavLangWrap = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media all and (max-width: 768px) {
+    /* margin-top: 30px; */
+    flex-direction: column-reverse;
+  }
 `;
 export const LangItem = styled.div`
   /* border: 3px solid #af9fff; */
   /* padding: 15px 20px; */
   opacity: 1;
   overflow: hidden;
-
   /* position: absolute; */
   /* right: -10px; */
   /* top: 50%; */
   /* transform: translateY(-50%); */
   background: transparent;
-
   /* width: 85px; */
   /* opacity: 0.5; */
   transition: all 0.3s;
@@ -176,6 +177,10 @@ export const LangIcon = styled(SlGlobe)`
   font-size: 30px;
   cursor: pointer;
   margin-right: 30px;
+  @media all and (max-width: 768px) {
+    /* margin-top: 30px; */
+    font-size: 20px;
+  }
 `;
 export const LangWrap = styled.div`
   transition: all 0.3s;
@@ -186,6 +191,13 @@ export const LangWrap = styled.div`
   align-items: center;
   cursor: pointer;
   /* opacity: 0.5; */
+  @media all and (max-width: 768px) {
+    /* margin-top: 30px; */
+    position: absolute;
+    top: 85px;
+    right: 8px;
+    /* width: 0px; */
+  }
 `;
 export const UL = styled.ul`
   list-style: none;
@@ -198,6 +210,12 @@ export const LI = styled.li`
   font-family: 'Darker Grotesque', sans-serif;
   line-height: 1;
   margin-right: 10px;
+  @media all and (max-width: 768px) {
+    /* margin-top: 30px; */
+    flex-direction: column-reverse;
+    font-size: 16px;
+    line-height: 1.5;
+  }
 `;
 export const NavContainer = styled.div`
   left: 0;

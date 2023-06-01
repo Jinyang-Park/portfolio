@@ -5,20 +5,16 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useTranslation } from 'react-i18next';
 
-export default function ChangelngModal({
-  closeModal,
-  setIsOpenModal,
-  isOpenModal,
-}) {
+export default function ChangelngModal({ closeModal }) {
   const { i18n } = useTranslation();
-  console.log(isOpenModal);
+
   useEffect(() => {
     AOS.init();
   });
 
   return (
     <>
-      <ModalWrap data-aos={isOpenModal ? 'fade-down' : 'fade-up'}>
+      <ModalWrap data-aos='fade-down'>
         <ModalBox>
           <ModalCenter>
             {/*바뀌는 언어를 체크 */}
