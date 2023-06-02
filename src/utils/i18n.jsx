@@ -16,7 +16,6 @@ const resources = {
 i18n
   .use(LanguaeDetector) // 사용자 언어 탐지
   .use(initReactI18next) // i18n 객체를 react-18next에 전달
-
   .init({
     resources: resources,
     // lng: "ko", //언어 감지기를 상요하는 경우 옵션 정의 X
