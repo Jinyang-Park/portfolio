@@ -97,7 +97,11 @@ function About() {
                 </IntroCardMyself>
               </IntromyselfWrap>
               <ResumeBtn
-                href='/assets/JIN YANG(English).pdf'
+                href={
+                  i18n.language === 'ko'
+                    ? '/assets/JIN YANG PARK(KOR).pdf'
+                    : '/assets/JIN YANG(English).pdf'
+                }
                 target='_blank'
                 rel='noreferrer'
               >
