@@ -91,7 +91,7 @@ function About() {
                     ))}
                   {/* <p>{t('aboutdescription.part2')}</p> */}
 
-                  <br />
+                  {i18n.language === 'ko' ? <br /> : ''}
                   {t('aboutdescription.part3', { returnObjects: true })
                     .split('\n')
                     .map((line) => (

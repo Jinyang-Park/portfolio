@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { BsLinkedin, BsGithub } from 'react-icons/bs';
 import { SiVelog } from 'react-icons/si';
 import styled from 'styled-components';
@@ -6,8 +6,11 @@ import { MdOutlineSend } from 'react-icons/md';
 import emailjs from '@emailjs/browser';
 import Contact2Mobile from './Contact2Mobile';
 import { useMediaQuery } from 'react-responsive';
+import { useTranslation } from 'react-i18next'; // 1. react-i18next import
 
 function Contact2() {
+  const { i18n, t } = useTranslation();
+
   const form = React.useRef(null);
 
   const [check, setCheck] = useState(true);
@@ -73,17 +76,30 @@ function Contact2() {
               together!
             </Title>
           </ContactTitleWrap>
-          <SubTitle>
-            Thanks for stopping by,
-            <br />
-            I’m currently looking to join a new team of creative designers and
-            developers.
+          <SubTitle
+            style={{
+              fontSize: i18n.language === 'ko' ? '50px' : '70px',
+              lineHeight: i18n.language === 'ko' ? '1.1' : '1',
+            }}
+          >
+            {t('contactdescription.part1', { returnObjects: true })
+              .split('\n')
+              .map((line) => (
+                <div>{line}</div>
+              ))}
+            {/* <br /> */}
+            {t('contactdescription.part2')}
           </SubTitle>
           <br />
-          <SubTitle>
-            If you think we might be a good fit for one another,
+          <SubTitle
+            style={{
+              fontSize: i18n.language === 'ko' ? '50px' : '70px',
+              lineHeight: i18n.language === 'ko' ? '1.1' : '1',
+            }}
+          >
+            {t('contactdescription.part3')}
             <br />
-            Send me an email.
+            {t('contactdescription.part4')}
           </SubTitle>
           <SocialWrap>
             <Website
@@ -108,7 +124,7 @@ function Contact2() {
                       type='text'
                       value={name}
                       name='fromname'
-                      placeholder='Name'
+                      placeholder={i18n.language === 'ko' ? '이름' : 'Name'}
                       onChange={handleName}
                       required
                     />
@@ -116,7 +132,7 @@ function Contact2() {
                       type='email'
                       value={email}
                       name='fromnemail'
-                      placeholder='E-mail'
+                      placeholder={i18n.language === 'ko' ? '메일' : 'E-mail'}
                       onChange={handleEmail}
                       required
                     />
@@ -124,7 +140,7 @@ function Contact2() {
                       type='text'
                       value={subject}
                       name='fromsubject'
-                      placeholder='Subject'
+                      placeholder={i18n.language === 'ko' ? '제목' : 'Subject'}
                       onChange={handleSubject}
                       required
                     />
@@ -133,7 +149,7 @@ function Contact2() {
                     <TextArea
                       value={message}
                       name='frommessage'
-                      placeholder='Message'
+                      placeholder={i18n.language === 'ko' ? '내용' : 'Message'}
                       onChange={handleTextarea}
                       required
                     />
@@ -142,13 +158,20 @@ function Contact2() {
                 {check ? (
                   <SendBtn type='submit'>
                     <BtnIcon></BtnIcon>
-                    <BtnText>Send</BtnText>
+                    <BtnText>
+                      {i18n.language === 'ko' ? '보내기' : 'Send'}
+                    </BtnText>
                   </SendBtn>
                 ) : (
                   <ChangeBtn type='submit'>
-                    <BtnText2>
-                      Thanks for your message.
-                      <br />I will get back to you as soon as possible.
+                    <BtnText2
+                      style={{
+                        fontSize: i18n.language === 'ko' ? '36px' : '40px',
+                        lineHeight: i18n.language === 'ko' ? '1.1' : '1',
+                      }}
+                    >
+                      {t('contactdescription.part5')}
+                      <br /> {t('contactdescription.part6')}
                     </BtnText2>
                   </ChangeBtn>
                 )}
@@ -195,9 +218,9 @@ export const Title = styled.h1`
   }
 `;
 export const SubTitle = styled.span`
-  font-size: 70px;
+  /* font-size: 70px; */
   font-family: 'Darker Grotesque', sans-serif;
-  line-height: 1;
+  line-height: 1.1;
   color: #eeff04;
   @media all and (min-width: 1920px) {
     //브라우저 창 width가 1023px보다 커지는 순간부터 적용
@@ -606,10 +629,11 @@ export const ChangeBtn = styled.button`
   background: none;
   padding-top: 170px;
 
-  /* width: 30%; */
-  /* display: block; */
-  /* text-align: center; */
-  /* margin: 20px; */
+  @media all and (min-width: 1920px) {
+    //브라우저 창 width가 1023px보다 커지는 순간부터 적용
+    //데스크탑
+    margin-top: 100px;
+  }
 `;
 export const BtnDiv = styled.div`
   display: inline-block;

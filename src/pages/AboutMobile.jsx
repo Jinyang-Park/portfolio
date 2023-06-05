@@ -67,7 +67,7 @@ function AboutMobile() {
                     ))}
                   {/* <p>{t('aboutdescription.part2')}</p> */}
 
-                  <br />
+                  {i18n.language === 'ko' ? <br /> : ''}
                   {i18n
                     .t('aboutdescription.part3')
                     .split('\n')
