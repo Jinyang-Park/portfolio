@@ -52,11 +52,13 @@ function AboutMobile() {
                 I'm Jinyang
               </IntroCardMyname>
 
-              <IntromyselfWrap>
+              <IntromyselfWrap
+                style={{ maxWidth: i18n.language === 'ko' ? '490px' : '480px' }}
+              >
                 <IntroCardMyself>
                   {t('aboutdescription.part1')}
                   <br />
-                  <br />
+                  {i18n.language === 'en' ? <br /> : ''}
                   {i18n
                     .t('aboutdescription.part2')
                     .split('\n')
@@ -76,10 +78,17 @@ function AboutMobile() {
 
                   <br />
                   {t('aboutdescription.part4')}
+                  <br />
+                  <br />
+                  {t('aboutdescription.part5')}
                 </IntroCardMyself>
               </IntromyselfWrap>
               <ResumeBtn
-                href='/assets/JIN YANG(English).pdf'
+                href={
+                  i18n.language === 'ko'
+                    ? '/assets/JIN YANG PARK(KOR).pdf'
+                    : '/assets/JIN YANG(English).pdf'
+                }
                 target='_blank'
                 rel='noreferrer'
               >
@@ -190,7 +199,6 @@ export const IntroCardMyname = styled.h3`
 `;
 export const IntromyselfWrap = styled.div`
   width: 100%;
-  max-width: 480px;
 `;
 export const IntroCardMyself = styled.p`
   margin-top: 0;

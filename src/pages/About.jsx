@@ -72,11 +72,18 @@ function About() {
                 I'm Jinyang
               </IntroCardMyname>
 
-              <IntromyselfWrap>
-                <IntroCardMyself>
+              <IntromyselfWrap
+                style={{ maxWidth: i18n.language === 'ko' ? '490px' : '480px' }}
+              >
+                <IntroCardMyself
+                  style={{
+                    letterSpacing: i18n.language === 'ko' ? '0px' : '-0.45px',
+                  }}
+                >
                   {t('aboutdescription.part1')}
                   <br />
-                  <br />
+                  {i18n.language === 'en' ? <br /> : ''}
+
                   {t('aboutdescription.part2', { returnObjects: true })
                     .split('\n')
                     .map((line) => (
@@ -94,6 +101,9 @@ function About() {
 
                   <br />
                   {t('aboutdescription.part4')}
+                  <br />
+                  <br />
+                  {t('aboutdescription.part5')}
                 </IntroCardMyself>
               </IntromyselfWrap>
               <ResumeBtn
@@ -254,12 +264,14 @@ export const IntroCardWrap = styled.div`
   display: grid;
   margin: 0 auto;
   width: 100%;
+  /* padding: 4rem 2.5rem; */
   padding: 4rem;
   grid-auto-columns: 1fr;
   grid-column-gap: 16px;
   grid-row-gap: 16px;
+  /* grid-row-gap: 25px; */
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 720px;
+  grid-template-rows: 780px;
   border-radius: 50px;
   background-color: #f5f5f5;
   top: -150px;
@@ -278,13 +290,12 @@ export const IntroCardMyname = styled.h3`
 `;
 export const IntromyselfWrap = styled.div`
   width: 100%;
-  max-width: 480px;
 `;
 export const IntroCardMyself = styled.p`
   margin-top: 0;
   font-size: 18px;
-  line-height: 1.2;
-  letter-spacing: -0.45px;
+  /* line-height: 1.2; */
+
   /* font-family: 'Darker Grotesque', sans-serif; */
 `;
 export const Intropic = styled.figure`
