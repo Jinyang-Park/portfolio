@@ -81,11 +81,11 @@ html {
         cursor: pointer;
     }
 
-    img {
+    /* img {
 
         
 
-    }
+    } */
 
     div {
         box-sizing: border-box;

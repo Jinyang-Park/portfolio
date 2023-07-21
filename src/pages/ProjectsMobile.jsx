@@ -465,7 +465,7 @@ export const ProjectImg = styled.img`
   object-fit: contain;
   width: 100%;
   height: 100%;
-  border-radius: 4.375rem;
+  border-radius: 1.8rem;
 `;
 
 export const CardLeftcontent = styled.div`
